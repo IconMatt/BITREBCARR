@@ -1,0 +1,65 @@
+// =============================================================================
+// ABSTRACTS / BREAKPOINTS
+// Mobile-first. All components are written for mobile by default,
+// then enhanced upward using respond-to().
+//
+// Grid: 12 columns, 48px gutter (from Figma layout grid)
+// Container: 1440px max-width, centered
+// =============================================================================
+
+$breakpoints: (
+  'sm':  480px,    // Large mobile / phone landscape
+  'md':  768px,    // Tablet portrait
+  'lg':  1024px,   // Tablet landscape / small desktop
+  'xl':  1280px,   // Desktop
+  'xxl': 1440px,   // Wide desktop — Figma artboard width
+) !default;
+
+// --- Usage: @include respond-to('md') { ... } ---
+@mixin respond-to($bp) {
+  $value: map-get($breakpoints, $bp);
+
+  @if $value == null {
+    @warn "Breakpoint `#{$bp}` not found in $breakpoints map.";
+  } @else {
+    @media screen and (min-width: $value) {
+      @content;
+    }
+  }
+}
+
+// --- Max-width variant (use sparingly — prefer min-width) ---
+@mixin respond-below($bp) {
+  $value: map-get($breakpoints, $bp);
+
+  @if $value == null {
+    @warn "Breakpoint `#{$bp}` not found in $breakpoints map.";
+  } @else {
+    @media screen and (max-width: ($value - 1px)) {
+      @content;
+    }
+  }
+}
+
+// --- Container ---
+// Figma grid: 12 cols × 93px + 11 × 48px gap = 1644px content
+// Practical container: 1440px max with padding giving ~1296px content at desktop
+$container-max-width:    1440px;
+$container-padding:      $spacing-md;   // 16px — mobile
+$container-padding-md:   $spacing-lg;   // 24px — tablet
+$container-padding-xl:   $size-7;       // 48px — desktop padding ($size-7 from spacing tokens)
+
+// Override the container mixin from _mixins.scss to use xl padding
+// (Defined here so it can reference $container-padding-xl before mixins load)
+
+// --- 12-Column CSS Grid (Figma: 48px gutter) ---
+// Usage: @include grid-12 on the container, then use grid-column: span N on children
+@mixin grid-12($gap: $size-7) {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: $gap; // 48px — matches Figma gutter
+}
+
+// Common column spans
+// Usage: grid-column: span 4; (inside a grid-12 parent)
+$col-gap: $size-7; // 48px — reference for manual calculations

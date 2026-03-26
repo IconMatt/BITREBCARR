@@ -1,0 +1,154 @@
+// =============================================================================
+// PAGES / ARTICLE
+// Page-specific layout for Drupal article/node pages.
+// Drupal: node--type-article.html.twig
+// =============================================================================
+
+.page-article {
+
+  &__header {
+    background-color: $color-brand-navy;
+    padding-block: $spacing-xl;
+
+    @include respond-to('md') {
+      padding-block: $spacing-2xl;
+    }
+
+    &-inner {
+      @include container;
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-md;
+      max-width: 800px;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+  }
+
+  &__date {
+    font-size: $font-size-sm;
+    color: $color-neutral-500;
+  }
+
+  &__title {
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-bold;
+    color: $color-text-inverse;
+    line-height: $line-height-tight;
+
+    @include respond-to('md') {
+      font-size: $font-size-3xl;
+    }
+  }
+
+  &__summary {
+    font-size: $font-size-md;
+    color: $color-neutral-400;
+    line-height: $line-height-loose;
+  }
+
+  // --- Featured image ---
+  &__hero-image {
+    @include aspect-ratio(16, 7);
+    background-color: $color-neutral-200;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  // --- Body layout ---
+  &__body {
+    padding-block: $spacing-xl;
+
+    @include respond-to('md') {
+      padding-block: $spacing-2xl;
+    }
+
+    &-inner {
+      @include container;
+      display: grid;
+      gap: $spacing-xl;
+
+      @include respond-to('lg') {
+        grid-template-columns: minmax(0, 1fr) 320px;
+        gap: $spacing-2xl;
+      }
+    }
+  }
+
+  // --- Main content column ---
+  &__content {
+    max-width: 720px;
+  }
+
+  // --- Sidebar ---
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+
+    @include respond-below('lg') {
+      order: -1; // Show sidebar above content on mobile
+    }
+  }
+
+  &__sidebar-widget {
+    @include surface;
+    padding: $spacing-lg;
+  }
+
+  &__sidebar-title {
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    margin-bottom: $spacing-md;
+  }
+
+  // --- Author block ---
+  &__author {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    padding: $spacing-lg;
+    @include surface;
+    margin-top: $spacing-xl;
+
+    &-avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: $radius-pill;
+      overflow: hidden;
+      flex-shrink: 0;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-xs;
+    }
+
+    &-name {
+      font-weight: $font-weight-semibold;
+      color: $color-text-primary;
+    }
+
+    &-bio {
+      font-size: $font-size-sm;
+      color: $color-text-secondary;
+    }
+  }
+}

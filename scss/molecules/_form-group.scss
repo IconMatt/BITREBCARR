@@ -1,0 +1,44 @@
+// =============================================================================
+// MOLECULES / FORM GROUP
+// BEM: .form-group
+// A composed form molecule — groups multiple fields with a fieldset structure.
+// =============================================================================
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+
+  &__legend {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__row {
+    display: grid;
+    gap: $spacing-md;
+
+    // Two column on tablet+
+    &--2-col {
+      @include respond-to('md') {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    // Three column on desktop+
+    &--3-col {
+      @include respond-to('lg') {
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-sm;
+    flex-wrap: wrap;
+    padding-top: $spacing-sm;
+  }
+}

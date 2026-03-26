@@ -1,0 +1,56 @@
+// =============================================================================
+// ABSTRACTS / VARIABLES
+// Semantic aliases that reference raw tokens.
+// Change a token — everything updates. Change this — only the concept updates.
+// =============================================================================
+
+// --- Page ---
+$page-bg:           $color-neutral-100;
+$page-color:        $color-text-primary;
+
+// --- Header ---
+$header-bg:         $color-brand-navy;
+$header-color:      $color-text-inverse;
+$header-height:     64px;  // mobile  — fits 48px logo
+$header-height-md:  92px;  // tablet  — fits 75px logo (75 + 8.5px padding each side)
+$header-height-lg:  80px;  // desktop — no logo in nav-bar
+
+// --- Footer ---
+$footer-bg:         $color-brand-navy;
+$footer-color:      $color-text-inverse;
+
+// --- Nav ---
+$nav-link-color:         $color-text-inverse;
+$nav-link-color-hover:   $color-brand-teal;
+$nav-link-color-active:  $color-brand-blue;
+
+// --- Links ---
+$link-color:        $color-ui-link;
+$link-color-hover:  $color-brand-secondary-deep-teal;
+
+// --- Borders ---
+$border-color:      $color-ui-border;
+$border-width:      1px;
+$border-style:      solid;
+$border-default:    $border-width $border-style $border-color;
+
+// --- Shadows ---
+$shadow-sm:  0 1px 3px rgba(8, 30, 63, 0.08);
+$shadow-md:  0 4px 12px rgba(8, 30, 63, 0.12);
+$shadow-lg:  0 8px 24px rgba(8, 30, 63, 0.16);
+
+// --- Z-index scale ---
+$z-below:    -1;
+$z-base:      0;
+$z-raised:   10;
+$z-dropdown: 100;
+$z-sticky:   200;
+$z-overlay:  300;
+$z-modal:    400;
+$z-toast:    500;
+
+// --- Transitions ---
+$transition-speed-fast:   0.15s;
+$transition-speed-base:   0.2s;
+$transition-speed-slow:   0.35s;
+$transition-easing:       ease-in-out;

@@ -1,0 +1,371 @@
+// =============================================================================
+// ORGANISMS / HERO
+// BEM: .hero
+// Variants: --home (centered + search box), --split, --centered, --light
+// =============================================================================
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background-color: $color-brand-navy;
+
+  &__inner {
+    @include container;
+
+    position: relative;
+    z-index: $z-raised;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-lg;
+    padding-top: $spacing-xl;
+    padding-bottom: $spacing-xl;
+
+    @include respond-to('md') {
+      padding-top: $spacing-3xl;
+      padding-bottom: $spacing-3xl;
+    }
+
+    @include respond-to('lg') {
+      padding-top: $spacing-2xl;
+      padding-bottom: $spacing-2xl;
+    }
+  }
+
+  &__eyebrow {
+    display: block;
+    font-size: $font-size-xs;
+    font-weight: $font-weight-extrabold;
+    letter-spacing: $letter-spacing-wider;
+    text-transform: uppercase;
+    color: $color-brand-teal;
+    text-align: center;
+  }
+
+  &__heading {
+    font-size: $font-size-2xl;       // 32px mobile
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-tight; // 1.25
+    color: $color-text-inverse;
+    text-align: center;
+    max-width: 900px;
+    text-wrap: balance;
+
+    @include respond-to('md') {
+      font-size: $font-size-3xl;     // 48px desktop — Figma H1 spec
+      line-height: $line-height-h1;  // 1.417 (68/48)
+    }
+
+    span {
+      color: $color-brand-blue;
+    }
+  }
+
+  &__intro-link {
+    @include transition(color);
+
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    color: $color-brand-teal;
+    text-decoration: none;
+
+    // Down-arrow SVG or unicode
+    &::after {
+      content: '↓';
+      display: inline-block;
+      @include transition(transform);
+    }
+
+    &:hover {
+      color: $color-brand-mint;
+
+      &::after {
+        transform: translateY(3px);
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: $spacing-md;
+    z-index: $z-raised;
+    width: 100%;
+    max-width: 1160px;
+  }
+
+  &__body {
+    font-size: $font-size-md;
+    line-height: $line-height-loose; // 1.55 — Big spec
+    color: $color-neutral-400;
+    text-align: center;
+    text-wrap: balance;
+
+    @include respond-to('md') {
+      font-size: $font-size-lg;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+    justify-content: center;
+    padding-top: $spacing-xs;
+  }
+
+  // --- Alert banner (sits below search box inside hero__inner) ---
+  &__alert {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    width: 100%;
+    background-color: mix(#fff, $color-brand-navy, 10%);
+    border-radius: $radius-xl;
+    padding: $spacing-md $spacing-lg;
+    position: relative;
+    z-index: $z-raised;
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+      background-color: mix(#fff, $color-brand-navy, 12%);
+    }
+  }
+
+  &__alert-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    border-radius: $radius-lg;
+    background: linear-gradient(135deg, $color-brand-mint, $color-brand-teal);
+
+    img {
+      width: 22px;
+      height: auto;
+    }
+
+    // Hide on mobile to save space
+    @media (max-width: 599px) {
+      display: none;
+    }
+  }
+
+  &__alert-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-xs;
+  }
+
+  &__alert-heading {
+    // Matches card__title spec, inverse colours for dark background
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-heading;
+    color: $color-text-inverse;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  &__alert-body {
+    // Matches card__excerpt spec, inverse colours for dark background
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    color: rgba($color-neutral-0, 0.8);
+    margin: 0;
+    text-wrap: balance;
+
+    a {
+      color: $color-brand-mint;
+      font-weight: $font-weight-semibold;
+      text-decoration: none;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: currentColor;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      &:hover {
+        color: $color-brand-teal;
+
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+
+  &__media {
+    position: relative;
+    z-index: $z-raised;
+    border-radius: $radius-xl;
+    overflow: hidden;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  // --- Background radial glow ---
+  &__bg {
+    position: absolute;
+    inset: 0;
+    z-index: $z-base;
+    pointer-events: none;
+
+    img {
+      // Mobile base
+      width: 100%;
+      height: 25%;
+      object-fit: fill;
+      opacity: 0.5;
+      offset: 20px;
+
+      @include respond-to('md') {
+        width: 90%;
+        height: 60%;
+      }
+
+      @include respond-to('lg') {
+        width: 70%;
+        height: 70%;
+      }
+    }
+  }
+
+  // --- Device grid — decorative SVG anchored top-right of hero --home ---
+  // Note: width / height / object-fit / opacity are set on hero__bg img above
+  // (higher specificity 0,1,1 vs 0,1,0 here). Only layout/position props live here.
+  &__device-grid {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -110px; // Mobile
+
+    @include respond-to('md') {
+      right: -270px;
+    }
+
+    pointer-events: none;
+  }
+
+  // =========================================================================
+  // VARIANT: --home  (matches Figma homepage design)
+  // Centered, full-width, with search box below heading
+  // =========================================================================
+
+  &--home {
+    padding-bottom: 0;
+
+    .hero__inner {
+      gap: 0;
+      padding-bottom: $spacing-lg;
+
+      // Space between content block and search box
+      .hero__content {
+        margin-bottom: $spacing-xl;
+      }
+
+      // Same gap between search box and alert
+      .search-box--hero {
+        margin-bottom: $spacing-xl;
+      }
+    }
+
+    .hero__heading {
+      max-width: 1160px;
+    }
+  }
+
+  // =========================================================================
+  // VARIANT: --split  (text left + image right)
+  // =========================================================================
+
+  &--split &__inner {
+    align-items: flex-start;
+    text-align: left;
+
+    @include respond-to('lg') {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  &--split &__content {
+    align-items: flex-start;
+    text-align: left;
+    max-width: none;
+
+    @include respond-to('lg') {
+      flex: 1;
+    }
+  }
+
+  &--split &__heading {
+    text-align: left;
+  }
+
+  &--split &__actions {
+    justify-content: flex-start;
+  }
+
+  &--split &__media {
+    @include respond-to('lg') {
+      flex: 1;
+      max-height: 520px;
+    }
+  }
+
+  // =========================================================================
+  // VARIANT: --centered  (text centered, no image)
+  // =========================================================================
+
+  &--centered &__inner {
+    align-items: center;
+    text-align: center;
+  }
+
+  &--centered &__actions {
+    justify-content: center;
+  }
+
+  // =========================================================================
+  // VARIANT: --light  (white background, dark text)
+  // =========================================================================
+
+  &--light {
+    background-color: $color-neutral-100;
+
+    .hero__heading {
+      color: $color-text-primary;
+    }
+
+    .hero__body {
+      color: $color-text-secondary;
+    }
+
+    .hero__eyebrow {
+      color: $color-brand-secondary-deep-teal;
+    }
+  }
+}

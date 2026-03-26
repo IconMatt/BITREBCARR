@@ -1,0 +1,52 @@
+// =============================================================================
+// BITCARR — MAIN SCSS ENTRY POINT
+// Architecture: Tokens → Abstracts → Atoms → Molecules → Organisms → Pages
+//
+// Drupal integration: compile this file and reference the output CSS in your
+// theme's .libraries.yml file.
+// =============================================================================
+
+// --- 1. TOKENS —————————————————————————————————————————————————————————————
+// Raw design values from Figma. Change here to update everything.
+@import 'tokens/colors';
+@import 'tokens/spacing';
+@import 'tokens/radius';
+@import 'tokens/typography';
+
+// --- 2. ABSTRACTS ——————————————————————————————————————————————————————————
+// Semantic aliases, mixins and breakpoints.
+// No CSS output — these are helpers only.
+@import 'abstracts/variables';
+@import 'abstracts/breakpoints';
+@import 'abstracts/mixins';
+
+// --- 3. ATOMS ——————————————————————————————————————————————————————————————
+// The smallest, indivisible UI elements.
+@import 'atoms/reset';
+@import 'atoms/typography';
+@import 'atoms/buttons';
+@import 'atoms/inputs';
+@import 'atoms/links';
+@import 'atoms/badge';
+
+// --- 4. MOLECULES ——————————————————————————————————————————————————————————
+// Composed from atoms. Single-responsibility UI units.
+@import 'molecules/card';
+@import 'molecules/nav-item';
+@import 'molecules/search-box';
+@import 'molecules/form-group';
+
+// --- 5. ORGANISMS ——————————————————————————————————————————————————————————
+// Complex, standalone UI sections.
+@import 'organisms/header';
+@import 'organisms/footer';
+@import 'organisms/hero';
+@import 'organisms/card-grid';
+@import 'organisms/new-releases';
+@import 'organisms/data-hubs';
+@import 'organisms/subscribe-banner';
+
+// --- 6. PAGES ——————————————————————————————————————————————————————————————
+// Page-specific layout overrides only.
+@import 'pages/home';
+@import 'pages/article';

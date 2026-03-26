@@ -1,0 +1,75 @@
+// =============================================================================
+// TOKENS / COLORS
+// Source: Figma Variables export (tokens.json)
+// =============================================================================
+// NOTE: secondaryMint exported as #ffffff — may be an error in the Figma source.
+//       brandMint (#a1feb5) is likely the intended value. Preserved as exported.
+// =============================================================================
+
+// --- Brand ---
+$color-brand-navy:               #081e3f;
+$color-brand-blue:               #78d1f5;
+$color-brand-teal:               #4eb2b4;
+$color-brand-mint:               #a1feb5;
+$color-brand-secondary-lime:     #c0dd92;
+$color-brand-secondary-deep-teal:#337b7e;
+$color-brand-secondary-green:    #6ec096;
+$color-brand-secondary-mint:     #ffffff; // ⚠ exported as #ffffff — verify in Figma
+
+// --- Neutrals ---
+$color-neutral-0:   #ffffff;
+$color-neutral-100: #f4f5f7;
+$color-neutral-200: #e9ecef;
+$color-neutral-300: #dee2e6;
+$color-neutral-400: #ced4da;
+$color-neutral-500: #adb5bd;
+$color-neutral-600: #6c757d;
+$color-neutral-700: #495057;
+$color-neutral-800: #343a40;
+$color-neutral-900: #343a40;
+
+// --- Text ---
+$color-text-primary:  #343a40;
+$color-text-secondary:#495057;
+$color-text-inverse:  #ffffff;
+
+// --- UI Semantic ---
+$color-ui-surface: #ffffff;
+$color-ui-border:  #dee2e6;
+$color-ui-link:    #337b7e;
+$color-ui-accent:  #4eb2b4;
+$color-ui-focus:   #78d1f5;
+$color-ui-error:   #c0392b;
+
+// --- CSS Custom Properties (for runtime theming / Drupal overrides) ---
+:root {
+  --color-brand-navy:                #{$color-brand-navy};
+  --color-brand-blue:                #{$color-brand-blue};
+  --color-brand-teal:                #{$color-brand-teal};
+  --color-brand-mint:                #{$color-brand-mint};
+  --color-brand-secondary-lime:      #{$color-brand-secondary-lime};
+  --color-brand-secondary-deep-teal: #{$color-brand-secondary-deep-teal};
+  --color-brand-secondary-green:     #{$color-brand-secondary-green};
+
+  --color-neutral-0:   #{$color-neutral-0};
+  --color-neutral-100: #{$color-neutral-100};
+  --color-neutral-200: #{$color-neutral-200};
+  --color-neutral-300: #{$color-neutral-300};
+  --color-neutral-400: #{$color-neutral-400};
+  --color-neutral-500: #{$color-neutral-500};
+  --color-neutral-600: #{$color-neutral-600};
+  --color-neutral-700: #{$color-neutral-700};
+  --color-neutral-800: #{$color-neutral-800};
+  --color-neutral-900: #{$color-neutral-900};
+
+  --color-text-primary:   #{$color-text-primary};
+  --color-text-secondary: #{$color-text-secondary};
+  --color-text-inverse:   #{$color-text-inverse};
+
+  --color-ui-surface: #{$color-ui-surface};
+  --color-ui-border:  #{$color-ui-border};
+  --color-ui-link:    #{$color-ui-link};
+  --color-ui-accent:  #{$color-ui-accent};
+  --color-ui-focus:   #{$color-ui-focus};
+  --color-ui-error:   #{$color-ui-error};
+}

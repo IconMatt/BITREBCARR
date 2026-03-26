@@ -1,0 +1,49 @@
+// =============================================================================
+// TOKENS / SPACING
+// Source: Figma Variables export — size.mode1
+// =============================================================================
+// Scale maps to a named spacing system for semantic use.
+// NOTE: size-2 exported as 1px (smaller than size-1 at 2px). Preserved as exported.
+// =============================================================================
+
+$size-0: 0px;
+$size-1: 2px;
+$size-2: 1px;  // ⚠ exported as 1 — verify in Figma (smaller than size-1)
+$size-3: 4px;
+$size-4: 8px;
+$size-5: 16px;
+$size-6: 24px;
+$size-7: 48px;
+$size-8: 96px;
+
+// --- Semantic spacing aliases ---
+$spacing-none:  $size-0;
+$spacing-xs:    $size-3;   // 4px
+$spacing-sm:    $size-4;   // 8px
+$spacing-md:    $size-5;   // 16px
+$spacing-lg:    $size-6;   // 24px
+$spacing-xl:    $size-7;   // 48px
+$spacing-3xl:   72px;      // 72px — tablet section padding (between xl and 2xl)
+$spacing-2xl:   $size-8;   // 96px
+
+// --- CSS Custom Properties ---
+:root {
+  --size-0: #{$size-0};
+  --size-1: #{$size-1};
+  --size-2: #{$size-2};
+  --size-3: #{$size-3};
+  --size-4: #{$size-4};
+  --size-5: #{$size-5};
+  --size-6: #{$size-6};
+  --size-7: #{$size-7};
+  --size-8: #{$size-8};
+
+  --spacing-none: #{$spacing-none};
+  --spacing-xs:   #{$spacing-xs};
+  --spacing-sm:   #{$spacing-sm};
+  --spacing-md:   #{$spacing-md};
+  --spacing-lg:   #{$spacing-lg};
+  --spacing-xl:   #{$spacing-xl};
+  --spacing-3xl:  #{$spacing-3xl};
+  --spacing-2xl:  #{$spacing-2xl};
+}

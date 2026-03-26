@@ -1,0 +1,167 @@
+// =============================================================================
+// ORGANISMS / SITE FOOTER
+// BEM: .site-footer
+// Dark navy footer with org name, nav columns, gov branding, and legal links
+// =============================================================================
+
+.site-footer {
+  background-color: $footer-bg;   // $color-brand-navy
+  color: $footer-color;           // $color-text-inverse (white)
+
+  padding-block: $spacing-xl;
+
+  @include respond-to('md') {
+    padding-block: $spacing-3xl;
+  }
+
+  &__inner {
+    @include container;
+
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+  }
+
+  // -------------------------------------------------------------------------
+  // Main columns — org name (wide) + two nav columns
+  // -------------------------------------------------------------------------
+  &__main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+
+    @include respond-to('md') {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond-to('lg') {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
+  }
+
+  &__brand {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  // Organisation name — matches mockup at ~24px, bold, white
+  &__org-name {
+    font-size: $font-size-xl;       // 24px mobile
+    font-weight: $font-weight-regular;
+    color: $color-text-inverse;
+    line-height: $line-height-heading;
+    margin: 0;
+    text-wrap: balance;
+
+    @include respond-to('md') {
+      font-size: $font-size-2xl;    // 32px desktop
+    }
+  }
+
+  // Nav column — no heading, just links stacked
+  &__nav-col {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+  }
+
+  &__nav-link {
+    @include transition(color);
+
+    font-size: $font-size-base;
+    color: rgba($color-neutral-0, 0.7);
+    text-decoration: none;
+
+    &:hover {
+      color: $color-brand-mint;
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  // Legal bar — gov branding left, legal links right
+  // -------------------------------------------------------------------------
+  &__legal {
+    padding-block-start: $spacing-lg;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $spacing-lg;
+
+    @include respond-to('md') {
+      padding-block-start: $spacing-xl;
+    }
+  }
+
+  // Australian Government crest + name + dept block
+  &__gov-brand {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+  }
+
+  // Placeholder for the official government crest asset
+  // In Drupal: swap src for the real crest — e.g. /themes/custom/biactre/images/gov-crest.png
+  &__gov-crest {
+    height: 75px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    flex-shrink: 0;
+  }
+
+  &__gov-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  // "Australian Government" — bold with a thin rule below (standard gov brand format)
+  &__gov-name {
+    display: block;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    color: $color-text-inverse;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba($color-neutral-0, 0.35);
+    margin-bottom: 4px;
+  }
+
+  &__gov-dept {
+    display: block;
+    font-size: $font-size-xs;
+    color: rgba($color-neutral-0, 0.6);
+    max-width: 280px;
+    line-height: 1.4;
+  }
+
+  // Privacy / Copyright / Disclaimer links with external icon
+  &__legal-links {
+    display: flex;
+    align-items: center;
+    gap: $spacing-lg;
+    flex-wrap: wrap;
+  }
+
+  &__legal-link {
+    @include transition(color);
+
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $color-text-inverse;
+    text-decoration: none;
+
+    svg {
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+
+    &:hover {
+      color: $color-brand-mint;
+    }
+  }
+}

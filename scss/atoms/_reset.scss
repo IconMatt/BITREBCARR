@@ -1,0 +1,113 @@
+// =============================================================================
+// ATOMS / RESET
+// Modern CSS reset — normalises browser defaults without being destructive.
+// =============================================================================
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%; // Respect user browser font size preferences
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-weight: $font-weight-regular;
+  line-height: $line-height-base;
+  color: $page-color;
+  background-color: $page-bg;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// --- Typography elements ---
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-family: $font-family-heading;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-tight;
+  text-wrap: pretty;
+}
+
+p {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+// --- Lists ---
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  text-wrap: pretty;
+}
+
+// --- Links ---
+a {
+  color: $link-color;
+  text-decoration: underline;
+
+  &:hover {
+    color: $link-color-hover;
+  }
+}
+
+// --- Media ---
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+// --- Forms ---
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+// --- Tables ---
+table {
+  border-collapse: collapse;
+}
+
+// --- Blockquote / HR ---
+blockquote {
+  margin: 0;
+  text-wrap: pretty;
+}
+
+hr {
+  border: none;
+  border-top: $border-default;
+  margin: $spacing-lg 0;
+}
+
+// --- Focus visible (keyboard nav) ---
+:focus-visible {
+  @include focus-ring;
+}
+
+// --- Selection ---
+::selection {
+  background-color: $color-brand-teal;
+  color: $color-text-inverse;
+}

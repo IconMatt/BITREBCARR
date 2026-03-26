@@ -1,0 +1,161 @@
+// =============================================================================
+// ATOMS / BUTTONS
+// BEM: .btn
+// Modifiers: --primary, --secondary, --ghost, --sm, --lg, --full-width, --icon
+// =============================================================================
+
+.btn {
+  @include button-reset;
+  @include transition(background-color color border-color box-shadow);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-xs;
+
+  padding: $spacing-sm $spacing-lg;   // 8px 24px
+  border-radius: $radius-pill;
+  border: 2px solid transparent;
+
+  font-size: $font-size-md;           // 18px — Figma Button text spec
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-none;     // 1 (18/18) — Figma Button text spec
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:focus-visible {
+    @include focus-ring($color-ui-focus);
+  }
+
+  &:disabled,
+  &[aria-disabled='true'] {
+    opacity: 0.45;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  // -----------------------------------------------------------------------
+  // Variants
+  // -----------------------------------------------------------------------
+
+  // Primary — navy background
+  &--primary {
+    background-color: $color-brand-navy;
+    border-color: $color-brand-navy;
+    color: $color-text-inverse;
+
+    &:hover {
+      background-color: $color-brand-secondary-deep-teal;
+      border-color: $color-brand-secondary-deep-teal;
+    }
+
+    &:active {
+      background-color: mix(#000, $color-brand-secondary-deep-teal, 14%);
+    }
+  }
+
+  // Secondary — teal border, transparent fill
+  &--secondary {
+    background-color: transparent;
+    border-color: $color-brand-teal;
+    color: $color-brand-teal;
+
+    &:hover {
+      background-color: $color-brand-teal;
+      color: $color-brand-navy;
+    }
+
+    &:active {
+      background-color: mix(#000, $color-brand-teal, 14%);
+      border-color: mix(#000, $color-brand-teal, 14%);
+    }
+  }
+
+  // Ghost — no border, text only
+  &--ghost {
+    background-color: transparent;
+    border-color: transparent;
+    color: $color-ui-link;
+
+    &:hover {
+      background-color: $color-neutral-100;
+      color: $link-color-hover;
+    }
+  }
+
+  // Ghost inverse (on dark backgrounds)
+  &--ghost-inverse {
+    background-color: transparent;
+    border-color: rgba($color-neutral-0, 0.3);
+    color: $color-text-inverse;
+
+    &:hover {
+      background-color: rgba($color-neutral-0, 0.1);
+      border-color: $color-neutral-0;
+    }
+  }
+
+  // Accent — mint/brand highlight
+  &--accent {
+    background-color: $color-brand-mint;
+    border-color: $color-brand-mint;
+    color: $color-brand-navy;
+
+    &:hover {
+      background-color: mix(#000, $color-brand-mint, 14%);
+      border-color: mix(#000, $color-brand-mint, 14%);
+    }
+  }
+
+  // -----------------------------------------------------------------------
+  // Sizes
+  // -----------------------------------------------------------------------
+
+  &--sm {
+    padding: $spacing-xs $spacing-md;  // 4px 16px
+    font-size: $font-size-sm;
+  }
+
+  &--lg {
+    padding: $spacing-md $spacing-xl;  // 16px 48px
+    font-size: $font-size-md;
+  }
+
+  // -----------------------------------------------------------------------
+  // Layout
+  // -----------------------------------------------------------------------
+
+  &--full-width {
+    width: 100%;
+  }
+
+  // Icon-only button
+  &--icon {
+    padding: $spacing-sm;
+    border-radius: $radius-md;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+  }
+
+  // -----------------------------------------------------------------------
+  // Elements
+  // -----------------------------------------------------------------------
+
+  &__icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  &__icon--leading {
+    order: -1;
+  }
+
+  &__icon--trailing {
+    order: 1;
+  }
+}

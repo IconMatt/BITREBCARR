@@ -1,0 +1,99 @@
+// =============================================================================
+// TOKENS / TYPOGRAPHY
+// Font: Mulish — https://fonts.google.com/specimen/Mulish
+// Weights loaded: 400, 500, 600, 700, 800 (regular → extrabold)
+//
+// Font sizes: rem, base 16px (respects user browser preferences)
+// Line heights: unitless ratios (best practice — scales with font size)
+//   Derived from Figma desktop values: line-height-px / font-size-px
+// =============================================================================
+
+// --- Font families ---
+$font-family-base:    'Mulish', 'Helvetica Neue', Arial, sans-serif;
+$font-family-heading: 'Mulish', 'Helvetica Neue', Arial, sans-serif;
+$font-family-mono:    'Courier New', Courier, monospace;
+
+// --- Font weights ---
+$font-weight-regular:   400;
+$font-weight-medium:    500;
+$font-weight-semibold:  600;
+$font-weight-bold:      700;
+$font-weight-extrabold: 800;  // Available in Mulish — use for display/hero headings
+
+// --- Font sizes (desktop targets from Figma) ---
+// All values in rem. Mobile breakpoints are handled in atoms/_typography.scss
+//
+// $font-size-xs:   12px  — (utility only)
+// $font-size-sm:   14px  — Small, Label
+// $font-size-base: 16px  — Body, H5, Nav-item
+// $font-size-md:   18px  — Button text
+// $font-size-lg:   20px  — H4, Big
+// $font-size-xl:   24px  — H3
+// $font-size-2xl:  32px  — H2
+// $font-size-3xl:  48px  — H1
+
+$font-size-xs:   0.75rem;   // 12px
+$font-size-sm:   0.875rem;  // 14px — Small / Label
+$font-size-base: 1rem;      // 16px — Body / H5 / Nav-item
+$font-size-md:   1.125rem;  // 18px — Button text
+$font-size-lg:   1.25rem;   // 20px — H4 / Big
+$font-size-xl:   1.5rem;    // 24px — H3
+$font-size-2xl:  2rem;      // 32px — H2
+$font-size-3xl:  3rem;      // 48px — H1
+
+// --- Line heights (unitless — from Figma: lh-px ÷ size-px) ---
+//
+// $line-height-none:    1      — Nav-item (16/16), Label (14/14), Button (18/18)
+// $line-height-tight:   1.25   — H2 (40/32)
+// $line-height-snug:    1.333  — H3 (32/24)
+// $line-height-heading: 1.4    — H4 (28/20)
+// $line-height-h1:      1.417  — H1 (68/48)
+// $line-height-base:    1.5    — Body (24/16) / H5 (24/16)
+// $line-height-small:   1.429  — Small (20/14)
+// $line-height-loose:   1.55   — Big (31/20)
+
+$line-height-none:    1;      // Nav-item, Label, Button text
+$line-height-tight:   1.25;   // H2
+$line-height-snug:    1.333;  // H3
+$line-height-heading: 1.4;    // H4
+$line-height-h1:      1.417;  // H1
+$line-height-base:    1.5;    // Body, H5
+$line-height-small:   1.429;  // Small
+$line-height-loose:   1.55;   // Big / lead paragraph
+
+// --- Letter spacing ---
+$letter-spacing-tight:  -0.02em;
+$letter-spacing-normal: 0;
+$letter-spacing-wide:   0.05em;
+$letter-spacing-wider:  0.1em;
+
+// --- CSS Custom Properties ---
+:root {
+  --font-family-base:    #{$font-family-base};
+  --font-family-heading: #{$font-family-heading};
+  --font-family-mono:    #{$font-family-mono};
+
+  --font-weight-regular:   #{$font-weight-regular};
+  --font-weight-medium:    #{$font-weight-medium};
+  --font-weight-semibold:  #{$font-weight-semibold};
+  --font-weight-bold:      #{$font-weight-bold};
+  --font-weight-extrabold: #{$font-weight-extrabold};
+
+  --font-size-xs:   #{$font-size-xs};
+  --font-size-sm:   #{$font-size-sm};
+  --font-size-base: #{$font-size-base};
+  --font-size-md:   #{$font-size-md};
+  --font-size-lg:   #{$font-size-lg};
+  --font-size-xl:   #{$font-size-xl};
+  --font-size-2xl:  #{$font-size-2xl};
+  --font-size-3xl:  #{$font-size-3xl};
+
+  --line-height-none:    #{$line-height-none};
+  --line-height-tight:   #{$line-height-tight};
+  --line-height-snug:    #{$line-height-snug};
+  --line-height-heading: #{$line-height-heading};
+  --line-height-h1:      #{$line-height-h1};
+  --line-height-base:    #{$line-height-base};
+  --line-height-small:   #{$line-height-small};
+  --line-height-loose:   #{$line-height-loose};
+}

@@ -1,0 +1,110 @@
+// =============================================================================
+// ORGANISMS / NEW RELEASES
+// BEM: .new-releases
+// Homepage section — 5-column report card grid on a white background
+// =============================================================================
+
+.new-releases {
+  background-color: $color-ui-surface;
+  padding-block: $spacing-xl;
+
+  @include respond-to('md') {
+    padding-block: $spacing-3xl;
+  }
+
+  @include respond-to('lg') {
+    padding-block: $spacing-2xl;
+  }
+
+  &__inner {
+    @include container;
+
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    @include respond-to('md') {
+      gap: $spacing-lg;
+    }
+
+    @include respond-to('xl') {
+      gap: $spacing-xl;
+    }
+  }
+
+  &__heading {
+    font-size: 1.5rem;              // matches .heading--2 mobile
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    margin: 0;
+
+    @include respond-to('md') {
+      font-size: $font-size-2xl;    // matches .heading--2 desktop (32px)
+    }
+  }
+
+  // Horizontal scroller on mobile/tablet → 5-col grid on desktop
+  &__grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: $spacing-md;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    // Hide scrollbar — partial card at edge signals scrollability
+    scrollbar-width: none;
+    &::-webkit-scrollbar { display: none; }
+
+    // Break out of container padding so scroller spans full viewport width.
+    // Re-add padding inline so the first card indents correctly and the last
+    // card has matching breathing room at the far scroll end.
+    margin-inline: -$container-padding;
+    padding-inline: $container-padding;
+    scroll-padding-inline-start: $container-padding;
+
+    // overflow-x: auto clips both axes — give shadows room to bleed vertically,
+    // then pull the layout back with negative margin so no extra space is added.
+    // 48px covers the hover shadow spread (0 10px 32px = ~42px below element).
+    padding-block: $spacing-xl;
+    margin-block: -$spacing-xl;
+
+    // ~2.2 cards visible on mobile (8% of 3rd card peeks)
+    > * {
+      flex: 0 0 calc(46% - 8px);   // 2*(46%-8px) + 16px gap = 92% → 8% peek
+      scroll-snap-align: start;
+    }
+
+    // ~3.2 cards visible on tablet
+    @include respond-to('md') {
+      gap: $spacing-lg;
+      margin-inline: -$container-padding-md;
+      padding-inline: $container-padding-md;
+      scroll-padding-inline-start: $container-padding-md;
+
+      > * {
+        flex: 0 0 calc(30% - 16px); // 3*(30%-16px) + 2*24px gap = 90% → 10% peek
+      }
+    }
+
+    // Switch to grid at desktop — all 5 fit without scrolling
+    @include respond-to('lg') {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      overflow-x: visible;
+      margin-inline: 0;
+      padding-inline: 0;
+      scroll-padding-inline-start: 0;
+      padding-block: 0;
+      margin-block: 0;
+
+      > * {
+        flex: none;
+      }
+    }
+
+    @include respond-to('xl') {
+      gap: $spacing-xl;
+    }
+  }
+}

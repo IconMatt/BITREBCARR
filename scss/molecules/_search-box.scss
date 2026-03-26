@@ -1,0 +1,197 @@
+// =============================================================================
+// MOLECULES / SEARCH BOX
+// BEM: .search-box
+//
+// Base:     standard search field for general use (traditional pill style)
+// Modifier: --hero  — special one-off for the homepage hero
+//
+// --hero layout:
+//   [ What are you looking for?  (input, 18px, placeholder = typed style)  ]
+//   [ Search all resources (label, accessible gray)           🔍 (icon btn) ]
+// =============================================================================
+
+
+// =============================================================================
+// BASE — traditional search (used outside the hero)
+// =============================================================================
+
+.search-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  background-color: $color-ui-surface;
+  border: 1.5px solid $color-ui-border;
+  border-radius: $radius-pill;
+  padding: $spacing-xs $spacing-xs $spacing-xs $spacing-md;
+  @include transition(border-color box-shadow);
+
+  &:focus-within {
+    border-color: $color-ui-focus;
+    box-shadow: 0 0 0 3px rgba($color-ui-focus, 0.2);
+  }
+
+  &__input {
+    flex: 1;
+    appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    color: $color-text-primary;
+    line-height: $line-height-base;
+    min-width: 0;
+
+    &::placeholder {
+      color: $color-neutral-500;
+    }
+
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button {
+      appearance: none;
+    }
+  }
+
+  &__submit {
+    @include button-reset;
+    @include transition(background-color);
+
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: $color-brand-navy;
+    border-radius: $radius-pill;
+    color: $color-text-inverse;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-brand-secondary-deep-teal;
+    }
+
+    &:focus-visible {
+      @include focus-ring($color-ui-focus);
+    }
+
+    svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+  }
+}
+
+
+// =============================================================================
+// VARIANT: --hero
+// Special one-off for the homepage hero. Not a general-use component.
+//
+// Structure:
+//   <form class="search-box search-box--hero">
+//     <input placeholder="What are you looking for?">
+//     <div class="search-box__footer">
+//       <label>Search all resources</label>
+//       <button class="search-box__submit"><!-- icon --></button>
+//     </div>
+//   </form>
+// =============================================================================
+
+.search-box--hero {
+  display: flex;
+  flex-direction: column;
+  max-width: 770px;
+  width: 100%;
+  background-color: $color-ui-surface;
+  border-radius: $radius-xl;
+  border: none;
+  padding: 16px 9px 10px 21px;
+  box-shadow: 0 4px 24px rgba(8, 30, 63, 0.14);
+  gap: $spacing-sm;
+  @include transition(box-shadow);
+
+  // Mint glow on focus — triggered by click/tap anywhere on the box
+  &:focus-within {
+    box-shadow:
+      0 4px 24px rgba(8, 30, 63, 0.14),
+      0 0 0 4px rgba($color-brand-mint, 1);
+  }
+
+  // --- Input — placeholder IS the prompt text; typed text matches exactly ---
+  .search-box__input {
+    appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    font-family: $font-family-base;
+    font-size: $font-size-md;          // 18px desktop
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    line-height: $line-height-base;
+    padding: 0;
+    min-width: 0;
+
+    // Placeholder styled identically to typed text
+    &::placeholder {
+      color: $color-text-primary;
+      opacity: 1;                       // Firefox normalisation
+    }
+
+    &::-webkit-search-decoration,
+    &::-webkit-search-cancel-button {
+      appearance: none;
+    }
+  }
+
+  // --- Footer row: label left, icon button right ---
+  .search-box__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-sm;
+    width: 100%;
+  }
+
+  // "Search all resources" — accessible secondary text on white
+  .search-box__label {
+    font-family: $font-family-base;
+    font-size: $font-size-sm;          // 14px
+    font-weight: $font-weight-regular;
+    color: $color-text-secondary;      // passes AA contrast on white bg
+    line-height: $line-height-none;
+    cursor: text;
+  }
+
+  // Icon-only button — no background, no circle, bottom-right
+  .search-box__submit {
+    @include button-reset;
+    @include transition(color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: $color-brand-navy;
+    cursor: pointer;
+    padding: 0;
+
+    &:hover {
+      color: $color-brand-secondary-deep-teal;
+    }
+
+    &:focus-visible {
+      @include focus-ring($color-ui-focus);
+      border-radius: $radius-sm;
+    }
+
+    svg {
+      width: 22px;
+      height: 22px;
+      flex-shrink: 0;
+    }
+  }
+}

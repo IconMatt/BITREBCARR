@@ -1,0 +1,275 @@
+// =============================================================================
+// ATOMS / TYPOGRAPHY
+// BEM: .heading, .body-text, .body-big, .label, .caption, .eyebrow, .prose
+//
+// Mobile-first: each heading scales up at md (768px).
+// Desktop targets match Figma spec exactly.
+// Line heights are per-level (unitless) to match Figma precisely.
+// =============================================================================
+
+// --- Headings ---
+.heading {
+  font-family: $font-family-heading;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin: 0;
+
+  // -------------------------------------------------------------------------
+  // H1 — mobile: 2rem / desktop: 3rem (48px) / lh: 1.417 (68/48)
+  // -------------------------------------------------------------------------
+  &--1 {
+    font-size: 2rem;              // 32px mobile
+    line-height: $line-height-tight; // 1.25 — acceptable at smaller size
+
+    @include respond-to('md') {
+      font-size: $font-size-3xl;  // 48px
+      line-height: $line-height-h1; // 1.417 (68/48) — Figma spec
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  // H2 — mobile: 1.5rem / desktop: 2rem (32px) / lh: 1.25 (40/32)
+  // -------------------------------------------------------------------------
+  &--2 {
+    font-size: 1.5rem;            // 24px mobile
+    line-height: $line-height-snug; // 1.333 — comfortable at smaller size
+
+    @include respond-to('md') {
+      font-size: $font-size-2xl;  // 32px
+      line-height: $line-height-tight; // 1.25 (40/32) — Figma spec
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  // H3 — mobile: 1.25rem / desktop: 1.5rem (24px) / lh: 1.333 (32/24)
+  // -------------------------------------------------------------------------
+  &--3 {
+    font-size: 1.25rem;           // 20px mobile
+    line-height: $line-height-heading; // 1.4 — comfortable at smaller size
+
+    @include respond-to('md') {
+      font-size: $font-size-xl;   // 24px
+      line-height: $line-height-snug; // 1.333 (32/24) — Figma spec
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  // H4 — mobile: 1.125rem / desktop: 1.25rem (20px) / lh: 1.4 (28/20)
+  // -------------------------------------------------------------------------
+  &--4 {
+    font-size: 1.125rem;          // 18px mobile
+    line-height: $line-height-base; // 1.5 — comfortable at smaller size
+
+    @include respond-to('md') {
+      font-size: $font-size-lg;   // 20px
+      line-height: $line-height-heading; // 1.4 (28/20) — Figma spec
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  // H5 — 1rem (16px) at all breakpoints / lh: 1.5 (24/16)
+  // -------------------------------------------------------------------------
+  &--5 {
+    font-size: $font-size-base;   // 16px
+    line-height: $line-height-base; // 1.5 (24/16) — Figma spec
+  }
+
+  // --- Colour modifiers ---
+  &--inverse {
+    color: $color-text-inverse;
+  }
+
+  &--brand {
+    color: $color-brand-teal;
+  }
+}
+
+// =============================================================================
+// BODY TEXT
+// Base: 16px / 1.5 (24/16) — Figma spec
+// Small: 14px / 1.429 (20/14) — Figma spec
+// Big: 20px / 1.55 (31/20) — Figma spec (lead paragraph / intro text)
+// =============================================================================
+
+.body-text {
+  font-size: $font-size-base;    // 16px
+  line-height: $line-height-base; // 1.5 (24/16) — Figma spec
+  color: $color-text-primary;
+
+  // Small — 14px / 1.429 (20/14)
+  &--sm {
+    font-size: $font-size-sm;        // 14px
+    line-height: $line-height-small; // 1.429 (20/14) — Figma spec
+  }
+
+  // Big / lead paragraph — 20px / 1.55 (31/20)
+  &--big {
+    font-size: $font-size-lg;        // 20px
+    line-height: $line-height-loose; // 1.55 (31/20) — Figma spec
+  }
+
+  &--secondary {
+    color: $color-text-secondary;
+  }
+
+  &--inverse {
+    color: $color-text-inverse;
+  }
+}
+
+// =============================================================================
+// NAV-ITEM TEXT
+// 16px / 1 (16/16) — Figma spec. Applied via molecules/_nav-item.scss.
+// Exposed as a utility class for consistency.
+// =============================================================================
+
+.nav-text {
+  font-size: $font-size-base;   // 16px
+  line-height: $line-height-none; // 1 (16/16) — Figma spec
+  font-weight: $font-weight-medium;
+
+  &--bold {
+    font-weight: $font-weight-bold;
+  }
+}
+
+// =============================================================================
+// LABEL
+// 14px / 1 (14/14) — Figma spec
+// =============================================================================
+
+.label {
+  display: inline-block;
+  font-size: $font-size-sm;      // 14px
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-none; // 1 (14/14) — Figma spec
+  color: $color-text-primary;
+
+  &--secondary {
+    color: $color-text-secondary;
+  }
+
+  &--required::after {
+    content: ' *';
+    color: $color-brand-teal;
+  }
+}
+
+// =============================================================================
+// EYEBROW (small label above a heading — not in Figma spec, design utility)
+// =============================================================================
+
+.eyebrow {
+  display: block;
+  font-size: $font-size-xs;          // 12px
+  font-weight: $font-weight-extrabold;
+  line-height: $line-height-none;     // 1
+  letter-spacing: $letter-spacing-wider;
+  text-transform: uppercase;
+  color: $color-brand-teal;
+
+  &--inverse {
+    color: $color-brand-blue;
+  }
+}
+
+// =============================================================================
+// CAPTION
+// Utility — smaller than Small, used for timestamps, image captions, etc.
+// =============================================================================
+
+.caption {
+  font-size: $font-size-xs;         // 12px
+  line-height: $line-height-small;  // 1.429 — readable at small size
+  color: $color-text-secondary;
+
+  &--inverse {
+    color: $color-neutral-400;
+  }
+}
+
+// =============================================================================
+// PROSE — rich text / Drupal body field output
+// Uses body text spec: 16px / 1.5
+// =============================================================================
+
+.prose {
+  font-size: $font-size-base;       // 16px
+  line-height: $line-height-base;   // 1.5 (24/16) — Figma Body spec
+  color: $color-text-primary;
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: $line-height-snug;
+    font-weight: $font-weight-bold;
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-sm;
+
+    @include respond-to('md') {
+      font-size: $font-size-2xl;
+      line-height: $line-height-tight;
+    }
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: $line-height-heading;
+    font-weight: $font-weight-bold;
+    margin-top: $spacing-xl;
+    margin-bottom: $spacing-sm;
+
+    @include respond-to('md') {
+      font-size: $font-size-xl;
+      line-height: $line-height-snug;
+    }
+  }
+
+  h4, h5, h6 {
+    font-size: $font-size-lg;
+    line-height: $line-height-heading;
+    font-weight: $font-weight-bold;
+    margin-top: $spacing-lg;
+    margin-bottom: $spacing-xs;
+  }
+
+  p, ul, ol {
+    margin-bottom: $spacing-md;
+  }
+
+  ul, ol {
+    padding-left: $spacing-lg;
+
+    li {
+      list-style: initial;
+      margin-bottom: $spacing-xs;
+    }
+  }
+
+  a {
+    color: $link-color;
+    text-decoration: underline;
+
+    &:hover {
+      color: $link-color-hover;
+    }
+  }
+
+  blockquote {
+    font-size: $font-size-lg;          // 20px
+    line-height: $line-height-loose;   // 1.55 — uses Big spec
+    border-left: 4px solid $color-brand-teal;
+    padding-left: $spacing-md;
+    margin-left: 0;
+    color: $color-text-secondary;
+    font-style: italic;
+  }
+
+  strong {
+    font-weight: $font-weight-semibold;
+  }
+
+  small {
+    font-size: $font-size-sm;
+    line-height: $line-height-small;
+  }
+}

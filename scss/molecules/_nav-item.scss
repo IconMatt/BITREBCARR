@@ -1,0 +1,167 @@
+// =============================================================================
+// MOLECULES / NAV ITEM
+// BEM: .nav-item
+//
+// Active/hover states: bottom-border indicator flush with the nav bar edge.
+//   Hover:  3px solid $color-brand-teal
+//   Active: 4px solid $color-brand-mint (brighter, thicker per Figma)
+// =============================================================================
+
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+
+  // --- Link ---
+  &__link {
+    @include transition(color background-color);
+
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: $size-3;
+    padding: 0 $spacing-sm;
+    font-size: $font-size-base;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-none;  // 1 — Figma Nav-item spec
+    color: $nav-link-color;
+    text-decoration: none;
+    white-space: nowrap;
+
+    // Bottom indicator line (hidden by default)
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background-color: $color-brand-teal;
+      opacity: 0;
+      @include transition(opacity);
+    }
+
+    &:hover {
+      color: $color-neutral-0;
+      background-color: rgba($color-neutral-0, 0.06);
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &:focus-visible {
+      @include focus-ring($color-ui-focus);
+    }
+  }
+
+  // --- Active state — mint, thicker ---
+  &--active > &__link {
+    color: $color-neutral-0;
+
+    &::after {
+      opacity: 1;
+      height: 4px;
+      background-color: $color-brand-mint;
+    }
+
+    &:hover {
+      background-color: rgba($color-neutral-0, 0.06);
+    }
+  }
+
+  // --- Dropdown caret element (place inside link: <span class="nav-item__caret"></span>) ---
+  &__caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 4px solid currentColor;
+    margin-left: $size-3;
+    opacity: 0.7;
+    @include transition(transform);
+  }
+
+  &--has-children.is-open > &__link > &__caret {
+    transform: rotate(180deg);
+  }
+
+  // --- Dropdown submenu ---
+  &__submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: $z-dropdown;
+    min-width: 220px;
+    background-color: $color-ui-surface;
+    border: $border-default;
+    border-top: 3px solid $color-brand-teal;
+    border-radius: 0 0 $radius-lg $radius-lg;
+    box-shadow: $shadow-lg;
+    padding: $spacing-xs 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    @include transition(opacity visibility transform);
+  }
+
+  &--has-children.is-open &__submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  // One-off: double left padding on the first nav item (Arts)
+  &--indent > &__link {
+    padding-left: $spacing-md;
+  }
+
+  &__submenu-item {
+    display: block;
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    color: $color-text-primary;
+    text-decoration: none;
+    @include transition(background-color color);
+
+    &:hover {
+      background-color: $color-neutral-100;
+      color: $color-ui-link;
+    }
+  }
+}
+
+// =============================================================================
+// NAV LIST
+// =============================================================================
+
+.nav-list {
+  display: flex;
+  align-items: stretch;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+
+  // Mobile vertical stack
+  &--vertical {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .nav-item {
+      width: 100%;
+    }
+
+    .nav-item__link {
+      padding: $spacing-sm $spacing-md;
+      width: 100%;
+
+      // No bottom indicator in vertical/mobile mode
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

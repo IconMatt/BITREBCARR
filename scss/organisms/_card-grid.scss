@@ -1,0 +1,120 @@
+// =============================================================================
+// ORGANISMS / CARD GRID
+// BEM: .card-grid
+// A responsive grid of .card molecules with optional section heading.
+// =============================================================================
+
+.card-grid {
+  padding-block: $spacing-xl;
+
+  @include respond-to('md') {
+    padding-block: $spacing-3xl;
+  }
+
+  @include respond-to('lg') {
+    padding-block: $spacing-2xl;
+  }
+
+  &__inner {
+    @include container;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    @include respond-to('md') {
+      gap: $spacing-lg;
+    }
+
+    @include respond-to('xl') {
+      gap: $spacing-xl;
+    }
+  }
+
+  // --- Section header ---
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+
+    @include respond-to('md') {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    line-height: $line-height-tight;
+
+    @include respond-to('md') {
+      font-size: $font-size-3xl;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-base;
+    color: $color-text-secondary;
+    max-width: 560px;
+  }
+
+  // --- Grid ---
+  &__grid {
+    display: grid;
+    gap: $spacing-md;
+    grid-template-columns: 1fr;
+
+    @include respond-to('sm') {
+      grid-template-columns: 1fr 1fr;
+      gap: $spacing-lg;
+    }
+
+    @include respond-to('lg') {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include respond-to('xl') {
+      gap: $spacing-xl;
+    }
+
+    // 4-col variant
+    &--4-col {
+      @include respond-to('xl') {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+
+  // --- Footer CTA ---
+  &__footer {
+    display: flex;
+    justify-content: center;
+  }
+
+  // --- Promo variant — dark navy section, no header ---
+  // Cards use .card--featured (see _card.scss)
+  // position + z-index needed when nested inside .hero so it sits above hero__bg
+  &--promo {
+    position: relative;
+    z-index: $z-raised;
+    padding-block-start: $spacing-lg;
+    padding-block-end: $spacing-xl;
+
+    @include respond-to('md') {
+      padding-block-start: $spacing-xl;
+      padding-block-end: $spacing-2xl;
+    }
+
+    // Override grid to stay 1-col while cards are horizontal (sm → lg)
+    // so each full-width horizontal card stacks cleanly
+    .card-grid__grid {
+      grid-template-columns: 1fr;
+
+      @include respond-to('lg') {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+}

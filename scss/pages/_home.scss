@@ -1,0 +1,66 @@
+// =============================================================================
+// PAGES / HOME
+// Page-specific layout overrides for the home page.
+// Drupal: node--type-home.html.twig or front-page body class
+// =============================================================================
+
+.page-home {
+
+  // Hero is flush to header — remove any top margin
+  .hero {
+    margin-top: 0;
+  }
+
+  // --- Featured section ---
+  &__featured {
+    padding-block: $spacing-xl;
+
+    @include respond-to('md') {
+      padding-block: $spacing-2xl;
+    }
+
+    &-inner {
+      @include container;
+    }
+  }
+
+  // --- Stats / highlights strip ---
+  &__stats {
+    background-color: $color-brand-navy;
+    padding-block: $spacing-xl;
+
+    &-inner {
+      @include container;
+      display: grid;
+      gap: $spacing-lg;
+      grid-template-columns: 1fr 1fr;
+
+      @include respond-to('md') {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-xs;
+      text-align: center;
+    }
+
+    &-value {
+      font-size: $font-size-3xl;
+      font-weight: $font-weight-bold;
+      color: $color-brand-teal;
+      line-height: 1;
+
+      @include respond-to('md') {
+        font-size: $font-size-3xl;
+      }
+    }
+
+    &-label {
+      font-size: $font-size-sm;
+      color: $color-neutral-400;
+    }
+  }
+}

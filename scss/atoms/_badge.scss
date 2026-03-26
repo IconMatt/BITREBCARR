@@ -1,0 +1,60 @@
+// =============================================================================
+// ATOMS / BADGE
+// BEM: .badge
+// =============================================================================
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: $size-1 $spacing-xs;       // 2px 4px — mobile
+  border-radius: $radius-pill;
+  font-size: 0.625rem;                // 10px — mobile
+  font-weight: $font-weight-semibold;
+  letter-spacing: $letter-spacing-wide;
+  text-transform: uppercase;
+  line-height: 1;
+  white-space: nowrap;
+
+  @include respond-to('md') {
+    font-size: $font-size-xs;         // 12px — tablet+
+    padding-inline: $spacing-sm;      // 8px
+  }
+
+  // --- Variants ---
+
+  // Mint green bg — navy text (e.g. FEATURED)
+  &--mint {
+    background-color: $color-brand-mint;
+    color: $color-brand-navy;
+  }
+
+  // Lime green bg — navy text (e.g. DASHBOARD)
+  &--lime {
+    background-color: $color-brand-secondary-lime;
+    color: $color-brand-navy;
+  }
+
+  // Light blue bg — navy text (e.g. REPORT)
+  &--blue {
+    background-color: $color-brand-blue;
+    color: $color-brand-navy;
+  }
+
+  // Dark navy bg — mint text (e.g. DATA)
+  &--navy {
+    background-color: $color-brand-navy;
+    color: $color-brand-mint;
+  }
+
+  // Solid deep-teal bg — white text (e.g. STATISTICS)
+  &--teal {
+    background-color: $color-brand-secondary-deep-teal;
+    color: $color-text-inverse;
+  }
+
+  // Neutral grey bg — muted text (e.g. NEUTRAL)
+  &--neutral {
+    background-color: $color-neutral-200;
+    color: $color-text-secondary;
+  }
+}

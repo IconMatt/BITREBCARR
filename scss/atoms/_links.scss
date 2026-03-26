@@ -1,0 +1,59 @@
+// =============================================================================
+// ATOMS / LINKS
+// BEM: .link
+// =============================================================================
+
+.link {
+  @include transition(color);
+
+  color: $link-color;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: $font-weight-medium;
+
+  &:hover {
+    color: $link-color-hover;
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+    border-radius: 2px;
+  }
+
+  // --- Variants ---
+  &--inverse {
+    color: $color-brand-blue;
+
+    &:hover {
+      color: $color-brand-mint;
+    }
+  }
+
+  &--subtle {
+    color: $color-text-secondary;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-text-primary;
+      text-decoration: underline;
+    }
+  }
+
+  // Standalone arrow link
+  &--arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-xs;
+    text-decoration: none;
+    font-weight: $font-weight-semibold;
+
+    &::after {
+      content: '→';
+      @include transition(transform);
+    }
+
+    &:hover::after {
+      transform: translateX(4px);
+    }
+  }
+}

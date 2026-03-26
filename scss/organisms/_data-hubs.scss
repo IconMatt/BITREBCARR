@@ -1,0 +1,65 @@
+// =============================================================================
+// ORGANISMS / DATA HUBS
+// BEM: .data-hubs
+// Homepage section — 3 data hub cards on a light-grey background
+// =============================================================================
+
+.data-hubs {
+  background-color: $color-ui-surface;
+  padding-block-start: $spacing-lg;
+  padding-block-end: $spacing-xl;
+
+  @include respond-to('md') {
+    padding-block-start: $spacing-xl;
+    padding-block-end: $spacing-3xl;
+  }
+
+  @include respond-to('lg') {
+    padding-block-start: $spacing-xl;
+    padding-block-end: $spacing-2xl;
+  }
+
+  &__inner {
+    @include container;
+
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+
+    @include respond-to('md') {
+      gap: $spacing-lg;
+    }
+
+    @include respond-to('xl') {
+      gap: $spacing-xl;
+    }
+  }
+
+  &__heading {
+    font-size: 1.5rem;              // matches section heading mobile scale
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    margin: 0;
+
+    @include respond-to('md') {
+      font-size: $font-size-2xl;    // 32px — matches new-releases heading
+    }
+  }
+
+  // 1-col on mobile → 3-col at tablet and above
+  // (3 cards fit comfortably at md — no scroller needed)
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+
+    @include respond-to('md') {
+      grid-template-columns: repeat(3, 1fr);
+      gap: $spacing-lg;
+    }
+
+    @include respond-to('xl') {
+      gap: $spacing-xl;
+    }
+  }
+}
