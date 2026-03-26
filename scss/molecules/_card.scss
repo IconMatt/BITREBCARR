@@ -14,7 +14,8 @@
   overflow: hidden;
   height: 100%;
 
-  &:hover {
+  &:hover,
+  &.is-touched {
     box-shadow: $shadow-md;
     transform: translateY(-2px);
   }
@@ -33,7 +34,8 @@
     }
   }
 
-  &:not(.card--featured):hover &__image img {
+  &:not(.card--featured):hover &__image img,
+  &:not(.card--featured).is-touched &__image img {
     transform: scale(1.04);
   }
 
@@ -133,7 +135,8 @@
     border: none;
     box-shadow: none;
 
-    &:hover {
+    &:hover,
+    &.is-touched {
       background-color: transparent;
       box-shadow: none;
       transform: none; // Cancel base card's translateY(-2px)
@@ -161,7 +164,8 @@
       }
     }
 
-    &:hover .card__image img {
+    &:hover .card__image img,
+    &.is-touched .card__image img {
       transform: scale(1.04);
     }
 
@@ -287,7 +291,8 @@
       box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
 
-    &:hover {
+    &:hover,
+    &.is-touched {
       transform: translateY(-3px);
       box-shadow: $shadow-md;
 
@@ -393,7 +398,8 @@
       }
     }
 
-    &:hover .card__link span::after {
+    &:hover .card__link span::after,
+    &.is-touched .card__link span::after {
       transform: scaleX(1);
     }
   }
@@ -447,7 +453,8 @@
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
 
-    &:hover {
+    &:hover,
+    &.is-touched {
       box-shadow: none;
       transform: translateY(-3px);
 
