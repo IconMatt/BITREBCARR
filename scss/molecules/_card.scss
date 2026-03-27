@@ -346,6 +346,21 @@
       }
     }
 
+    // Horizontal layout at tablet — icon left, content right
+    @include respond-to('md') {
+      flex-direction: row;
+      align-items: flex-start;
+
+      .card__icon {
+        flex-shrink: 0;
+      }
+    }
+
+    // Revert to vertical at desktop (3-col grid)
+    @include respond-to('lg') {
+      flex-direction: column;
+    }
+
     .card__body {
       padding: 0;
       gap: $spacing-sm;

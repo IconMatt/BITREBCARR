@@ -18,16 +18,16 @@
     flex-direction: column;
     align-items: center;
     gap: $spacing-lg;
-    padding-top: $spacing-xl;
+    padding-top: $spacing-lg;
     padding-bottom: $spacing-xl;
 
     @include respond-to('md') {
-      padding-top: $spacing-3xl;
+      padding-top: $spacing-2xl;
       padding-bottom: $spacing-3xl;
     }
 
     @include respond-to('lg') {
-      padding-top: $spacing-2xl;
+      padding-top: $spacing-xl;
       padding-bottom: $spacing-2xl;
     }
   }
@@ -49,7 +49,7 @@
     color: $color-text-inverse;
     text-align: center;
     max-width: 900px;
-    text-wrap: balance;
+    text-wrap: pretty;
 
     @include respond-to('md') {
       font-size: $font-size-3xl;     // 48px desktop — Figma H1 spec
@@ -95,7 +95,7 @@
     gap: $spacing-md;
     z-index: $z-raised;
     width: 100%;
-    max-width: 1160px;
+    max-width: 770px;
   }
 
   &__body {
@@ -232,41 +232,57 @@
     inset: 0;
     z-index: $z-base;
     pointer-events: none;
-
-    img {
-      // Mobile base
-      width: 100%;
-      height: 25%;
-      object-fit: fill;
-      opacity: 0.5;
-      offset: 20px;
-
-      @include respond-to('md') {
-        width: 90%;
-        height: 60%;
-      }
-
-      @include respond-to('lg') {
-        width: 70%;
-        height: 70%;
-      }
-    }
   }
 
-  // --- Device grid — decorative SVG anchored top-right of hero --home ---
-  // Note: width / height / object-fit / opacity are set on hero__bg img above
-  // (higher specificity 0,1,1 vs 0,1,0 here). Only layout/position props live here.
+  // --- Device grid — decorative SVGs anchored to left and right edges ---
+  // --- Device grid — decorative SVGs anchored to left and right edges ---
   &__device-grid {
     display: block;
     position: absolute;
     top: 0;
-    right: -110px; // Mobile
+    pointer-events: none;
+    opacity: 0.65;
+    width: 480px; // mobile
 
     @include respond-to('md') {
-      right: -270px;
+      width: 560px;
     }
 
-    pointer-events: none;
+    @include respond-to('lg') {
+      width: auto;
+      max-width: 50%;
+    }
+  }
+
+  &__device-grid--right {
+    right: -110px;
+    top: 18%; // mobile — sits behind the search box
+
+    @include respond-to('md') {
+      top: 28%;
+      right: -100px;
+    }
+
+    @include respond-to('lg') {
+      top: 20%;
+      right: -40px;
+    }
+  }
+
+  &__device-grid--left {
+    left: -110px;
+    top: 42%; // mobile — above right SVG to avoid clash
+    transform: translateY(-50%) scale(-1, -1) rotate(15deg);
+
+    @include respond-to('md') {
+      top: 58%;
+      left: -100px;
+    }
+
+    @include respond-to('lg') {
+      top: 50%;
+      left: -40px;
+    }
   }
 
   // =========================================================================
@@ -286,9 +302,17 @@
         margin-bottom: $spacing-xl;
       }
 
-      // Same gap between search box and alert
+      // Same gap between search box and alert — matches hero top padding
       .search-box--hero {
-        margin-bottom: $spacing-xl;
+        margin-bottom: $spacing-lg;
+
+        @include respond-to('md') {
+          margin-bottom: $spacing-2xl;
+        }
+
+        @include respond-to('lg') {
+          margin-bottom: $spacing-xl;
+        }
       }
     }
 

@@ -20,10 +20,12 @@
   // Gradient card — blue (left) → mint (right), large radius
   // Text + button are centred together as a group
   &__card {
+    position: relative;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: $spacing-xl;
+    gap: $spacing-md;
     flex-wrap: wrap;
     background: linear-gradient(to right, $color-brand-blue, $color-brand-mint);
     border-radius: $radius-xl;
@@ -35,9 +37,29 @@
     }
   }
 
-  // Subscription prompt text
+  // Decorative SVG — anchored right, partial bleed
+  &__bg {
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 280%;
+    width: auto;
+    opacity: 0.95;
+    pointer-events: none;
+    user-select: none;
+
+    @include respond-to('md') {
+      right: -40px;
+      height: 320%;
+    }
+  }
+
+  // Subscription prompt text — sits above decorative bg
   &__text {
-    font-size: $font-size-lg;
+    position: relative;
+    z-index: 1;
+    font-size: $font-size-xl;
     font-weight: $font-weight-bold;
     color: $color-brand-navy;
     line-height: $line-height-heading;
@@ -53,23 +75,27 @@
 
   // Navy CTA button — stands out on the light gradient
   &__btn {
+    position: relative;
+    z-index: 1;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    padding: $spacing-sm $spacing-xl;
+    padding: $spacing-md $spacing-lg;
     background-color: $color-brand-navy;
-    color: $color-text-inverse;
+    color: $color-brand-mint;
     font-size: $font-size-base;
     font-weight: $font-weight-semibold;
     border-radius: $radius-lg;
     text-decoration: none;
     transition:
       background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+      color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
       transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover {
       background-color: mix(#fff, $color-brand-navy, 10%);
+      color: $color-text-inverse;
       transform: translateY(-1px);
     }
   }

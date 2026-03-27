@@ -54,8 +54,11 @@
     gap: $spacing-md;
 
     @include respond-to('md') {
-      grid-template-columns: repeat(3, 1fr);
       gap: $spacing-lg;
+    }
+
+    @include respond-to('lg') {
+      grid-template-columns: repeat(3, 1fr); // 3-col desktop
     }
 
     @include respond-to('xl') {

@@ -175,9 +175,10 @@
 ========================================================================== -->
 <section class="hero hero--home">
 
-  <!-- Background: device grid SVG -->
+  <!-- Background: device grid SVG (right + mirrored left) -->
   <div class="hero__bg" aria-hidden="true">
-    <img src="../assets/images/device-grid.svg" alt="" class="hero__device-grid">
+    <img src="../assets/images/device-grid.svg" alt="" class="hero__device-grid hero__device-grid--right">
+    <img src="../assets/images/device-grid.svg" alt="" class="hero__device-grid hero__device-grid--left">
   </div>
 
   <div class="hero__inner">
@@ -417,6 +418,7 @@
 <section class="subscribe-banner" aria-label="Newsletter subscription">
   <div class="subscribe-banner__inner">
     <div class="subscribe-banner__card">
+      <img src="../assets/images/device-grid.svg" alt="" class="subscribe-banner__bg" aria-hidden="true">
       <p class="subscribe-banner__text">Subscribe for email notifications when new reports are published</p>
       <a href="#" class="subscribe-banner__btn">Subscribe</a>
     </div>
@@ -433,7 +435,7 @@
     <div class="site-footer__main">
 
       <div class="site-footer__brand">
-        <p class="site-footer__org-name">Bureau of Infrastructure, Arts, Communications, Transport and Regional Economics</p>
+        <p class="site-footer__org-name">Bureau of Infrastructure, Arts,<br> Communications, Transport<br> and Regional Economics</p>
       </div>
 
       <nav class="site-footer__nav-col" aria-label="Footer navigation">
@@ -567,5 +569,30 @@
 </script>
 <script src="../js/main.js"></script>
 
+
+<script>
+  // Parallax for hero device-grid SVGs
+  (function () {
+    const right = document.querySelector('.hero__device-grid--right');
+    const left  = document.querySelector('.hero__device-grid--left');
+    if (!right || !left) return;
+
+    // Left SVG has existing CSS transforms — preserve them
+    const leftBase = 'translateY(-50%) scale(-1, -1) rotate(15deg)';
+
+    let ticking = false;
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          const y = window.scrollY;
+          right.style.transform = 'translateY(' + (-y * 0.12) + 'px)';
+          left.style.transform  = leftBase + ' translateY(' + (-y * 0.08) + 'px)';
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
+</script>
 </body>
 </html>
