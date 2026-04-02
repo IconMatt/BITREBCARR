@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BIACTRE — Design System Kitchen Sink</title>
+  <title>BITRE/BCARR — Design System Kitchen Sink</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
@@ -351,7 +351,7 @@
   KS PAGE HEADER
 ============================================================ -->
 <header class="ks-page-header">
-  <p class="ks-page-header__eyebrow">BIACTRE / Design System</p>
+  <p class="ks-page-header__eyebrow">BITRE/BCARR / Design System</p>
   <h1 class="ks-page-header__title">Kitchen Sink</h1>
   <p class="ks-page-header__sub">tokens → abstracts → atoms → molecules → organisms</p>
   <nav aria-label="Kitchen sink navigation">
@@ -375,13 +375,30 @@
 
   <div class="ks-sub">
     <p class="ks-sub__label">Page templates</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:20px;">
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:20px;">
 
-      <a href="templates/home.html" target="_blank" style="display:flex;flex-direction:column;gap:12px;padding:24px;background:#fff;border:2px solid #dee2e6;border-radius:8px;text-decoration:none;color:inherit;transition:border-color 0.2s,box-shadow 0.2s;" onmouseover="this.style.borderColor='#4eb2b4';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'" onmouseout="this.style.borderColor='#dee2e6';this.style.boxShadow='none'">
-        <div style="font-family:'Courier New',monospace;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#adb5bd;">templates/home.html</div>
-        <div style="font-family:'Mulish',sans-serif;font-size:18px;font-weight:800;color:#081e3f;letter-spacing:-0.01em;">Home</div>
-        <div style="font-family:'Mulish',sans-serif;font-size:13px;color:#6c757d;line-height:1.5;">Homepage with hero, featured cards, new releases, data hubs, and footer.</div>
-        <div style="margin-top:auto;padding-top:12px;font-family:'Mulish',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#4eb2b4;">Open ↗</div>
+      <a href="templates/home.html" target="_blank" style="display:flex;flex-direction:column;gap:0;background:#fff;border:2px solid #dee2e6;border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color 0.2s,box-shadow 0.2s;" onmouseover="this.style.borderColor='#4eb2b4';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'" onmouseout="this.style.borderColor='#dee2e6';this.style.boxShadow='none'">
+        <div style="overflow:hidden;border-bottom:2px solid #dee2e6;background:#f4f5f7;">
+          <img src="assets/images/screenshots/home.jpg" alt="Home page screenshot" style="width:100%;height:220px;object-fit:cover;object-position:top;display:block;">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;padding:20px 24px 24px;">
+          <div style="font-family:'Courier New',monospace;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#adb5bd;">templates/home.html</div>
+          <div style="font-family:'Mulish',sans-serif;font-size:18px;font-weight:800;color:#081e3f;letter-spacing:-0.01em;">Home</div>
+          <div style="font-family:'Mulish',sans-serif;font-size:13px;color:#6c757d;line-height:1.5;">Homepage with hero, featured cards, new releases, data hubs, and footer.</div>
+          <div style="margin-top:4px;font-family:'Mulish',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#4eb2b4;">Open ↗</div>
+        </div>
+      </a>
+
+      <a href="templates/topic-landing.html" target="_blank" style="display:flex;flex-direction:column;gap:0;background:#fff;border:2px solid #dee2e6;border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color 0.2s,box-shadow 0.2s;" onmouseover="this.style.borderColor='#4eb2b4';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'" onmouseout="this.style.borderColor='#dee2e6';this.style.boxShadow='none'">
+        <div style="overflow:hidden;border-bottom:2px solid #dee2e6;background:#f4f5f7;">
+          <img src="assets/images/screenshots/topic-landing.jpg" alt="Topic Landing page screenshot" style="width:100%;height:220px;object-fit:cover;object-position:top;display:block;">
+        </div>
+        <div style="display:flex;flex-direction:column;gap:8px;padding:20px 24px 24px;">
+          <div style="font-family:'Courier New',monospace;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#adb5bd;">templates/topic-landing.html</div>
+          <div style="font-family:'Mulish',sans-serif;font-size:18px;font-weight:800;color:#081e3f;letter-spacing:-0.01em;">Topic Landing</div>
+          <div style="font-family:'Mulish',sans-serif;font-size:13px;color:#6c757d;line-height:1.5;">Topic page with split hero, page nav, featured resource, and sub-topics grid.</div>
+          <div style="margin-top:4px;font-family:'Mulish',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#4eb2b4;">Open ↗</div>
+        </div>
       </a>
 
     </div>
@@ -746,7 +763,7 @@
         </div>
         <div class="card__body">
           <h3 class="card__title">National Road Safety Data Hub</h3>
-          <p class="card__excerpt">Provides national road safety dashboards, crash data, performance tracking, and interactive tools that supplement BIACTRE's Road Safety statistics.</p>
+          <p class="card__excerpt">Provides national road safety dashboards, crash data, performance tracking, and interactive tools that supplement BITRE/BCARR's Road Safety statistics.</p>
           <a href="#" class="card__link" target="_blank" rel="noopener noreferrer">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 2H14V6M14 2L8 8M6 4H3C2.44772 4 2 4.44772 2 5V13C2 13.5523 2.44772 14 3 14H11C11.5523 14 12 13.5523 12 13V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <span>Visit datahub.roadsafety.gov.au</span>
@@ -798,6 +815,78 @@
           </button>
         </div>
       </form>
+    </div>
+  </div>
+
+  <!-- 3.5 Card — Resource Featured -->
+  <div class="ks-sub">
+    <p class="ks-sub__label">3.5 — Card (resource-featured) — H2 heading, intro body, portrait cover</p>
+
+    <article class="card card--resource-featured">
+      <div class="card__image">
+        <img src="assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Australian Aircraft Activity report cover">
+      </div>
+      <div class="card__body">
+        <div class="card__badges">
+          <span class="badge badge--mint">Featured</span>
+          <span class="badge badge--blue">Statistical Report</span>
+        </div>
+        <h3 class="card__title">
+          <a href="#">Australian Aircraft Activity (General aviation activity)</a>
+        </h3>
+        <p class="card__excerpt">This annual survey covers all Australian registered aircraft used in the Commercial Air Transport and General Aviation sectors of the Australian aviation industry. It collects information on aircraft operations, fuel usage and employment.</p>
+        <p class="card__date">Published 18 November 2024</p>
+      </div>
+    </article>
+  </div>
+
+  <!-- 3.6 Card — Topic Resource -->
+  <div class="ks-sub">
+    <p class="ks-sub__label">3.6 — Card (topic-resource) — float cover, text wrap, badge + title + excerpt + date</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px;">
+
+      <article class="card card--topic-resource">
+        <div class="card__image">
+          <img src="assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Broadband Performance report cover">
+        </div>
+        <div class="card__body">
+          <div class="card__meta">
+            <span class="badge badge--mint">Report</span>
+          </div>
+          <h3 class="card__title"><a href="#">Australia's Broadband Performance statistical snapshot</a></h3>
+          <p class="card__excerpt">A statistical snapshot released alongside the Broadband Performance Dashboard, covering fixed-line speeds, latency, and congestion across Australian providers.</p>
+          <p class="card__date">Published 18 November 2024</p>
+        </div>
+      </article>
+
+      <article class="card card--topic-resource">
+        <div class="card__image">
+          <img src="assets/images/report/BITRE-RVSA-entry-recall-statistics-Dec-2023.jpg" alt="Road vehicle entry report cover">
+        </div>
+        <div class="card__body">
+          <div class="card__meta">
+            <span class="badge badge--blue">Research Report</span>
+          </div>
+          <h3 class="card__title"><a href="#">Measuring digital inclusion in regional and remote Australia</a></h3>
+          <p class="card__excerpt">Examines access to broadband, mobile connectivity, and digital skills among communities outside metropolitan areas, drawing on survey and administrative data.</p>
+          <p class="card__date">Published 4 March 2024</p>
+        </div>
+      </article>
+
+      <article class="card card--topic-resource">
+        <div class="card__image">
+          <img src="assets/images/report/trainline-12.jpg" alt="Trainline report cover">
+        </div>
+        <div class="card__body">
+          <div class="card__meta">
+            <span class="badge badge--navy">Data</span>
+          </div>
+          <h3 class="card__title"><a href="#">Fixed broadband subscriber data — quarterly update</a></h3>
+          <p class="card__excerpt">Tracks the number of fixed broadband services in operation by technology type, provider, and state, updated each quarter.</p>
+          <p class="card__date">Published 10 October 2024</p>
+        </div>
+      </article>
+
     </div>
   </div>
 
@@ -861,7 +950,7 @@
         <div class="card__icon"><img src="assets/images/icons/icon-cars.svg" alt="" aria-hidden="true"></div>
         <div class="card__body">
           <h3 class="card__title">National Road Safety Data Hub</h3>
-          <p class="card__excerpt">Provides national road safety dashboards, crash data, performance tracking, and interactive tools that supplement BIACTRE's Road Safety statistics.</p>
+          <p class="card__excerpt">Provides national road safety dashboards, crash data, performance tracking, and interactive tools that supplement BITRE/BCARR's Road Safety statistics.</p>
           <a href="#" class="card__link" target="_blank" rel="noopener noreferrer">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 2H14V6M14 2L8 8M6 4H3C2.44772 4 2 4.44772 2 5V13C2 13.5523 2.44772 14 3 14H11C11.5523 14 12 13.5523 12 13V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <span>Visit datahub.roadsafety.gov.au</span>
@@ -911,9 +1000,152 @@
   </div>
 </section>
 
+<section class="ks-section" style="padding-block:24px 0;border-bottom:none">
+  <div class="ks-sub" style="margin-bottom:0">
+    <p class="ks-sub__label">4.4 — Featured Resources</p>
+  </div>
+</section>
+
+<!-- Featured Resources — full bleed organism -->
+<section class="featured-resources" aria-label="Featured resources">
+  <div class="featured-resources__inner">
+
+    <article class="card card--resource-featured">
+      <div class="card__image">
+        <img src="assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Australian Aircraft Activity report cover">
+      </div>
+      <div class="card__body">
+        <div class="card__badges">
+          <span class="badge badge--mint">Featured</span>
+          <span class="badge badge--blue">Statistical Report</span>
+        </div>
+        <h3 class="card__title">
+          <a href="#">Australian Aircraft Activity (General aviation activity)</a>
+        </h3>
+        <p class="card__excerpt">This annual survey covers all Australian registered aircraft used in the Commercial Air Transport and General Aviation sectors of the Australian aviation industry. It collects information on aircraft operations, fuel usage and employment.</p>
+        <p class="card__date">Published 18 November 2024</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="ks-section" style="padding-block:24px 0;border-bottom:none">
+  <div class="ks-sub" style="margin-bottom:0">
+    <p class="ks-sub__label">4.5 — Sub Topics</p>
+  </div>
+</section>
+
+<!-- Sub Topics — full bleed organism -->
+<section class="sub-topics" id="ks-broadband" aria-labelledby="ks-broadband-heading">
+  <div class="sub-topics__inner">
+
+    <div class="sub-topics__header">
+      <h2 class="sub-topics__heading" id="ks-broadband-heading">Broadband &amp; performance</h2>
+    </div>
+
+    <p class="sub-topics__body">The communications sector is a critical enabler of economic and social activity. Communications technology touches and transforms everyone's lives, providing economic and data analysis on communications issues to support evidence-based policy development and advice.</p>
+
+    <a class="sub-topics__more" href="#">
+      More
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+
+    <div class="sub-topics__grid">
+
+      <article class="card card--topic-resource">
+        <div class="card__image">
+          <img src="assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Broadband Performance report cover">
+        </div>
+        <div class="card__body">
+          <div class="card__meta">
+            <span class="badge badge--mint">Report</span>
+          </div>
+          <h3 class="card__title"><a href="#">Australia's Broadband Performance statistical snapshot</a></h3>
+          <p class="card__excerpt">A statistical snapshot released alongside the Broadband Performance Dashboard, covering fixed-line speeds, latency, and congestion across Australian providers.</p>
+          <p class="card__date">Published 18 November 2024</p>
+        </div>
+      </article>
+
+      <article class="card card--topic-resource">
+        <div class="card__image">
+          <img src="assets/images/report/BITRE-RVSA-entry-recall-statistics-Dec-2023.jpg" alt="Road vehicle entry report cover">
+        </div>
+        <div class="card__body">
+          <div class="card__meta">
+            <span class="badge badge--blue">Research Report</span>
+          </div>
+          <h3 class="card__title"><a href="#">Measuring digital inclusion in regional and remote Australia</a></h3>
+          <p class="card__excerpt">Examines access to broadband, mobile connectivity, and digital skills among communities outside metropolitan areas, drawing on survey and administrative data.</p>
+          <p class="card__date">Published 4 March 2024</p>
+        </div>
+      </article>
+
+      <article class="card card--topic-resource">
+        <div class="card__image">
+          <img src="assets/images/report/trainline-12.jpg" alt="Trainline report cover">
+        </div>
+        <div class="card__body">
+          <div class="card__meta">
+            <span class="badge badge--navy">Data</span>
+          </div>
+          <h3 class="card__title"><a href="#">Fixed broadband subscriber data — quarterly update</a></h3>
+          <p class="card__excerpt">Tracks the number of fixed broadband services in operation by technology type, provider, and state, updated each quarter.</p>
+          <p class="card__date">Published 10 October 2024</p>
+        </div>
+      </article>
+
+      <article class="card card--topic-resource">
+        <div class="card__image">
+          <img src="assets/images/report/bitre-cover--assessment-of-road-improvements-in-remote-and-regional-areas--5september2025--lowres.jpg" alt="Assessment of road improvements report cover">
+        </div>
+        <div class="card__body">
+          <div class="card__meta">
+            <span class="badge badge--mint">Report</span>
+          </div>
+          <h3 class="card__title"><a href="#">Mobile coverage and quality in regional Australia</a></h3>
+          <p class="card__excerpt">Analyses mobile network performance, coverage gaps, and reliability for users outside major urban centres using crowd-sourced and operator data.</p>
+          <p class="card__date">Published 22 July 2024</p>
+        </div>
+      </article>
+
+      <article class="card card--topic-resource">
+        <div class="card__image">
+          <img src="assets/images/report/asf-2023-24.jpg" alt="Sea Freight report cover">
+        </div>
+        <div class="card__body">
+          <div class="card__meta">
+            <span class="badge badge--blue">Research Report</span>
+          </div>
+          <h3 class="card__title"><a href="#">Consumer experience with broadband services in Australia</a></h3>
+          <p class="card__excerpt">Surveys consumer satisfaction, complaint rates, and switching behaviour across Australia's fixed broadband market to understand service quality trends.</p>
+          <p class="card__date">Published 5 June 2024</p>
+        </div>
+      </article>
+
+      <article class="card card--topic-resource">
+        <div class="card__image">
+          <img src="assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Aviation report cover">
+        </div>
+        <div class="card__body">
+          <div class="card__meta">
+            <span class="badge badge--navy">Data</span>
+          </div>
+          <h3 class="card__title"><a href="#">NBN take-up and technology mix by region — 2024</a></h3>
+          <p class="card__excerpt">Provides a regional breakdown of NBN connections by technology type — FTTP, FTTN, HFC, fixed wireless, and satellite — updated annually.</p>
+          <p class="card__date">Published 12 February 2024</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 <div class="ks-section" style="padding-block:32px">
-  <p class="ks-sub__label" style="font-family:monospace;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#ced4da;margin:0 0 8px">4.4 — Header &amp; Footer &amp; Hero</p>
-  <p style="font-family:'Mulish',sans-serif;font-size:14px;color:#6c757d;margin:0">These organisms require full page context. <a href="templates/home.html" style="color:#337b7e;font-weight:600">View on home.html →</a></p>
+  <p class="ks-sub__label" style="font-family:monospace;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#ced4da;margin:0 0 8px">4.6 — Header, Footer &amp; Hero</p>
+  <p style="font-family:'Mulish',sans-serif;font-size:14px;color:#6c757d;margin:0">These organisms require full page context. <a href="templates/home.html" style="color:#337b7e;font-weight:600">View on home.html →</a> &nbsp;|&nbsp; <a href="templates/topic-landing.html" style="color:#337b7e;font-weight:600">View on topic-landing.html →</a></p>
 </div>
 <script src="js/main.js"></script>
 

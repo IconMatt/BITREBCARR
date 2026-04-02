@@ -17,7 +17,7 @@
     @include container;
   }
 
-  // Gradient card — blue (left) → mint (right), large radius
+  // Gradient card — deep-teal (left) → teal (right), large radius
   // Text + button are centred together as a group
   &__card {
     position: relative;
@@ -27,7 +27,7 @@
     justify-content: center;
     gap: $spacing-md;
     flex-wrap: wrap;
-    background: linear-gradient(to right, $color-brand-blue, $color-brand-mint);
+    background: linear-gradient(to right, $color-brand-secondary-deep-teal, $color-brand-teal);
     border-radius: $radius-xl;
     padding: $spacing-xl;
 
@@ -40,18 +40,18 @@
   // Decorative SVG — anchored right, partial bleed
   &__bg {
     position: absolute;
-    right: -60px;
+    right: -140px;
     top: 50%;
     transform: translateY(-50%);
-    height: 280%;
+    height: 200%;
     width: auto;
     opacity: 0.95;
     pointer-events: none;
     user-select: none;
 
     @include respond-to('md') {
-      right: -40px;
-      height: 320%;
+      right: -120px;
+      height: 240%;
     }
   }
 
@@ -61,7 +61,7 @@
     z-index: 1;
     font-size: $font-size-xl;
     font-weight: $font-weight-bold;
-    color: $color-brand-navy;
+    color: $color-text-inverse;
     line-height: $line-height-heading;
     margin: 0;
     text-wrap: balance;
@@ -83,7 +83,7 @@
     flex-shrink: 0;
     padding: $spacing-md $spacing-lg;
     background-color: $color-brand-navy;
-    color: $color-brand-mint;
+    color: $color-text-inverse;
     font-size: $font-size-base;
     font-weight: $font-weight-semibold;
     border-radius: $radius-lg;

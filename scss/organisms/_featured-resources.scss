@@ -1,0 +1,25 @@
+// =============================================================================
+// ORGANISMS / FEATURED RESOURCES
+// BEM: .featured-resources
+// Topic landing section — full-width resource-featured card on light bg
+// =============================================================================
+
+.featured-resources {
+  background-color: $color-neutral-100;
+  padding-block: $spacing-lg;
+
+  &__inner {
+    @include container;
+
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-lg;
+  }
+
+  &__heading {
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    margin: 0;
+  }
+}

@@ -1,0 +1,69 @@
+// =============================================================================
+// ORGANISMS / PAGE NAV
+// BEM: .page-nav
+// "On this page" anchor link bar — sits below the topic hero
+// =============================================================================
+
+.page-nav {
+  position: sticky;
+  top: 0;
+  z-index: $z-sticky;
+  background-color: $color-neutral-100;
+  border-bottom: 1px solid $color-ui-border;
+
+  &__inner {
+    @include container;
+
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+    padding-block: $spacing-md;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__label {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    flex-wrap: nowrap;
+  }
+
+  &__link {
+    @include transition(background-color color);
+
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding: $spacing-xs $spacing-md;
+    border-radius: $radius-pill;
+    background-color: $color-brand-mint;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    color: $color-brand-navy;
+    text-decoration: none;
+
+    &:hover {
+      background-color: mix(#fff, $color-brand-mint, 50%);
+      color: $color-brand-navy;
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+    }
+  }
+}

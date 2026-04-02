@@ -262,7 +262,6 @@
     top: 0;
     z-index: $z-sticky;
     background-color: $color-brand-navy;
-    box-shadow: 0 2px 8px rgba(8, 30, 63, 0.3);
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   }
 
@@ -374,32 +373,49 @@
     }
   }
 
-  // --- Mobile logo (visible inside nav-bar on mobile) ---
+  // --- Mobile logo (md breakpoint only, alongside site name) ---
   &__mobile-logo {
-    display: flex;
-    align-items: center;
-    flex: 1;
-    padding-left: $spacing-md;
+    display: none; // hidden on smallest mobile
+
+    @include respond-to('md') {
+      display: flex;
+      align-items: center;
+      padding-left: $spacing-md;
+      flex-shrink: 0;
+    }
 
     @include respond-to('lg') {
       display: none;
     }
 
     img {
-      height: 48px;  // mobile
+      height: 75px;
       width: auto;
       filter: brightness(0) invert(1);
+    }
+  }
 
-      @include respond-to('md') {
-        height: 75px; // tablet — matches desktop logo size
-      }
+  // --- Mobile site name (visible on mobile + md, hidden at lg where utility-bar takes over) ---
+  &__mobile-site-name {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding-left: $spacing-md;
+    font-size: 1.75rem;
+    font-weight: $font-weight-extrabold;
+    color: $color-text-inverse;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+
+    @include respond-to('lg') {
+      display: none;
     }
   }
 
   // --- Mobile hamburger ---
   &__burger {
     @include button-reset;
-    @include flex-col($gap: 5px);
+    @include flex-col($gap: 7px);
 
     width: 56px;
     height: 100%;
@@ -425,9 +441,8 @@
     }
 
     &[aria-expanded='true'] {
-      span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-      span:nth-child(2) { opacity: 0; }
-      span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+      span:nth-child(1) { transform: translateY(4.5px) rotate(45deg); }
+      span:nth-child(2) { transform: translateY(-4.5px) rotate(-45deg); }
     }
   }
 

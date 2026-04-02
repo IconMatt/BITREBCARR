@@ -174,7 +174,7 @@
       // Image is clipped at the bottom by overflow: hidden
 
       // Base gradient — fades out on hover via ::before crossfade
-      background: linear-gradient(135deg, $color-brand-blue, $color-brand-mint);
+      background: linear-gradient(135deg, $color-brand-secondary-deep-teal, $color-brand-teal);
       border-radius: $radius-xl;
       padding: $spacing-md clamp(#{$spacing-lg}, 4vw, #{$spacing-xl}) 0;
 
@@ -189,7 +189,7 @@
         position: absolute;
         inset: 0;
         border-radius: inherit;
-        background: linear-gradient(170deg, $color-brand-blue, $color-brand-mint);
+        background: linear-gradient(170deg, $color-brand-secondary-deep-teal, $color-brand-teal);
         opacity: 0;
         transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         pointer-events: none;
@@ -417,6 +417,227 @@
     &.is-touched .card__link span::after {
       transform: scaleX(1);
     }
+  }
+
+  // -------------------------------------------------------------------------
+  // Resource-featured — portrait cover padded inside card, like hub card icon
+  // Mobile: column (cover on top). Desktop: row (cover left, content right).
+  // -------------------------------------------------------------------------
+  &--resource-featured {
+    height: auto;
+    flex-direction: column;
+    padding: $spacing-lg;
+    gap: $spacing-lg;
+    border: none;
+
+    // Below sm — adopt resource card styling (block + floated image)
+    @include respond-below('sm') {
+      display: block;
+      padding: $spacing-md;
+      overflow: hidden;
+
+      .card__body {
+        display: block;
+        padding: 0;
+        flex: unset;
+        justify-content: unset;
+      }
+
+      .card__badges {
+        margin-bottom: $spacing-sm;
+      }
+
+      .card__title {
+        margin-bottom: $spacing-sm;
+      }
+
+      .card__excerpt {
+        margin-bottom: $spacing-xs;
+      }
+
+      .card__date {
+        margin-top: $spacing-sm;
+      }
+    }
+
+    @include respond-to('sm') {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    @include respond-to('md') {
+      padding: $spacing-lg;
+      gap: 34px;
+    }
+
+    // Portrait cover — sits inside card with its own radius + shadow
+    .card__image {
+      width: 160px;
+      aspect-ratio: 3 / 4;
+      flex-shrink: 0;
+      align-self: flex-start;
+      border-radius: $radius-lg;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      transition: box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      @include respond-below('sm') {
+        float: right;
+        width: 90px;
+        margin-left: $spacing-md;
+        align-self: unset;
+      }
+
+      @include respond-to('md') {
+        width: 200px;
+      }
+
+      @include respond-to('lg') {
+        width: 230px;
+      }
+    }
+
+    &:hover .card__image,
+    &.is-touched .card__image {
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+    }
+
+    // Body — card padding provides the outer spacing
+    .card__body {
+      padding: 0;
+      gap: $spacing-md;
+      flex: 1;
+      justify-content: flex-start;
+    }
+
+    .card__badges {
+      display: flex;
+      gap: $spacing-xs;
+      flex-wrap: wrap;
+    }
+
+    .card__title {
+      font-size: $font-size-2xl;
+      line-height: $line-height-tight;
+
+      @include respond-below('sm') {
+        font-size: 1.25rem;
+        line-height: $line-height-heading;
+      }
+    }
+
+    .card__excerpt {
+      font-size: $font-size-md;
+      line-height: $line-height-loose;
+
+      @include respond-below('sm') {
+        font-size: $font-size-base;
+        line-height: $line-height-base;
+      }
+
+      @include line-clamp(4);
+    }
+
+    .card__date {
+      font-size: $font-size-sm;
+      color: $color-text-secondary;
+      margin-top: $spacing-xs;
+    }
+  }
+
+  // -------------------------------------------------------------------------
+  // Topic resource — horizontal: text left, portrait cover right
+  // Used in sub-topics section — 2-col grid on topic landing
+  // -------------------------------------------------------------------------
+  &--topic-resource {
+    display: block; // override flex — float layout needs block container
+    padding: $spacing-md;
+    height: auto;
+    border: none;
+    overflow: hidden; // clear the float
+
+    @include respond-to('md') {
+      padding: $spacing-lg;
+    }
+
+    // Smooth override of base transition
+    transition:
+      box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+      transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &.is-touched {
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+
+    .card__body {
+      display: block; // plain block so content flows around the floated image
+      padding: 0;
+    }
+
+    .card__meta {
+      margin-bottom: $spacing-sm;
+    }
+
+    .card__title {
+      font-size: $font-size-xl;
+      font-weight: $font-weight-bold;
+      line-height: $line-height-heading;
+      margin-bottom: $spacing-sm;
+
+      @include respond-below('sm') {
+        font-size: 1.25rem;
+      }
+    }
+
+    .card__excerpt {
+      @include line-clamp(3);
+      margin-bottom: $spacing-xs;
+    }
+
+    .card__date {
+      font-size: $font-size-xs;
+      color: $color-text-secondary;
+      margin-top: $spacing-sm;
+    }
+
+    // Portrait cover — floated right so text wraps around it
+    .card__image {
+      float: right;
+      width: 90px;
+      margin-left: $spacing-md;
+      aspect-ratio: 3 / 4;
+      border-radius: $radius-lg;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+      transition: box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      @include respond-to('md') {
+        width: 130px;
+        margin-left: $spacing-lg;
+      }
+    }
+
+    &:hover .card__image,
+    &.is-touched .card__image {
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    }
+
   }
 
   // Compact — tighter padding, smaller type
