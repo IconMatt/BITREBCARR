@@ -197,10 +197,8 @@
     gap: $spacing-md;
 
     @include respond-to('lg') {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-end;
-      justify-content: space-between;
+      grid-template-columns: 1fr 1fr minmax(0, 160px) minmax(0, 160px);
+      align-items: end;
     }
   }
 
@@ -212,29 +210,17 @@
       grid-column: span 2;
     }
 
-    // md+: all fields are single-column (2-col grid gives Topic|SubTopic, Release|Sort)
+    // md+: reset spans so all fields sit in single columns
     @include respond-to('md') {
-      > .page-resource-library__field {
+      > .page-resource-library__field:nth-child(-n+2) {
         grid-column: auto;
       }
     }
-
-    @include respond-to('lg') {
-      display: grid;
-      flex: 1;
-      gap: $spacing-md;
-      grid-template-columns: 1fr 1fr minmax(0, 160px);
-    }
   }
 
+  // Sort always display: contents — participates directly in __toolbar-top grid
   &__sort {
     display: contents;
-
-    @include respond-to('lg') {
-      display: block;
-      width: 160px;
-      flex-shrink: 0;
-    }
   }
 
   &__field {

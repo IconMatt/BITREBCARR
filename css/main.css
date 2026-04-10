@@ -4133,10 +4133,8 @@ hr {
 }
 @media screen and (min-width: 1024px) {
   .page-resource-library__toolbar-top {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
+    grid-template-columns: 1fr 1fr minmax(0, 160px) minmax(0, 160px);
+    align-items: end;
   }
 }
 .page-resource-library__filters {
@@ -4146,27 +4144,12 @@ hr {
   grid-column: span 2;
 }
 @media screen and (min-width: 768px) {
-  .page-resource-library__filters > .page-resource-library__field {
+  .page-resource-library__filters > .page-resource-library__field:nth-child(-n+2) {
     grid-column: auto;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .page-resource-library__filters {
-    display: grid;
-    flex: 1;
-    gap: 16px;
-    grid-template-columns: 1fr 1fr minmax(0, 160px);
   }
 }
 .page-resource-library__sort {
   display: contents;
-}
-@media screen and (min-width: 1024px) {
-  .page-resource-library__sort {
-    display: block;
-    width: 160px;
-    flex-shrink: 0;
-  }
 }
 .page-resource-library__field {
   display: flex;

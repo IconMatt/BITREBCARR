@@ -17,7 +17,7 @@
       --ks-bg:        #f4f5f7;
       --ks-border:    #dee2e6;
       --ks-mono:      'Courier New', Courier, monospace;
-      --ks-muted:     #adb5bd;
+      --ks-muted:     #6c757d;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -69,7 +69,7 @@
 
     .ks-section__layer {
       font-family: var(--ks-mono);
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -93,7 +93,7 @@
       font-family: 'Mulish', sans-serif;
       font-size: 15px;
       line-height: 1.65;
-      color: #6c757d;
+      color: #495057;
       margin: -20px 0 40px;
     }
 
@@ -172,14 +172,14 @@
 
     .ks-swatch__name {
       font-family: var(--ks-mono);
-      font-size: 9.5px;
+      font-size: 11px;
       color: #495057;
       line-height: 1.5;
     }
 
     .ks-swatch-group-label {
       font-family: var(--ks-mono);
-      font-size: 10px;
+      font-size: 11px;
       color: var(--ks-muted);
       font-weight: 700;
       letter-spacing: 0.1em;
@@ -210,7 +210,7 @@
 
     .ks-spacing-meta {
       font-family: var(--ks-mono);
-      font-size: 9px;
+      font-size: 11px;
       color: #495057;
       text-align: center;
       line-height: 1.5;
@@ -240,7 +240,7 @@
 
     .ks-radius-meta {
       font-family: var(--ks-mono);
-      font-size: 9px;
+      font-size: 11px;
       color: #495057;
       text-align: center;
       line-height: 1.5;
@@ -266,7 +266,7 @@
 
     .ks-type-meta {
       font-family: var(--ks-mono);
-      font-size: 9.5px;
+      font-size: 11px;
       color: var(--ks-muted);
       line-height: 1.5;
     }
@@ -336,11 +336,11 @@
 
     .ks-template-card__path {
       font-family: var(--ks-mono);
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: #adb5bd;
+      color: #6c757d;
     }
 
     .ks-template-card__name {
@@ -647,7 +647,7 @@
 
       <a href="templates/resource-library.html" target="_blank" class="ks-template-card">
         <div class="ks-template-card__media">
-          <img src="assets/images/banner/3750.avif" alt="Resource library template preview">
+          <img src="assets/images/screenshots/resource-library.jpg" alt="Resource library template preview">
         </div>
         <div class="ks-template-card__content">
           <div class="ks-template-card__path">templates/resource-library.html</div>
@@ -758,7 +758,7 @@
 <section id="atoms" class="ks-section">
   <p class="ks-section__layer">Core Elements</p>
   <h2 class="ks-section__title">Atoms</h2>
-  <p class="ks-section__intro">This section covers the smallest reusable UI pieces: headings, text styles, buttons, links, badges, and form controls. These should feel production-ready, because larger components depend on them directly.</p>
+  <p class="ks-section__intro">This section covers the smallest reusable UI pieces: headings, text styles, and badges. These are the building blocks that all larger components depend on.</p>
 
   <!-- 2.1 Typography -->
   <div class="ks-sub">
@@ -786,38 +786,9 @@
 
   <!-- 2.2 Buttons -->
   <div class="ks-sub">
-    <p class="ks-sub__label">2.2 — Buttons</p>
-
-    <p class="ks-swatch-group-label">Variants — default size</p>
-    <div class="ks-row ks-row--center" style="margin-bottom:24px">
-      <a href="#" class="btn btn--primary">Primary</a>
-      <a href="#" class="btn btn--secondary">Secondary</a>
-      <a href="#" class="btn btn--ghost">Ghost</a>
-      <a href="#" class="btn btn--accent">Accent</a>
-      <a href="#" class="btn btn--primary" aria-disabled="true" tabindex="-1">Disabled</a>
-    </div>
-
-    <p class="ks-swatch-group-label">Sizes</p>
-    <div class="ks-row ks-row--center" style="margin-bottom:24px">
-      <a href="#" class="btn btn--primary btn--sm">Small</a>
-      <a href="#" class="btn btn--primary">Default</a>
-      <a href="#" class="btn btn--primary btn--lg">Large</a>
-    </div>
-
-    <p class="ks-swatch-group-label">On dark background</p>
-    <div class="ks-dark">
-      <div class="ks-row ks-row--center">
-        <a href="#" class="btn btn--primary">Primary</a>
-        <a href="#" class="btn btn--secondary">Secondary</a>
-        <a href="#" class="btn btn--ghost-inverse">Ghost inverse</a>
-        <a href="#" class="btn btn--accent">Accent / Mint</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- 2.3 Badges -->
+  <!-- 2.2 Badges -->
   <div class="ks-sub">
-    <p class="ks-sub__label">2.3 — Badges</p>
+    <p class="ks-sub__label">2.2 — Badges</p>
     <div class="ks-row ks-row--center">
       <span class="badge badge--mint">Featured</span>
       <span class="badge badge--lime">Dashboard</span>
@@ -828,69 +799,6 @@
     </div>
   </div>
 
-  <!-- 2.4 Links -->
-  <div class="ks-sub">
-    <p class="ks-sub__label">2.4 — Links</p>
-    <div class="ks-col" style="max-width:400px">
-      <a href="#" class="link">Default link — underlined, deep-teal</a>
-      <a href="#" class="link link--subtle">Subtle link — muted, underline on hover</a>
-      <a href="#" class="link link--arrow">Arrow link — see more</a>
-    </div>
-    <div class="ks-dark" style="margin-top:16px;display:inline-block;width:100%">
-      <a href="#" class="link link--inverse">Inverse link on dark background</a>
-    </div>
-  </div>
-
-  <!-- 2.5 Inputs -->
-  <div class="ks-sub">
-    <p class="ks-sub__label">2.5 — Inputs</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;max-width:900px">
-
-      <div class="form-field">
-        <label class="form-field__label form-field__label--required" for="ks-name">Full name</label>
-        <input class="form-field__input" id="ks-name" type="text" placeholder="e.g. Jane Smith">
-      </div>
-
-      <div class="form-field">
-        <label class="form-field__label form-field__label--required" for="ks-email">Email address</label>
-        <input class="form-field__input" id="ks-email" type="email" placeholder="jane@example.com">
-        <span class="form-field__hint">We'll never share your email.</span>
-      </div>
-
-      <div class="form-field form-field--error">
-        <label class="form-field__label" for="ks-phone">Phone number</label>
-        <input class="form-field__input" id="ks-phone" type="tel" value="not-a-number">
-        <span class="form-field__error">Please enter a valid phone number</span>
-      </div>
-
-      <div class="form-field">
-        <label class="form-field__label" for="ks-category">Category</label>
-        <select class="form-field__input form-field__input--select" id="ks-category">
-          <option value="">Select a category</option>
-          <option>Road</option>
-          <option>Aviation</option>
-          <option>Rail</option>
-        </select>
-      </div>
-
-      <div class="form-field" style="grid-column:1/-1;max-width:580px">
-        <label class="form-field__label" for="ks-message">Message</label>
-        <textarea class="form-field__input form-field__input--textarea" id="ks-message" placeholder="Tell us more…"></textarea>
-      </div>
-
-      <div style="grid-column:1/-1">
-        <label class="form-check">
-          <input class="form-check__input" type="checkbox">
-          <span class="form-check__label">I agree to the terms and conditions</span>
-        </label>
-      </div>
-
-      <div>
-        <button class="btn btn--primary" type="submit">Submit form</button>
-      </div>
-
-    </div>
-  </div>
 
 </section>
 
@@ -1167,6 +1075,27 @@
 
 </section>
 
+<section class="ks-section" style="padding-top:48px">
+
+  <!-- 3.7 Page nav -->
+  <div class="ks-sub">
+    <p class="ks-sub__label">3.7 — Page nav — sticky anchor links, horizontal scroll on mobile</p>
+    <p style="font-family:'Mulish',sans-serif;font-size:13px;color:#6c757d;margin:0 0 20px">Used on topic landing pages. Scrolls horizontally on mobile/tablet. Active state shown on the second link.</p>
+    <nav class="page-nav" aria-label="On this page" style="position:static;border-top:1px solid #dee2e6;border-bottom:1px solid #dee2e6">
+      <div class="page-nav__inner">
+        <span class="page-nav__label">On this page:</span>
+        <ul class="page-nav__links" role="list">
+          <li><a class="page-nav__link" href="#">Broadband &amp; performance</a></li>
+          <li><a class="page-nav__link page-nav__link--active" href="#" aria-current="true">Affordability</a></li>
+          <li><a class="page-nav__link" href="#">Access &amp; inclusion</a></li>
+          <li><a class="page-nav__link" href="#">Streaming &amp; SVOD</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+</section>
+
 
 <!-- ============================================================
   4. ORGANISMS
@@ -1418,9 +1347,123 @@
   </div>
 </section>
 
-<div class="ks-section" style="padding-block:32px">
-  <p class="ks-sub__label" style="margin:0 0 8px">4.6 — Header, Footer &amp; Hero</p>
-  <p style="font-family:'Mulish',sans-serif;font-size:14px;color:#6c757d;margin:0">These organisms require full page context. <a href="templates/home.html" style="color:#337b7e;font-weight:600">View on home.html →</a> &nbsp;|&nbsp; <a href="templates/topic-landing.html" style="color:#337b7e;font-weight:600">View on topic-landing.html →</a></p>
+<div class="ks-section" style="padding-block:40px">
+  <p class="ks-sub__label" style="margin:0 0 20px">4.6 — Header, Footer &amp; Hero variants</p>
+  <p style="font-family:'Mulish',sans-serif;font-size:13px;color:#6c757d;margin:0 0 24px">These organisms require full page context — open the templates to see them in situ.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;margin-bottom:32px">
+
+    <div style="border:1px solid #dee2e6;border-radius:8px;padding:20px;font-family:'Mulish',sans-serif">
+      <p style="font-family:'Courier New',monospace;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#6c757d;margin:0 0 6px">hero--home</p>
+      <p style="font-size:13px;font-weight:700;color:#081e3f;margin:0 0 8px">Homepage hero</p>
+      <p style="font-size:12px;color:#6c757d;line-height:1.5;margin:0 0 12px">Full-width centered layout. Heading, body, hero search box, and alert banner. Entrance animations on load. Device grid SVG left + right.</p>
+      <a href="templates/home.html" target="_blank" style="font-family:'Mulish',sans-serif;font-size:12px;font-weight:700;color:#337b7e;text-decoration:none">View home.html →</a>
+    </div>
+
+    <div style="border:1px solid #dee2e6;border-radius:8px;padding:20px;font-family:'Mulish',sans-serif">
+      <p style="font-family:'Courier New',monospace;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#6c757d;margin:0 0 6px">hero--topic</p>
+      <p style="font-size:13px;font-weight:700;color:#081e3f;margin:0 0 8px">Topic landing hero</p>
+      <p style="font-size:12px;color:#6c757d;line-height:1.5;margin:0 0 12px">Split layout: navy content panel left (breadcrumb, H1, body, search box) + brand-blue image panel right with parallax banner image and SVG device overlay.</p>
+      <a href="templates/topic-landing.html" target="_blank" style="font-family:'Mulish',sans-serif;font-size:12px;font-weight:700;color:#337b7e;text-decoration:none">View topic-landing.html →</a>
+    </div>
+
+    <div style="border:1px solid #dee2e6;border-radius:8px;padding:20px;font-family:'Mulish',sans-serif">
+      <p style="font-family:'Courier New',monospace;font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#6c757d;margin:0 0 6px">hero--topic (no image panel)</p>
+      <p style="font-size:13px;font-weight:700;color:#081e3f;margin:0 0 8px">Resource library hero</p>
+      <p style="font-size:12px;color:#6c757d;line-height:1.5;margin:0 0 12px">Same hero--topic but left panel spans full width — no right image panel. Device grid SVG floats right with parallax. Gradient background.</p>
+      <a href="templates/resource-library.html" target="_blank" style="font-family:'Mulish',sans-serif;font-size:12px;font-weight:700;color:#337b7e;text-decoration:none">View resource-library.html →</a>
+    </div>
+
+  </div>
+
+  <p class="ks-sub__label" style="margin:0 0 16px">4.7 — Resource library — filter toolbar, chips &amp; pagination</p>
+  <p style="font-family:'Mulish',sans-serif;font-size:13px;color:#6c757d;margin:0 0 24px">Used on <code style="font-size:11px;background:#f4f5f7;padding:2px 6px;border-radius:4px">resource-library.html</code> only. Toolbar collapses to stacked dropdowns on mobile, two-column grid on tablet, four-column single row on desktop.</p>
+
+  <div style="background:#f4f5f7;border-radius:12px;padding:32px;max-width:1000px">
+
+    <div class="page-resource-library__toolbar">
+      <div class="page-resource-library__toolbar-top">
+        <div class="page-resource-library__filters">
+          <div class="page-resource-library__field">
+            <p class="page-resource-library__field-label">Topic</p>
+            <div class="page-resource-library__select-wrap">
+              <select class="page-resource-library__select" aria-label="Filter by topic">
+                <option>All topics</option>
+                <option>Communications</option>
+              </select>
+            </div>
+          </div>
+          <div class="page-resource-library__field">
+            <p class="page-resource-library__field-label">Sub topic</p>
+            <div class="page-resource-library__select-wrap">
+              <select class="page-resource-library__select page-resource-library__select--subtopic" aria-label="Filter by sub topic" disabled>
+                <option>Select a topic first</option>
+              </select>
+            </div>
+          </div>
+          <div class="page-resource-library__field">
+            <p class="page-resource-library__field-label">Release date</p>
+            <div class="page-resource-library__select-wrap">
+              <select class="page-resource-library__select" aria-label="Filter by release date">
+                <option>Any time</option>
+                <option>Past 12 months</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="page-resource-library__sort">
+          <div class="page-resource-library__field">
+            <p class="page-resource-library__field-label">Sort by</p>
+            <div class="page-resource-library__select-wrap">
+              <select class="page-resource-library__select" aria-label="Sort results">
+                <option>Latest</option>
+                <option>Oldest</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-resource-library__meta">
+        <div class="page-resource-library__chips" role="group" aria-label="Applied filters">
+          <button class="page-resource-library__chip" type="button">
+            Aviation
+            <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M1 1l9 9M10 1l-9 9"/></svg>
+          </button>
+          <button class="page-resource-library__chip" type="button">
+            Past 2 years
+            <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M1 1l9 9M10 1l-9 9"/></svg>
+          </button>
+          <a href="#" class="page-resource-library__clear">Clear all</a>
+        </div>
+        <p class="page-resource-library__summary">Showing 1–8 of 68 resources</p>
+      </div>
+    </div>
+
+    <div style="margin-top:32px">
+      <nav class="page-resource-library__pagination" aria-label="Pagination">
+        <ul class="page-resource-library__pagination-list">
+          <li>
+            <a href="#" class="page-resource-library__page-link page-resource-library__page-link--nav" aria-label="Previous page" aria-disabled="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+            </a>
+          </li>
+          <li><span class="page-resource-library__page-current">1</span></li>
+          <li><a href="#" class="page-resource-library__page-link">2</a></li>
+          <li><a href="#" class="page-resource-library__page-link">3</a></li>
+          <li><span class="page-resource-library__page-gap">…</span></li>
+          <li><a href="#" class="page-resource-library__page-link">9</a></li>
+          <li>
+            <a href="#" class="page-resource-library__page-link page-resource-library__page-link--nav" aria-label="Next page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+  </div>
+
 </div>
 
 <button class="ks-back-to-top js-back-to-top" type="button" aria-label="Back to top" data-show-after=".ks-docs-hero">
