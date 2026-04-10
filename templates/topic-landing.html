@@ -47,11 +47,11 @@
           </svg>
         </a>
         <a class="site-header__utility-link site-header__utility-link--bold" href="#">About us</a>
-        <button class="site-header__utility-search" aria-label="Open site search">
+        <button class="site-header__utility-search" aria-label="Open site search" aria-expanded="false" aria-controls="header-search-panel">
           Search
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         </button>
-        <span class="site-header__site-name" aria-label="BITRE/BCARR">BITRE/BCARR</span>
+        <a class="site-header__site-name" href="/" aria-label="BITRE/BCARR home">BITRE/BCARR</a>
       </nav>
 
     </div>
@@ -59,25 +59,32 @@
     <!-- Search panel (toggled by Search button in utility nav) -->
     <div class="site-header__search-panel" id="header-search-panel" aria-hidden="true">
       <div class="site-header__search-panel-inner">
-        <form class="site-header__search-form" role="search" action="/search">
-          <div class="site-header__search-field">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-            <input
-              type="search"
-              id="header-search-input"
-              class="site-header__search-input"
-              placeholder="Search BITRE/BCARR resources…"
-              autocomplete="off"
-              aria-label="Search BITRE/BCARR"
-            >
-            <button type="submit" class="site-header__search-submit" aria-label="Submit search">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
-          </div>
-        </form>
-        <button class="site-header__search-close" aria-label="Close search">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
-        </button>
+        <label class="site-header__search-label" for="header-search-input">Search topics</label>
+        <div class="site-header__search-row">
+          <form class="site-header__search-form" role="search" action="/search">
+            <div class="site-header__search-field">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input
+                type="search"
+                id="header-search-input"
+                name="q"
+                class="site-header__search-input"
+                placeholder="e.g. road safety, freight…"
+                autocomplete="off"
+                autocorrect="off"
+                spellcheck="false"
+              >
+              <button type="submit" class="site-header__search-submit">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <span class="u-visually-hidden">Search</span>
+              </button>
+            </div>
+          </form>
+          <button class="site-header__search-close">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            <span class="u-visually-hidden">Close search</span>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -87,6 +94,14 @@
   <div class="site-header__nav-bar">
     <div class="site-header__nav-bar-inner">
 
+      <!-- Mobile logo (md breakpoint only) -->
+      <a class="site-header__mobile-logo" href="/" aria-label="DITRDCSA home">
+        <img src="../assets/images/logo.svg" alt="DITRDCSA">
+      </a>
+
+      <!-- Mobile site name (hidden on desktop) -->
+      <a class="site-header__mobile-site-name" href="/" aria-label="BITRE/BCARR home">BITRE/BCARR</a>
+
       <!-- Home icon (desktop) -->
       <a class="site-header__home-link" href="/" aria-label="Home">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -95,20 +110,12 @@
         </svg>
       </a>
 
-      <!-- Mobile logo (md breakpoint only) -->
-      <a class="site-header__mobile-logo" href="/" aria-label="DITRDCSA home">
-        <img src="../assets/images/logo.svg" alt="DITRDCSA">
-      </a>
-
-      <!-- Mobile site name (hidden on desktop) -->
-      <span class="site-header__mobile-site-name" aria-hidden="true">BITRE/BCARR</span>
-
       <!-- Primary navigation (desktop) -->
       <nav class="site-header__nav" aria-label="Primary navigation">
         <ul class="nav-list" role="list">
           <li class="nav-item nav-item--indent"><a class="nav-item__link" href="#">Arts</a></li>
           <li class="nav-item"><a class="nav-item__link" href="#">Aviation</a></li>
-          <li class="nav-item"><a class="nav-item__link" href="#">Communications</a></li>
+          <li class="nav-item nav-item--active"><a class="nav-item__link" href="#">Communications</a></li>
           <li class="nav-item"><a class="nav-item__link" href="#">Freight</a></li>
           <li class="nav-item"><a class="nav-item__link" href="#">Infrastructure</a></li>
           <li class="nav-item"><a class="nav-item__link" href="#">Maritime</a></li>
@@ -134,11 +141,13 @@
   <!-- Mobile menu panel -->
   <div class="site-header__mobile-menu" id="mobile-menu" aria-hidden="true">
     <div class="site-header__mobile-menu-inner">
+
+      <!-- Primary nav links -->
       <nav aria-label="Mobile navigation">
         <ul class="nav-list nav-list--vertical" role="list">
           <li class="nav-item nav-item--indent"><a class="nav-item__link" href="#">Arts</a></li>
           <li class="nav-item"><a class="nav-item__link" href="#">Aviation</a></li>
-          <li class="nav-item"><a class="nav-item__link" href="#">Communications</a></li>
+          <li class="nav-item nav-item--active"><a class="nav-item__link" href="#">Communications</a></li>
           <li class="nav-item"><a class="nav-item__link" href="#">Freight</a></li>
           <li class="nav-item"><a class="nav-item__link" href="#">Infrastructure</a></li>
           <li class="nav-item"><a class="nav-item__link" href="#">Maritime</a></li>
@@ -148,6 +157,49 @@
           <li class="nav-item"><a class="nav-item__link" href="#">Road Safety</a></li>
         </ul>
       </nav>
+
+      <!-- Utility links -->
+      <div class="site-header__mobile-utility">
+        <a class="site-header__mobile-utility-link site-header__mobile-utility-link--bold" href="#">About us</a>
+        <a class="site-header__mobile-utility-link" href="#" target="_blank" rel="noopener noreferrer">
+          Ministers
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          </svg>
+        </a>
+        <a class="site-header__mobile-utility-link" href="#" target="_blank" rel="noopener noreferrer">
+          Department
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Search -->
+      <div class="site-header__mobile-search">
+        <form class="site-header__mobile-search-form search-box search-box--hero" role="search" action="/search">
+          <input
+            class="search-box__input"
+            type="search"
+            id="mobile-nav-search"
+            name="q"
+            placeholder="What are you looking for?"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+          >
+          <div class="search-box__footer">
+            <label class="search-box__label" for="mobile-nav-search">Search all resources</label>
+            <button class="search-box__submit" type="submit" aria-label="Search">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.35-4.35"/>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+
     </div>
   </div>
 
@@ -167,20 +219,20 @@
       <div class="hero__left-inner">
 
         <!-- Breadcrumb -->
-        <nav class="hero__breadcrumb" aria-label="Breadcrumb">
+        <nav class="hero__breadcrumb" aria-label="Breadcrumb" data-animate>
           <a href="/">Home</a>
           <span class="hero__breadcrumb-sep" aria-hidden="true">›</span>
           <span class="hero__breadcrumb-current" aria-current="page">Communications</span>
         </nav>
 
         <!-- Heading -->
-        <h1 class="hero__heading" id="topic-hero-heading">Communications</h1>
+        <h1 class="hero__heading" id="topic-hero-heading" data-animate style="--animate-delay: 80ms">Communications</h1>
 
         <!-- Body -->
-        <p class="hero__body">The communications sector is a critical enabler of economic and social activity. Communications technology touches and transforms everyone's lives, providing economic and data analysis on communications issues to support evidence-based policy development and advice.</p>
+        <p class="hero__body" data-animate style="--animate-delay: 160ms">The communications sector is a critical enabler of economic and social activity. Communications technology touches and transforms everyone's lives, providing economic and data analysis on communications issues to support evidence-based policy development and advice.</p>
 
         <!-- Search -->
-        <form class="search-box search-box--hero" role="search" action="#">
+        <form class="search-box search-box--hero" role="search" action="#" data-animate style="--animate-delay: 260ms">
           <input
             class="search-box__input"
             type="search"
@@ -221,8 +273,8 @@
       <ul class="page-nav__links" role="list">
         <li><a class="page-nav__link" href="#broadband">Broadband &amp; performance</a></li>
         <li><a class="page-nav__link" href="#affordability">Affordability</a></li>
-        <li><a class="page-nav__link" href="#access">Access &amp; inclusion</a></li>
-        <li><a class="page-nav__link" href="#streaming">Streaming &amp; SVOD</a></li>
+        <li><a class="page-nav__link" href="#access-inclusion">Access &amp; inclusion</a></li>
+        <li><a class="page-nav__link" href="#streaming-svod">Streaming &amp; SVOD</a></li>
       </ul>
     </div>
   </nav>
@@ -233,13 +285,12 @@
   <section class="featured-resources" aria-label="Featured resources">
     <div class="featured-resources__inner">
 
-      <article class="card card--resource-featured">
+      <article class="card card--resource-featured" data-animate>
         <div class="card__image">
           <img src="../assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Australian Aircraft Activity report cover">
         </div>
         <div class="card__body">
           <div class="card__badges">
-            <span class="badge badge--mint">Featured</span>
             <span class="badge badge--blue">Statistical Report</span>
           </div>
           <h3 class="card__title">
@@ -260,7 +311,7 @@
     <div class="sub-topics__inner">
 
       <div class="sub-topics__header">
-        <h2 class="sub-topics__heading" id="broadband-heading">Broadband &amp; performance</h2>
+        <h2 class="sub-topics__heading" id="broadband-heading" data-animate>Broadband &amp; performance</h2>
       </div>
 
       <p class="sub-topics__body">The communications sector is a critical enabler of economic and social activity. Communications technology touches and transforms everyone's lives, providing economic and data analysis on communications issues to support evidence-based policy development and advice.</p>
@@ -272,15 +323,16 @@
         </svg>
       </a>
 
-      <div class="sub-topics__grid">
+      <div class="sub-topics__grid" data-animate-stagger>
 
-        <article class="card card--topic-resource">
+        <!-- Card 1: Real cover image (override example) -->
+        <article class="card card--topic-resource" data-animate>
           <div class="card__image">
-            <img src="../assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Broadband Performance report cover">
+            <img src="../assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Australia's Broadband Performance statistical snapshot cover">
           </div>
           <div class="card__body">
             <div class="card__meta">
-              <span class="badge badge--mint">Report</span>
+              <span class="badge badge--blue">Statistical Report</span>
             </div>
             <h3 class="card__title"><a href="#">Australia's Broadband Performance statistical snapshot</a></h3>
             <p class="card__excerpt">A statistical snapshot released alongside the Broadband Performance Dashboard.</p>
@@ -288,73 +340,405 @@
           </div>
         </article>
 
-        <article class="card card--topic-resource">
+        <!-- Card 2: Annual Report — default cover -->
+        <article class="card card--topic-resource" data-animate>
           <div class="card__image">
-            <img src="../assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Broadband Performance report cover">
+            <img src="../assets/images/default_covers/Annual%20Report.png" alt="">
           </div>
           <div class="card__body">
             <div class="card__meta">
-              <span class="badge badge--mint">Report</span>
+              <span class="badge badge--navy">Annual Report</span>
             </div>
-            <h3 class="card__title"><a href="#">Australia's Broadband Performance statistical snapshot</a></h3>
-            <p class="card__excerpt">A statistical snapshot released alongside the Broadband Performance Dashboard.</p>
-            <p class="card__date">Published 18 November 2024</p>
+            <h3 class="card__title"><a href="#">Communications Sector Annual Report 2023–24</a></h3>
+            <p class="card__excerpt">A comprehensive overview of the communications sector's economic and social performance for the financial year.</p>
+            <p class="card__date">Published 12 September 2024</p>
           </div>
         </article>
 
-        <article class="card card--topic-resource">
+        <!-- Card 3: Research Report — default cover -->
+        <article class="card card--topic-resource" data-animate>
           <div class="card__image">
-            <img src="../assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Broadband Performance report cover">
+            <img src="../assets/images/default_covers/Research%20Report.png" alt="">
           </div>
           <div class="card__body">
             <div class="card__meta">
-              <span class="badge badge--mint">Report</span>
+              <span class="badge badge--blue">Research Report</span>
             </div>
-            <h3 class="card__title"><a href="#">Australia's Broadband Performance statistical snapshot</a></h3>
-            <p class="card__excerpt">A statistical snapshot released alongside the Broadband Performance Dashboard.</p>
-            <p class="card__date">Published 18 November 2024</p>
+            <h3 class="card__title"><a href="#">Fixed broadband service quality in Australia</a></h3>
+            <p class="card__excerpt">Research into the quality of fixed broadband services delivered to Australian households and businesses.</p>
+            <p class="card__date">Published 3 July 2024</p>
           </div>
         </article>
 
-        <article class="card card--topic-resource">
+        <!-- Card 4: Monthly Report — default cover -->
+        <article class="card card--topic-resource" data-animate>
           <div class="card__image">
-            <img src="../assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Broadband Performance report cover">
+            <img src="../assets/images/default_covers/Monthly%20Report.png" alt="">
           </div>
           <div class="card__body">
             <div class="card__meta">
-              <span class="badge badge--mint">Report</span>
+              <span class="badge badge--blue">Monthly Report</span>
             </div>
-            <h3 class="card__title"><a href="#">Australia's Broadband Performance statistical snapshot</a></h3>
-            <p class="card__excerpt">A statistical snapshot released alongside the Broadband Performance Dashboard.</p>
-            <p class="card__date">Published 18 November 2024</p>
+            <h3 class="card__title"><a href="#">Broadband Performance Dashboard — October 2024</a></h3>
+            <p class="card__excerpt">Monthly tracking of broadband speeds and performance metrics across fixed-line and mobile networks.</p>
+            <p class="card__date">Published 1 November 2024</p>
           </div>
         </article>
 
-        <article class="card card--topic-resource">
+        <!-- Card 5: Dashboard — default cover -->
+        <article class="card card--topic-resource" data-animate>
           <div class="card__image">
-            <img src="../assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Broadband Performance report cover">
+            <img src="../assets/images/default_covers/Dashboard.png" alt="">
           </div>
           <div class="card__body">
             <div class="card__meta">
-              <span class="badge badge--mint">Report</span>
+              <span class="badge badge--lime">Dashboard</span>
             </div>
-            <h3 class="card__title"><a href="#">Australia's Broadband Performance statistical snapshot</a></h3>
-            <p class="card__excerpt">A statistical snapshot released alongside the Broadband Performance Dashboard.</p>
-            <p class="card__date">Published 18 November 2024</p>
+            <h3 class="card__title"><a href="#">Broadband Performance Dashboard</a></h3>
+            <p class="card__excerpt">Interactive dashboard providing real-time and historical broadband speed and performance data across Australia.</p>
+            <p class="card__date">Updated monthly</p>
           </div>
         </article>
 
-        <article class="card card--topic-resource">
+        <!-- Card 6: Statistics — default cover -->
+        <article class="card card--topic-resource" data-animate>
           <div class="card__image">
-            <img src="../assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Broadband Performance report cover">
+            <img src="../assets/images/default_covers/Statistics.png" alt="">
           </div>
           <div class="card__body">
             <div class="card__meta">
-              <span class="badge badge--mint">Report</span>
+              <span class="badge badge--teal">Statistics</span>
             </div>
-            <h3 class="card__title"><a href="#">Australia's Broadband Performance statistical snapshot</a></h3>
-            <p class="card__excerpt">A statistical snapshot released alongside the Broadband Performance Dashboard.</p>
-            <p class="card__date">Published 18 November 2024</p>
+            <h3 class="card__title"><a href="#">Internet Activity Statistics — June 2024</a></h3>
+            <p class="card__excerpt">Key statistics on internet activity in Australia, including data volumes, connections, and technology types.</p>
+            <p class="card__date">Published 29 August 2024</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+    SUB TOPICS — Affordability
+  ========================================================================== -->
+  <section class="sub-topics" id="affordability" aria-labelledby="affordability-heading">
+    <div class="sub-topics__inner">
+
+      <div class="sub-topics__header">
+        <h2 class="sub-topics__heading" id="affordability-heading" data-animate>Affordability</h2>
+      </div>
+
+      <p class="sub-topics__body">Analysing the cost of communications services and their accessibility to all Australians, with a focus on pricing trends, household expenditure, and policy impacts on affordability.</p>
+
+      <a class="sub-topics__more" href="#">
+        More
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <div class="sub-topics__grid" data-animate-stagger>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Research%20Report.png" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--blue">Research Report</span>
+            </div>
+            <h3 class="card__title"><a href="#">Affordability of telecommunications services in Australia</a></h3>
+            <p class="card__excerpt">An examination of the cost burden of telecommunications on Australian households across income brackets.</p>
+            <p class="card__date">Published 5 March 2024</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Statistics.png" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--teal">Statistics</span>
+            </div>
+            <h3 class="card__title"><a href="#">Household telecommunications expenditure 2023–24</a></h3>
+            <p class="card__excerpt">Statistical overview of Australian household spending on communications services including mobile, broadband, and bundled plans.</p>
+            <p class="card__date">Published 14 October 2024</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Dashboard.png" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--lime">Dashboard</span>
+            </div>
+            <h3 class="card__title"><a href="#">Telecommunications Pricing Dashboard</a></h3>
+            <p class="card__excerpt">Interactive tool tracking retail pricing trends across broadband, mobile, and voice services over time.</p>
+            <p class="card__date">Updated quarterly</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Monthly%20Report.png" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--blue">Monthly Report</span>
+            </div>
+            <h3 class="card__title"><a href="#">Mobile plan pricing trends — September 2024</a></h3>
+            <p class="card__excerpt">Monthly snapshot of retail mobile plan pricing across major Australian providers.</p>
+            <p class="card__date">Published 7 October 2024</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Annual%20Report.png" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--navy">Annual Report</span>
+            </div>
+            <h3 class="card__title"><a href="#">Communications Affordability Review 2022–23</a></h3>
+            <p class="card__excerpt">Annual assessment of affordability across fixed and mobile communications services for Australian consumers.</p>
+            <p class="card__date">Published 20 January 2024</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Data.png" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--navy">Data</span>
+            </div>
+            <h3 class="card__title"><a href="#">Telecommunications affordability dataset</a></h3>
+            <p class="card__excerpt">Underlying data supporting BCARR's affordability analysis, including price indices and household income comparisons.</p>
+            <p class="card__date">Updated annually</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+    SUB TOPICS — Access & inclusion
+  ========================================================================== -->
+  <section class="sub-topics" id="access-inclusion" aria-labelledby="access-heading">
+    <div class="sub-topics__inner">
+
+      <div class="sub-topics__header">
+        <h2 class="sub-topics__heading" id="access-heading" data-animate>Access &amp; inclusion</h2>
+      </div>
+
+      <p class="sub-topics__body">Tracking digital inclusion across Australia — examining gaps in access to communications services by geography, age, income, and other demographic factors.</p>
+
+      <a class="sub-topics__more" href="#">
+        More
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <div class="sub-topics__grid" data-animate-stagger>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Annual%20Report.png" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--navy">Annual Report</span>
+            </div>
+            <h3 class="card__title"><a href="#">Australian Digital Inclusion Index 2024</a></h3>
+            <p class="card__excerpt">Annual measurement of digital inclusion across access, affordability, and digital ability dimensions for Australians.</p>
+            <p class="card__date">Published 22 August 2024</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Research%20Report.png" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--blue">Research Report</span>
+            </div>
+            <h3 class="card__title"><a href="#">Regional and remote connectivity gaps in Australia</a></h3>
+            <p class="card__excerpt">Research into connectivity disparities between metropolitan, regional, and remote communities, and policy options to address them.</p>
+            <p class="card__date">Published 11 June 2024</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Statistics.png" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--teal">Statistics</span>
+            </div>
+            <h3 class="card__title"><a href="#">Internet use and household access statistics 2024</a></h3>
+            <p class="card__excerpt">Statistics on internet access rates and usage patterns across Australian households, by location and demographic group.</p>
+            <p class="card__date">Published 18 July 2024</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Dashboard.png" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--lime">Dashboard</span>
+            </div>
+            <h3 class="card__title"><a href="#">Digital Inclusion Dashboard</a></h3>
+            <p class="card__excerpt">Interactive tool exploring digital inclusion indicators across Australia's states, territories, and regional areas.</p>
+            <p class="card__date">Updated annually</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Monthly%20Report.png" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--blue">Monthly Report</span>
+            </div>
+            <h3 class="card__title"><a href="#">Mobile coverage and accessibility update — October 2024</a></h3>
+            <p class="card__excerpt">Monthly update on mobile network coverage expansion and accessibility improvements across Australia.</p>
+            <p class="card__date">Published 4 November 2024</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Data.png" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--navy">Data</span>
+            </div>
+            <h3 class="card__title"><a href="#">Digital inclusion indicators dataset</a></h3>
+            <p class="card__excerpt">Data underlying the Australian Digital Inclusion Index, available for download and analysis.</p>
+            <p class="card__date">Updated annually</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+    SUB TOPICS — Streaming & SVOD
+  ========================================================================== -->
+  <section class="sub-topics" id="streaming-svod" aria-labelledby="streaming-heading">
+    <div class="sub-topics__inner">
+
+      <div class="sub-topics__header">
+        <h2 class="sub-topics__heading" id="streaming-heading" data-animate>Streaming &amp; SVOD</h2>
+      </div>
+
+      <p class="sub-topics__body">Monitoring the growth of subscription video on demand and streaming services in Australia, including consumer uptake, market dynamics, and implications for content regulation and network demand.</p>
+
+      <a class="sub-topics__more" href="#">
+        More
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+      <div class="sub-topics__grid" data-animate-stagger>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Research%20Report.png" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--blue">Research Report</span>
+            </div>
+            <h3 class="card__title"><a href="#">Streaming and SVOD in Australia: market analysis 2024</a></h3>
+            <p class="card__excerpt">An analysis of the subscription video on demand market in Australia, including subscriber growth, pricing, and content trends.</p>
+            <p class="card__date">Published 9 September 2024</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Statistics.png" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--teal">Statistics</span>
+            </div>
+            <h3 class="card__title"><a href="#">SVOD subscriber and revenue statistics 2023–24</a></h3>
+            <p class="card__excerpt">Key statistics on SVOD subscriber numbers, revenue, and churn rates across major platforms operating in Australia.</p>
+            <p class="card__date">Published 31 October 2024</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Dashboard.png" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--lime">Dashboard</span>
+            </div>
+            <h3 class="card__title"><a href="#">Streaming consumption dashboard</a></h3>
+            <p class="card__excerpt">Interactive dashboard showing streaming traffic volumes, peak usage periods, and platform market share across Australia.</p>
+            <p class="card__date">Updated quarterly</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Annual%20Report.png" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--navy">Annual Report</span>
+            </div>
+            <h3 class="card__title"><a href="#">Streaming services in Australia — annual overview 2023</a></h3>
+            <p class="card__excerpt">Annual summary of streaming and SVOD market performance, consumer behaviour, and regulatory context.</p>
+            <p class="card__date">Published 15 February 2024</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Monthly%20Report.png" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--blue">Monthly Report</span>
+            </div>
+            <h3 class="card__title"><a href="#">Streaming traffic report — October 2024</a></h3>
+            <p class="card__excerpt">Monthly report on streaming data traffic volumes and network demand across fixed and mobile networks.</p>
+            <p class="card__date">Published 6 November 2024</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Data.png" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--navy">Data</span>
+            </div>
+            <h3 class="card__title"><a href="#">SVOD market data — historical series</a></h3>
+            <p class="card__excerpt">Historical dataset covering SVOD subscriber numbers, platform entry dates, and pricing across the Australian market.</p>
+            <p class="card__date">Updated annually</p>
           </div>
         </article>
 
@@ -363,6 +747,19 @@
   </section>
 
 </main>
+
+<!-- =========================================================================
+  SUBSCRIBE BANNER
+========================================================================== -->
+<section class="subscribe-banner" aria-label="Newsletter subscription">
+  <div class="subscribe-banner__inner">
+    <div class="subscribe-banner__card" data-animate>
+      <img src="../assets/images/device-grid.svg" alt="" class="subscribe-banner__bg" aria-hidden="true">
+      <p class="subscribe-banner__text">Subscribe for email notifications when new reports are published</p>
+      <a href="#" class="subscribe-banner__btn">Subscribe</a>
+    </div>
+  </div>
+</section>
 
 <!-- =========================================================================
   FOOTER
@@ -435,10 +832,79 @@
 
     if (!burger || !menu) return;
 
+    var navBar  = document.querySelector('.site-header__nav-bar');
+    var header  = document.querySelector('.site-header');
+    var siteName = document.querySelector('.site-header__mobile-site-name');
+    var desktopMq = window.matchMedia('(min-width: 1024px)');
+    var mobileNavMq = window.matchMedia('(max-width: 1023px)');
+
+    function setMenuOffset() {
+      if (navBar) {
+        menu.style.setProperty('--mobile-menu-offset', navBar.getBoundingClientRect().height + 'px');
+      }
+    }
+
+    function closeMenu() {
+      menu.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (siteName) {
+        siteName.style.transition = '';
+        siteName.style.transform = '';
+      }
+      if (header) header.classList.remove('is-menu-open');
+    }
+
+    function animateSiteNameLayoutChange(mutate) {
+      if (!siteName || !mobileNavMq.matches) {
+        mutate();
+        return;
+      }
+
+      var firstRect = siteName.getBoundingClientRect();
+      mutate();
+      var lastRect = siteName.getBoundingClientRect();
+      var deltaX = firstRect.left - lastRect.left;
+
+      if (!deltaX) return;
+
+      siteName.style.transition = 'none';
+      siteName.style.transform = 'translateX(' + deltaX + 'px)';
+      siteName.getBoundingClientRect(); // force layout so the starting transform is applied
+
+      requestAnimationFrame(function () {
+        siteName.style.transition = '';
+        siteName.style.transform = '';
+      });
+    }
+
     burger.addEventListener('click', function () {
-      var isOpen = menu.classList.toggle('is-open');
-      burger.setAttribute('aria-expanded', isOpen);
-      menu.setAttribute('aria-hidden', !isOpen);
+      animateSiteNameLayoutChange(function () {
+        if (header) header.classList.remove('is-menu-open'); // reset before measuring
+        var isOpen = menu.classList.toggle('is-open');
+        burger.setAttribute('aria-expanded', isOpen);
+        menu.setAttribute('aria-hidden', !isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+        if (isOpen) {
+          window.scrollTo({ top: 0, behavior: 'auto' });
+          if (header) header.classList.add('is-menu-open');
+          setMenuOffset();
+        } else {
+          closeMenu();
+        }
+      });
+    });
+
+    window.addEventListener('resize', function () {
+      if (desktopMq.matches) {
+        closeMenu();
+        return;
+      }
+
+      if (menu.classList.contains('is-open')) {
+        setMenuOffset();
+      }
     });
   })();
 
@@ -487,6 +953,41 @@
       ) {
         closePanel();
       }
+    });
+  })();
+
+  // Scroll-triggered fade-in animations
+  // Watches [data-animate] elements and adds .is-visible when they enter the viewport.
+  // [data-animate-stagger] containers auto-stagger their direct [data-animate] children.
+  (function () {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('[data-animate]').forEach(function (el) {
+        el.classList.add('is-visible');
+      });
+      return;
+    }
+
+    document.querySelectorAll('[data-animate-stagger]').forEach(function (container) {
+      var children = container.querySelectorAll(':scope > [data-animate]');
+      children.forEach(function (child, index) {
+        child.style.setProperty('--animate-delay', (index * 80) + 'ms');
+      });
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('[data-animate]').forEach(function (el) {
+      observer.observe(el);
     });
   })();
 </script>

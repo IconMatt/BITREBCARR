@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BITRE/BCARR — Design System Kitchen Sink</title>
+  <title>BITRE/BCARR — Design System</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
   <style>
     /* ==========================================================================
-       Kitchen-sink scaffold — NOT part of the design system
+       Design-system demo scaffold — NOT part of the design system
        ========================================================================== */
 
     :root {
@@ -28,65 +28,33 @@
       padding: 0;
     }
 
-    /* ---- Page header ---- */
-    .ks-page-header {
-      background: #081e3f;
-      padding: 24px 48px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 200;
-      border-bottom: 2px solid #337b7e;
-    }
-
-    .ks-page-header__eyebrow {
-      font-family: var(--ks-mono);
-      font-size: 10px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      margin: 0 0 4px;
-    }
-
-    .ks-page-header__title {
-      font-family: 'Mulish', sans-serif;
-      font-size: 20px;
-      font-weight: 800;
-      color: #ffffff;
-      margin: 0 0 2px;
-      letter-spacing: -0.01em;
-    }
-
-    .ks-page-header__sub {
-      font-family: var(--ks-mono);
-      font-size: 11px;
-      color: #a1feb5;
-      margin: 0 0 14px;
-      letter-spacing: 0.04em;
-    }
-
-    .ks-nav {
-      display: flex;
+    .ks-docs-hero .hero__inner {
       gap: 0;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      flex-wrap: wrap;
+      padding-top: 48px;
+      padding-bottom: 56px;
     }
 
-    .ks-nav a {
-      display: inline-block;
-      padding: 5px 14px 5px 0;
-      color: rgba(255,255,255,0.55);
-      text-decoration: none;
-      font-family: 'Mulish', sans-serif;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      transition: color 0.2s;
+    .ks-docs-hero .hero__content {
+      max-width: 820px;
     }
 
-    .ks-nav a:hover { color: #a1feb5; }
+    .ks-docs-hero .hero__heading {
+      max-width: none;
+      margin: 0 auto;
+    }
+
+    .ks-docs-hero .hero__body {
+      max-width: 54ch;
+      margin: 0 auto;
+    }
+
+    .ks-docs-hero .hero__actions {
+      padding-top: 20px;
+    }
+
+    .ks-docs-page-nav {
+      top: 0;
+    }
 
     /* ---- Section wrapper ---- */
     .ks-section {
@@ -94,6 +62,7 @@
       margin: 0 auto;
       padding: 56px 48px;
       border-bottom: 2px solid var(--ks-border);
+      scroll-margin-top: 96px;
     }
 
     .ks-section:last-child { border-bottom: none; }
@@ -119,6 +88,15 @@
       letter-spacing: -0.02em;
     }
 
+    .ks-section__intro {
+      max-width: 780px;
+      font-family: 'Mulish', sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      color: #6c757d;
+      margin: -20px 0 40px;
+    }
+
     /* ---- Subsections ---- */
     .ks-sub {
       margin-bottom: 56px;
@@ -128,11 +106,11 @@
 
     .ks-sub__label {
       font-family: var(--ks-mono);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: #ced4da;
+      color: #495057;
       margin: 0 0 20px;
       display: flex;
       align-items: center;
@@ -304,6 +282,183 @@
       grid-template-columns: repeat(3, 1fr);
     }
 
+    .ks-template-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 20px;
+    }
+
+    .ks-template-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: #fff;
+      border: 2px solid var(--ks-border);
+      border-radius: 8px;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+
+    .ks-template-card:hover,
+    .ks-template-card:focus-visible {
+      border-color: #4eb2b4;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
+    }
+
+    .ks-template-card:focus-visible {
+      outline: 3px solid #78d1f5;
+      outline-offset: 3px;
+    }
+
+    .ks-template-card__media {
+      overflow: hidden;
+      border-bottom: 2px solid var(--ks-border);
+      background: #f4f5f7;
+    }
+
+    .ks-template-card__media img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+
+    .ks-template-card__content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 20px 24px 24px;
+    }
+
+    .ks-template-card__path {
+      font-family: var(--ks-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #adb5bd;
+    }
+
+    .ks-template-card__name {
+      font-family: 'Mulish', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: #081e3f;
+      letter-spacing: -0.01em;
+    }
+
+    .ks-template-card__desc {
+      font-family: 'Mulish', sans-serif;
+      font-size: 13px;
+      color: #6c757d;
+      line-height: 1.5;
+    }
+
+    .ks-template-card__cta {
+      margin-top: 4px;
+      font-family: 'Mulish', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #4eb2b4;
+    }
+
+    .ks-overview {
+      background:
+        radial-gradient(circle at top right, rgba(120,209,245,0.14), transparent 28%),
+        linear-gradient(180deg, #ffffff 0%, #f7f9fb 100%);
+      border-bottom: 2px solid var(--ks-border);
+    }
+
+    .ks-overview__inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 36px 48px 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .ks-overview__eyebrow {
+      font-family: var(--ks-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #6c757d;
+      margin: 0 0 8px;
+    }
+
+    .ks-overview__title {
+      font-family: 'Mulish', sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #081e3f;
+      letter-spacing: -0.02em;
+      margin: 0 0 12px;
+      max-width: 18ch;
+    }
+
+    .ks-overview__body {
+      max-width: 72ch;
+      font-family: 'Mulish', sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+      color: #495057;
+      margin: 0;
+    }
+
+    .ks-overview__grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .ks-overview-card {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 24px;
+      background: #ffffff;
+      border: 1px solid rgba(8,30,63,0.08);
+      border-radius: 14px;
+      box-shadow: 0 10px 24px rgba(8,30,63,0.05);
+    }
+
+    .ks-overview-card__label {
+      font-family: var(--ks-mono);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #4eb2b4;
+      margin: 0;
+    }
+
+    .ks-overview-card__title {
+      font-family: 'Mulish', sans-serif;
+      font-size: 19px;
+      font-weight: 800;
+      line-height: 1.3;
+      color: #081e3f;
+      letter-spacing: -0.01em;
+      margin: 0;
+    }
+
+    .ks-overview-card__body {
+      font-family: 'Mulish', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #6c757d;
+      margin: 0;
+    }
+
     .ks-card-grid--report {
       display: flex;
       gap: 24px;
@@ -337,11 +492,82 @@
       margin: 40px 0;
     }
 
+    .ks-back-to-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      z-index: 40;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 64px;
+      height: 64px;
+      padding: 0;
+      border: 0;
+      border-radius: 16px;
+      background: #081e3f;
+      color: #ffffff;
+      box-shadow: 0 14px 32px rgba(8,30,63,0.2);
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(12px);
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .ks-back-to-top.is-visible {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .ks-back-to-top:hover,
+    .ks-back-to-top:focus-visible {
+      background: #0f2a53;
+      box-shadow: 0 18px 36px rgba(8,30,63,0.24);
+    }
+
+    .ks-back-to-top:focus-visible {
+      outline: 3px solid #78d1f5;
+      outline-offset: 4px;
+    }
+
+    .ks-back-to-top svg {
+      width: 28px;
+      height: 28px;
+    }
+
     /* Responsive at smaller screens */
     @media (max-width: 768px) {
+      .ks-docs-hero .hero__inner {
+        padding-top: 32px;
+        padding-bottom: 40px;
+      }
+
+      .ks-docs-hero .hero__heading {
+        max-width: none;
+      }
+
       .ks-section { padding: 40px 20px; }
-      .ks-page-header { padding: 20px; }
       .ks-card-grid--3 { grid-template-columns: 1fr; }
+      .ks-template-grid { grid-template-columns: 1fr; }
+      .ks-overview__inner { padding: 32px 20px 36px; }
+      .ks-overview__grid { grid-template-columns: 1fr; }
+      .ks-overview__title { max-width: none; font-size: 26px; }
+      .ks-back-to-top {
+        right: 16px;
+        bottom: 16px;
+        width: 56px;
+        height: 56px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ks-back-to-top {
+        transition: none;
+      }
     }
   </style>
 </head>
@@ -350,54 +576,84 @@
 <!-- ============================================================
   KS PAGE HEADER
 ============================================================ -->
-<header class="ks-page-header">
-  <p class="ks-page-header__eyebrow">BITRE/BCARR / Design System</p>
-  <h1 class="ks-page-header__title">Kitchen Sink</h1>
-  <p class="ks-page-header__sub">tokens → abstracts → atoms → molecules → organisms</p>
-  <nav aria-label="Kitchen sink navigation">
-    <ul class="ks-nav">
-      <li><a href="#templates">Templates</a></li>
-      <li><a href="#tokens">1 — Tokens</a></li>
-      <li><a href="#atoms">2 — Atoms</a></li>
-      <li><a href="#molecules">3 — Molecules</a></li>
-      <li><a href="#organisms">4 — Organisms</a></li>
-    </ul>
-  </nav>
-</header>
+<section class="hero ks-docs-hero" aria-labelledby="design-system-heading">
+  <div class="hero__bg" aria-hidden="true">
+    <img src="assets/images/device-grid.svg" alt="" class="hero__device-grid hero__device-grid--right">
+    <img src="assets/images/device-grid.svg" alt="" class="hero__device-grid hero__device-grid--left">
+  </div>
 
+  <div class="hero__inner">
+    <div class="hero__content">
+      <span class="hero__eyebrow">BITRE/BCARR</span>
+      <h1 class="hero__heading" id="design-system-heading">Design System</h1>
+      <p class="hero__body">A handoff reference for templates, foundations, components, and page patterns.</p>
+      <div class="hero__actions">
+        <a href="#templates" class="btn btn--primary">Start With Templates</a>
+        <a href="templates/home.html" class="btn btn--ghost-inverse" target="_blank" rel="noopener noreferrer">Open Home</a>
+        <a href="templates/topic-landing.html" class="btn btn--ghost-inverse" target="_blank" rel="noopener noreferrer">Open Topic</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<nav class="page-nav ks-docs-page-nav" aria-label="Design system sections">
+  <div class="page-nav__inner">
+    <span class="page-nav__label">On this page</span>
+    <div class="page-nav__links">
+      <a class="page-nav__link" href="#templates">Templates</a>
+      <a class="page-nav__link" href="#tokens">Foundations</a>
+      <a class="page-nav__link" href="#atoms">Elements</a>
+      <a class="page-nav__link" href="#molecules">Components</a>
+      <a class="page-nav__link" href="#organisms">Patterns</a>
+    </div>
+  </div>
+</nav>
 
 <!-- ============================================================
   TEMPLATES
 ============================================================ -->
 <section id="templates" class="ks-section">
-  <p class="ks-section__layer">Page templates</p>
+  <p class="ks-section__layer">Start Here</p>
   <h2 class="ks-section__title">Templates</h2>
+  <p class="ks-section__intro">These are the highest-value references for build handoff. A Drupal developer should be able to scan this section first, understand the intended page families, and then use the sections below to confirm the design decisions that sit underneath them.</p>
 
   <div class="ks-sub">
     <p class="ks-sub__label">Page templates</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:20px;">
+    <div class="ks-template-grid">
 
-      <a href="templates/home.html" target="_blank" style="display:flex;flex-direction:column;gap:0;background:#fff;border:2px solid #dee2e6;border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color 0.2s,box-shadow 0.2s;" onmouseover="this.style.borderColor='#4eb2b4';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'" onmouseout="this.style.borderColor='#dee2e6';this.style.boxShadow='none'">
-        <div style="overflow:hidden;border-bottom:2px solid #dee2e6;background:#f4f5f7;">
-          <img src="assets/images/screenshots/home.jpg" alt="Home page screenshot" style="width:100%;height:220px;object-fit:cover;object-position:top;display:block;">
+      <a href="templates/home.html" target="_blank" class="ks-template-card">
+        <div class="ks-template-card__media">
+          <img src="assets/images/screenshots/home.jpg" alt="Home page screenshot">
         </div>
-        <div style="display:flex;flex-direction:column;gap:8px;padding:20px 24px 24px;">
-          <div style="font-family:'Courier New',monospace;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#adb5bd;">templates/home.html</div>
-          <div style="font-family:'Mulish',sans-serif;font-size:18px;font-weight:800;color:#081e3f;letter-spacing:-0.01em;">Home</div>
-          <div style="font-family:'Mulish',sans-serif;font-size:13px;color:#6c757d;line-height:1.5;">Homepage with hero, featured cards, new releases, data hubs, and footer.</div>
-          <div style="margin-top:4px;font-family:'Mulish',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#4eb2b4;">Open ↗</div>
+        <div class="ks-template-card__content">
+          <div class="ks-template-card__path">templates/home.html</div>
+          <div class="ks-template-card__name">Home</div>
+          <div class="ks-template-card__desc">Homepage with hero, featured cards, new releases, data hubs, and footer.</div>
+          <div class="ks-template-card__cta">Open ↗</div>
         </div>
       </a>
 
-      <a href="templates/topic-landing.html" target="_blank" style="display:flex;flex-direction:column;gap:0;background:#fff;border:2px solid #dee2e6;border-radius:8px;overflow:hidden;text-decoration:none;color:inherit;transition:border-color 0.2s,box-shadow 0.2s;" onmouseover="this.style.borderColor='#4eb2b4';this.style.boxShadow='0 4px 16px rgba(0,0,0,0.08)'" onmouseout="this.style.borderColor='#dee2e6';this.style.boxShadow='none'">
-        <div style="overflow:hidden;border-bottom:2px solid #dee2e6;background:#f4f5f7;">
-          <img src="assets/images/screenshots/topic-landing.jpg" alt="Topic Landing page screenshot" style="width:100%;height:220px;object-fit:cover;object-position:top;display:block;">
+      <a href="templates/topic-landing.html" target="_blank" class="ks-template-card">
+        <div class="ks-template-card__media">
+          <img src="assets/images/screenshots/topic-landing.jpg" alt="Topic landing page screenshot">
         </div>
-        <div style="display:flex;flex-direction:column;gap:8px;padding:20px 24px 24px;">
-          <div style="font-family:'Courier New',monospace;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#adb5bd;">templates/topic-landing.html</div>
-          <div style="font-family:'Mulish',sans-serif;font-size:18px;font-weight:800;color:#081e3f;letter-spacing:-0.01em;">Topic Landing</div>
-          <div style="font-family:'Mulish',sans-serif;font-size:13px;color:#6c757d;line-height:1.5;">Topic page with split hero, page nav, featured resource, and sub-topics grid.</div>
-          <div style="margin-top:4px;font-family:'Mulish',sans-serif;font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#4eb2b4;">Open ↗</div>
+        <div class="ks-template-card__content">
+          <div class="ks-template-card__path">templates/topic-landing.html</div>
+          <div class="ks-template-card__name">Topic Landing</div>
+          <div class="ks-template-card__desc">Topic page with split hero, page nav, featured resource, and sub-topics grid.</div>
+          <div class="ks-template-card__cta">Open ↗</div>
+        </div>
+      </a>
+
+      <a href="templates/resource-library.html" target="_blank" class="ks-template-card">
+        <div class="ks-template-card__media">
+          <img src="assets/images/banner/3750.avif" alt="Resource library template preview">
+        </div>
+        <div class="ks-template-card__content">
+          <div class="ks-template-card__path">templates/resource-library.html</div>
+          <div class="ks-template-card__name">Resource Library</div>
+          <div class="ks-template-card__desc">Search-led library template with filters, resource cards, and pagination using the shared site header and footer.</div>
+          <div class="ks-template-card__cta">Open ↗</div>
         </div>
       </a>
 
@@ -410,8 +666,9 @@
   1. TOKENS
 ============================================================ -->
 <section id="tokens" class="ks-section">
-  <p class="ks-section__layer">Layer 1</p>
+  <p class="ks-section__layer">Foundations</p>
   <h2 class="ks-section__title">Tokens</h2>
+  <p class="ks-section__intro">These values should stay stable across templates and components. They define the visual language of the system and are the best place to sanity-check consistency before implementation starts.</p>
 
   <!-- 1.1 Colours -->
   <div class="ks-sub">
@@ -499,8 +756,9 @@
   2. ATOMS
 ============================================================ -->
 <section id="atoms" class="ks-section">
-  <p class="ks-section__layer">Layer 3</p>
+  <p class="ks-section__layer">Core Elements</p>
   <h2 class="ks-section__title">Atoms</h2>
+  <p class="ks-section__intro">This section covers the smallest reusable UI pieces: headings, text styles, buttons, links, badges, and form controls. These should feel production-ready, because larger components depend on them directly.</p>
 
   <!-- 2.1 Typography -->
   <div class="ks-sub">
@@ -641,8 +899,9 @@
   3. MOLECULES
 ============================================================ -->
 <section id="molecules" class="ks-section">
-  <p class="ks-section__layer">Layer 4</p>
+  <p class="ks-section__layer">Reusable Components</p>
   <h2 class="ks-section__title">Molecules</h2>
+  <p class="ks-section__intro">These are combinations of core elements that are likely to recur throughout the site. Showing them both as standalone components and in richer contexts makes the handoff more useful than a pure style tile.</p>
 
   <!-- 3.1 Card — Featured -->
   <div class="ks-sub">
@@ -657,34 +916,34 @@
 
       <article class="card card--featured">
         <div class="card__image">
-          <img src="assets/images/card/National Road Safety Tracker.png" alt="National Road Safety Tracker">
+          <img src="assets/images/card/national-road-safety-tracker.png" alt="National Road Safety Tracker dashboard screenshot">
           <span class="card__image-badge badge badge--mint">Featured</span>
         </div>
         <div class="card__body">
           <h3 class="card__title"><a href="#">National Road Safety Tracker</a></h3>
-          <p class="card__excerpt">Interactive dashboard tracking road safety performance across Australia.</p>
+          <p class="card__excerpt">Explore how Australia is tracking on national strategic targets for 2030.</p>
         </div>
       </article>
 
       <article class="card card--featured">
         <div class="card__image">
-          <img src="assets/images/card/Experimental Gross Regional Product estimates.png" alt="Gross Regional Product">
-          <span class="card__image-badge badge badge--lime">Dashboard</span>
+          <img src="assets/images/card/experimental-gross-regional-product-estimates.png" alt="Experimental Gross Regional Product estimates dashboard screenshot">
+          <span class="card__image-badge badge badge--mint">Featured</span>
         </div>
         <div class="card__body">
           <h3 class="card__title"><a href="#">Gross Regional Product estimates</a></h3>
-          <p class="card__excerpt">Experimental estimates of gross regional product for Australian regions.</p>
+          <p class="card__excerpt">Gross Regional Product (GRP) is an estimate of each region's unique contribution to the national economy.</p>
         </div>
       </article>
 
       <article class="card card--featured">
         <div class="card__image">
-          <img src="assets/images/card/Cultural and Creative activity.png" alt="Cultural and Creative Activity">
-          <span class="card__image-badge badge badge--navy">Data</span>
+          <img src="assets/images/card/cultural-and-creative-activity.png" alt="Cultural and Creative activity dashboard screenshot">
+          <span class="card__image-badge badge badge--mint">Featured</span>
         </div>
         <div class="card__body">
-          <h3 class="card__title"><a href="#">Cultural and Creative Activity</a></h3>
-          <p class="card__excerpt">GDP contribution data for cultural and creative industries by domain.</p>
+          <h3 class="card__title"><a href="#">Cultural and Creative activity</a></h3>
+          <p class="card__excerpt">Explore Australia's cultural economy: $67.4b in 2023–24, growing 6.6%.</p>
         </div>
       </article>
 
@@ -766,7 +1025,7 @@
           <p class="card__excerpt">Provides national road safety dashboards, crash data, performance tracking, and interactive tools that supplement BITRE/BCARR's Road Safety statistics.</p>
           <a href="#" class="card__link" target="_blank" rel="noopener noreferrer">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 2H14V6M14 2L8 8M6 4H3C2.44772 4 2 4.44772 2 5V13C2 13.5523 2.44772 14 3 14H11C11.5523 14 12 13.5523 12 13V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Visit datahub.roadsafety.gov.au</span>
+            <span>Visit data hub</span>
           </a>
         </div>
       </article>
@@ -780,7 +1039,7 @@
           <p class="card__excerpt">Aggregates and visualises Australia's freight data across road, rail, air, and maritime. Includes freight movement datasets, mapping tools, and dashboards.</p>
           <a href="#" class="card__link" target="_blank" rel="noopener noreferrer">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 2H14V6M14 2L8 8M6 4H3C2.44772 4 2 4.44772 2 5V13C2 13.5523 2.44772 14 3 14H11C11.5523 14 12 13.5523 12 13V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Visit freightdata.gov.au</span>
+            <span>Visit data hub</span>
           </a>
         </div>
       </article>
@@ -794,7 +1053,7 @@
           <p class="card__excerpt">Offers widely used datasets and tools focused on regional Australia — population, housing, economy, social outcomes, and more. Supports regional planning and analysis.</p>
           <a href="#" class="card__link" target="_blank" rel="noopener noreferrer">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 2H14V6M14 2L8 8M6 4H3C2.44772 4 2 4.44772 2 5V13C2 13.5523 2.44772 14 3 14H11C11.5523 14 12 13.5523 12 13V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Visit regionaldata.gov.au</span>
+            <span>Visit data hub</span>
           </a>
         </div>
       </article>
@@ -805,16 +1064,33 @@
   <!-- 3.4 Search box -->
   <div class="ks-sub">
     <p class="ks-sub__label">3.4 — Search box</p>
-    <div style="max-width:560px">
-      <form class="search-box" role="search" action="#" method="get">
-        <div class="search-box__field">
-          <label class="search-box__label" for="ks-search">What are you looking for?</label>
-          <input class="search-box__input" id="ks-search" type="search" placeholder="Search all resources" autocomplete="off">
+    <div class="ks-row ks-row--gap-lg">
+      <div class="ks-col" style="flex:1 1 320px;max-width:440px">
+        <p class="ks-swatch-group-label">Default</p>
+        <form class="search-box" role="search" action="#" method="get">
+          <label class="u-visually-hidden" for="ks-search-default">Search all resources</label>
+          <input class="search-box__input" id="ks-search-default" type="search" placeholder="Search all resources" autocomplete="off">
           <button class="search-box__submit" type="submit" aria-label="Search">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M13.5 13.5L17 17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </button>
-        </div>
-      </form>
+        </form>
+      </div>
+
+      <div class="ks-col" style="flex:1 1 420px;max-width:560px">
+        <p class="ks-swatch-group-label">Hero variant</p>
+        <form class="search-box search-box--hero" role="search" action="#" method="get">
+          <input class="search-box__input" id="ks-search-hero" type="search" placeholder="What are you looking for?" autocomplete="off">
+          <div class="search-box__footer">
+            <label class="search-box__label" for="ks-search-hero">Search all resources</label>
+            <button class="search-box__submit" type="submit" aria-label="Search">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.35-4.35"/>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 
@@ -828,13 +1104,12 @@
       </div>
       <div class="card__body">
         <div class="card__badges">
-          <span class="badge badge--mint">Featured</span>
           <span class="badge badge--blue">Statistical Report</span>
         </div>
         <h3 class="card__title">
           <a href="#">Australian Aircraft Activity (General aviation activity)</a>
         </h3>
-        <p class="card__excerpt">This annual survey covers all Australian registered aircraft used in the Commercial Air Transport and General Aviation sectors of the Australian aviation industry. It collects information on aircraft operations, fuel usage and employment.</p>
+        <p class="card__excerpt">This annual survey covers all Australian registered aircraft used in the Commercial Air Transport and General Aviation sectors of the Australian aviation industry.</p>
         <p class="card__date">Published 18 November 2024</p>
       </div>
     </article>
@@ -847,21 +1122,21 @@
 
       <article class="card card--topic-resource">
         <div class="card__image">
-          <img src="assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Broadband Performance report cover">
+          <img src="assets/images/default_covers/Dashboard.png" alt="">
         </div>
         <div class="card__body">
           <div class="card__meta">
-            <span class="badge badge--mint">Report</span>
+            <span class="badge badge--lime">Dashboard</span>
           </div>
-          <h3 class="card__title"><a href="#">Australia's Broadband Performance statistical snapshot</a></h3>
-          <p class="card__excerpt">A statistical snapshot released alongside the Broadband Performance Dashboard, covering fixed-line speeds, latency, and congestion across Australian providers.</p>
-          <p class="card__date">Published 18 November 2024</p>
+          <h3 class="card__title"><a href="#">Broadband Performance Dashboard</a></h3>
+          <p class="card__excerpt">Interactive dashboard tracking broadband speeds, latency, congestion, and provider performance across Australia.</p>
+          <p class="card__date">Updated monthly</p>
         </div>
       </article>
 
       <article class="card card--topic-resource">
         <div class="card__image">
-          <img src="assets/images/report/BITRE-RVSA-entry-recall-statistics-Dec-2023.jpg" alt="Road vehicle entry report cover">
+          <img src="assets/images/default_covers/Research%20Report.png" alt="">
         </div>
         <div class="card__body">
           <div class="card__meta">
@@ -875,7 +1150,7 @@
 
       <article class="card card--topic-resource">
         <div class="card__image">
-          <img src="assets/images/report/trainline-12.jpg" alt="Trainline report cover">
+          <img src="assets/images/default_covers/Data.png" alt="">
         </div>
         <div class="card__body">
           <div class="card__meta">
@@ -897,8 +1172,9 @@
   4. ORGANISMS
 ============================================================ -->
 <section id="organisms" class="ks-section">
-  <p class="ks-section__layer">Layer 5</p>
+  <p class="ks-section__layer">Page Patterns</p>
   <h2 class="ks-section__title">Organisms</h2>
+  <p class="ks-section__intro">Larger sections work best when previewed close to real page width and rhythm. That helps a developer understand not just the component itself, but also how it behaves in the flow of a page.</p>
 
   <div class="ks-sub">
     <p class="ks-sub__label">4.1 — New Releases</p>
@@ -935,7 +1211,7 @@
   </div>
 </section>
 
-<section class="ks-section" style="padding-block:24px 0;border-bottom:none">
+<section class="ks-section" style="padding-block:32px 0;border-bottom:none;background:#ffffff">
   <div class="ks-sub" style="margin-bottom:0">
     <p class="ks-sub__label">4.2 — Data Hubs</p>
   </div>
@@ -953,7 +1229,7 @@
           <p class="card__excerpt">Provides national road safety dashboards, crash data, performance tracking, and interactive tools that supplement BITRE/BCARR's Road Safety statistics.</p>
           <a href="#" class="card__link" target="_blank" rel="noopener noreferrer">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 2H14V6M14 2L8 8M6 4H3C2.44772 4 2 4.44772 2 5V13C2 13.5523 2.44772 14 3 14H11C11.5523 14 12 13.5523 12 13V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Visit datahub.roadsafety.gov.au</span>
+            <span>Visit data hub</span>
           </a>
         </div>
       </article>
@@ -964,7 +1240,7 @@
           <p class="card__excerpt">Aggregates and visualises Australia's freight data across road, rail, air, and maritime. Includes freight movement datasets, mapping tools, and dashboards.</p>
           <a href="#" class="card__link" target="_blank" rel="noopener noreferrer">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 2H14V6M14 2L8 8M6 4H3C2.44772 4 2 4.44772 2 5V13C2 13.5523 2.44772 14 3 14H11C11.5523 14 12 13.5523 12 13V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Visit freightdata.gov.au</span>
+            <span>Visit data hub</span>
           </a>
         </div>
       </article>
@@ -975,7 +1251,7 @@
           <p class="card__excerpt">Offers widely used datasets and tools focused on regional Australia — population, housing, economy, social outcomes, and more. Supports regional planning and analysis.</p>
           <a href="#" class="card__link" target="_blank" rel="noopener noreferrer">
             <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M10 2H14V6M14 2L8 8M6 4H3C2.44772 4 2 4.44772 2 5V13C2 13.5523 2.44772 14 3 14H11C11.5523 14 12 13.5523 12 13V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Visit regionaldata.gov.au</span>
+            <span>Visit data hub</span>
           </a>
         </div>
       </article>
@@ -1000,7 +1276,7 @@
   </div>
 </section>
 
-<section class="ks-section" style="padding-block:24px 0;border-bottom:none">
+<section class="ks-section" style="padding-block:40px 0 8px;border-bottom:none">
   <div class="ks-sub" style="margin-bottom:0">
     <p class="ks-sub__label">4.4 — Featured Resources</p>
   </div>
@@ -1016,13 +1292,12 @@
       </div>
       <div class="card__body">
         <div class="card__badges">
-          <span class="badge badge--mint">Featured</span>
           <span class="badge badge--blue">Statistical Report</span>
         </div>
         <h3 class="card__title">
           <a href="#">Australian Aircraft Activity (General aviation activity)</a>
         </h3>
-        <p class="card__excerpt">This annual survey covers all Australian registered aircraft used in the Commercial Air Transport and General Aviation sectors of the Australian aviation industry. It collects information on aircraft operations, fuel usage and employment.</p>
+        <p class="card__excerpt">This annual survey covers all Australian registered aircraft used in the Commercial Air Transport and General Aviation sectors of the Australian aviation industry.</p>
         <p class="card__date">Published 18 November 2024</p>
       </div>
     </article>
@@ -1057,21 +1332,21 @@
 
       <article class="card card--topic-resource">
         <div class="card__image">
-          <img src="assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Broadband Performance report cover">
+          <img src="assets/images/default_covers/Dashboard.png" alt="">
         </div>
         <div class="card__body">
           <div class="card__meta">
-            <span class="badge badge--mint">Report</span>
+            <span class="badge badge--lime">Dashboard</span>
           </div>
-          <h3 class="card__title"><a href="#">Australia's Broadband Performance statistical snapshot</a></h3>
-          <p class="card__excerpt">A statistical snapshot released alongside the Broadband Performance Dashboard, covering fixed-line speeds, latency, and congestion across Australian providers.</p>
-          <p class="card__date">Published 18 November 2024</p>
+          <h3 class="card__title"><a href="#">Broadband Performance Dashboard</a></h3>
+          <p class="card__excerpt">Interactive dashboard tracking broadband speeds, latency, congestion, and provider performance across Australia.</p>
+          <p class="card__date">Updated monthly</p>
         </div>
       </article>
 
       <article class="card card--topic-resource">
         <div class="card__image">
-          <img src="assets/images/report/BITRE-RVSA-entry-recall-statistics-Dec-2023.jpg" alt="Road vehicle entry report cover">
+          <img src="assets/images/default_covers/Research%20Report.png" alt="">
         </div>
         <div class="card__body">
           <div class="card__meta">
@@ -1085,7 +1360,7 @@
 
       <article class="card card--topic-resource">
         <div class="card__image">
-          <img src="assets/images/report/trainline-12.jpg" alt="Trainline report cover">
+          <img src="assets/images/default_covers/Data.png" alt="">
         </div>
         <div class="card__body">
           <div class="card__meta">
@@ -1099,11 +1374,11 @@
 
       <article class="card card--topic-resource">
         <div class="card__image">
-          <img src="assets/images/report/bitre-cover--assessment-of-road-improvements-in-remote-and-regional-areas--5september2025--lowres.jpg" alt="Assessment of road improvements report cover">
+          <img src="assets/images/default_covers/Statistics.png" alt="">
         </div>
         <div class="card__body">
           <div class="card__meta">
-            <span class="badge badge--mint">Report</span>
+            <span class="badge badge--teal">Statistics</span>
           </div>
           <h3 class="card__title"><a href="#">Mobile coverage and quality in regional Australia</a></h3>
           <p class="card__excerpt">Analyses mobile network performance, coverage gaps, and reliability for users outside major urban centres using crowd-sourced and operator data.</p>
@@ -1113,11 +1388,11 @@
 
       <article class="card card--topic-resource">
         <div class="card__image">
-          <img src="assets/images/report/asf-2023-24.jpg" alt="Sea Freight report cover">
+          <img src="assets/images/default_covers/Annual%20Report.png" alt="">
         </div>
         <div class="card__body">
           <div class="card__meta">
-            <span class="badge badge--blue">Research Report</span>
+            <span class="badge badge--navy">Annual Report</span>
           </div>
           <h3 class="card__title"><a href="#">Consumer experience with broadband services in Australia</a></h3>
           <p class="card__excerpt">Surveys consumer satisfaction, complaint rates, and switching behaviour across Australia's fixed broadband market to understand service quality trends.</p>
@@ -1127,7 +1402,7 @@
 
       <article class="card card--topic-resource">
         <div class="card__image">
-          <img src="assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Aviation report cover">
+          <img src="assets/images/default_covers/Data.png" alt="">
         </div>
         <div class="card__body">
           <div class="card__meta">
@@ -1144,9 +1419,16 @@
 </section>
 
 <div class="ks-section" style="padding-block:32px">
-  <p class="ks-sub__label" style="font-family:monospace;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#ced4da;margin:0 0 8px">4.6 — Header, Footer &amp; Hero</p>
+  <p class="ks-sub__label" style="margin:0 0 8px">4.6 — Header, Footer &amp; Hero</p>
   <p style="font-family:'Mulish',sans-serif;font-size:14px;color:#6c757d;margin:0">These organisms require full page context. <a href="templates/home.html" style="color:#337b7e;font-weight:600">View on home.html →</a> &nbsp;|&nbsp; <a href="templates/topic-landing.html" style="color:#337b7e;font-weight:600">View on topic-landing.html →</a></p>
 </div>
+
+<button class="ks-back-to-top js-back-to-top" type="button" aria-label="Back to top" data-show-after=".ks-docs-hero">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M12 19V6" />
+    <path d="M6 12l6-6 6 6" />
+  </svg>
+</button>
 <script src="js/main.js"></script>
 
 </body>

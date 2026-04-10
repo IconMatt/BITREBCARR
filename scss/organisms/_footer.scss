@@ -82,7 +82,7 @@
     @include transition(color);
 
     font-size: $font-size-base;
-    color: rgba($color-neutral-0, 0.7);
+    color: $color-neutral-0;
     text-decoration: none;
 
     &:hover {
@@ -174,7 +174,7 @@
 
     svg {
       flex-shrink: 0;
-      opacity: 0.7;
+      opacity: 1;
     }
 
     &:hover {

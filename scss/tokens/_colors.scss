@@ -2,9 +2,6 @@
 // TOKENS / COLORS
 // Source: Figma Variables export (tokens.json)
 // =============================================================================
-// NOTE: secondaryMint exported as #ffffff — may be an error in the Figma source.
-//       brandMint (#a1feb5) is likely the intended value. Preserved as exported.
-// =============================================================================
 
 // --- Brand ---
 $color-brand-navy:               #081e3f;
@@ -14,7 +11,7 @@ $color-brand-mint:               #a1feb5;
 $color-brand-secondary-lime:     #c0dd92;
 $color-brand-secondary-deep-teal:#337b7e;
 $color-brand-secondary-green:    #6ec096;
-$color-brand-secondary-mint:     #ffffff; // ⚠ exported as #ffffff — verify in Figma
+$color-brand-secondary-mint:     #a1feb5;
 
 // --- Neutrals ---
 $color-neutral-0:   #ffffff;

@@ -61,11 +61,11 @@
           </svg>
         </a>
         <a class="site-header__utility-link site-header__utility-link--bold" href="#">About us</a>
-        <button class="site-header__utility-search" aria-label="Open site search">
+        <button class="site-header__utility-search" aria-label="Open site search" aria-expanded="false" aria-controls="header-search-panel">
           Search
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
         </button>
-        <span class="site-header__site-name" aria-label="BITRE/BCARR">BITRE/BCARR</span>
+        <a class="site-header__site-name" href="/" aria-label="BITRE/BCARR home">BITRE/BCARR</a>
       </nav>
 
     </div>
@@ -73,25 +73,32 @@
     <!-- Search panel (toggled by Search button in utility nav) -->
     <div class="site-header__search-panel" id="header-search-panel" aria-hidden="true">
       <div class="site-header__search-panel-inner">
-        <form class="site-header__search-form" role="search" action="/search">
-          <div class="site-header__search-field">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-            <input
-              type="search"
-              id="header-search-input"
-              class="site-header__search-input"
-              placeholder="Search BITCARR resources…"
-              autocomplete="off"
-              aria-label="Search BITCARR"
-            >
-            <button type="submit" class="site-header__search-submit" aria-label="Submit search">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </button>
-          </div>
-        </form>
-        <button class="site-header__search-close" aria-label="Close search">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
-        </button>
+        <label class="site-header__search-label" for="header-search-input">Search topics</label>
+        <div class="site-header__search-row">
+          <form class="site-header__search-form" role="search" action="/search">
+            <div class="site-header__search-field">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input
+                type="search"
+                id="header-search-input"
+                name="q"
+                class="site-header__search-input"
+                placeholder="e.g. road safety, freight…"
+                autocomplete="off"
+                autocorrect="off"
+                spellcheck="false"
+              >
+              <button type="submit" class="site-header__search-submit">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <span class="u-visually-hidden">Search</span>
+              </button>
+            </div>
+          </form>
+          <button class="site-header__search-close">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            <span class="u-visually-hidden">Close search</span>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -101,6 +108,14 @@
   <div class="site-header__nav-bar">
     <div class="site-header__nav-bar-inner">
 
+      <!-- Mobile logo (md breakpoint only) -->
+      <a class="site-header__mobile-logo" href="/" aria-label="DITRDCSA home">
+        <img src="../assets/images/logo.svg" alt="DITRDCSA">
+      </a>
+
+      <!-- Mobile site name (hidden on desktop) -->
+      <a class="site-header__mobile-site-name" href="/" aria-label="BITRE/BCARR home">BITRE/BCARR</a>
+
       <!-- Home icon (desktop) -->
       <a class="site-header__home-link" href="/" aria-label="Home">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -108,14 +123,6 @@
           <polyline points="9 22 9 12 15 12 15 22"/>
         </svg>
       </a>
-
-      <!-- Mobile logo (md breakpoint only) -->
-      <a class="site-header__mobile-logo" href="/" aria-label="DITRDCSA home">
-        <img src="../assets/images/logo.svg" alt="DITRDCSA">
-      </a>
-
-      <!-- Mobile site name (hidden on desktop) -->
-      <span class="site-header__mobile-site-name" aria-hidden="true">BITRE/BCARR</span>
 
       <!-- Primary navigation (desktop) -->
       <nav class="site-header__nav" aria-label="Primary navigation">
@@ -151,15 +158,15 @@
   <!-- Mobile menu panel -->
   <div class="site-header__mobile-menu" id="mobile-menu" aria-hidden="true">
     <div class="site-header__mobile-menu-inner">
+
+      <!-- Primary nav links -->
       <nav aria-label="Mobile navigation">
         <ul class="nav-list nav-list--vertical" role="list">
           <li class="nav-item nav-item--indent"><a class="nav-item__link" href="#">Arts</a></li>
           <li class="nav-item"><a class="nav-item__link" href="#">Aviation</a></li>
           <li class="nav-item"><a class="nav-item__link" href="#">Communications</a></li>
           <li class="nav-item"><a class="nav-item__link" href="#">Freight</a></li>
-          <li class="nav-item">
-            <a class="nav-item__link" href="#">Infrastructure</a>
-          </li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Infrastructure</a></li>
           <li class="nav-item"><a class="nav-item__link" href="#">Maritime</a></li>
           <li class="nav-item"><a class="nav-item__link" href="#">Rail</a></li>
           <li class="nav-item"><a class="nav-item__link" href="#">Regions &amp; Cities</a></li>
@@ -167,6 +174,49 @@
           <li class="nav-item"><a class="nav-item__link" href="#">Road Safety</a></li>
         </ul>
       </nav>
+
+      <!-- Utility links -->
+      <div class="site-header__mobile-utility">
+        <a class="site-header__mobile-utility-link site-header__mobile-utility-link--bold" href="#">About us</a>
+        <a class="site-header__mobile-utility-link" href="#" target="_blank" rel="noopener noreferrer">
+          Ministers
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          </svg>
+        </a>
+        <a class="site-header__mobile-utility-link" href="#" target="_blank" rel="noopener noreferrer">
+          Department
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Search -->
+      <div class="site-header__mobile-search">
+        <form class="site-header__mobile-search-form search-box search-box--hero" role="search" action="/search">
+          <input
+            class="search-box__input"
+            type="search"
+            id="mobile-nav-search"
+            name="q"
+            placeholder="What are you looking for?"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+          >
+          <div class="search-box__footer">
+            <label class="search-box__label" for="mobile-nav-search">Search all resources</label>
+            <button class="search-box__submit" type="submit" aria-label="Search">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.35-4.35"/>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+
     </div>
   </div>
 
@@ -189,7 +239,7 @@
       <h1 class="hero__heading">
         Bureau of Infrastructure and Transport Research Economics &amp; Bureau of Communications, Arts and Regional Research
       </h1>
-      <p class="hero__body">BITRE/BCARR supports evidence-based policy design, program delivery, and regulation across the department, portfolio and external portfolio stakeholders.</p>
+      <p class="hero__body">The Bureaux support evidence-based policy design, program delivery, and regulation across the department and external portfolio stakeholders.</p>
     </div>
 
     <!-- Search box — hero variant -->
@@ -232,9 +282,9 @@
   ========================================================================== -->
   <div class="card-grid card-grid--promo" aria-label="Promo cards">
     <div class="card-grid__inner">
-      <div class="card-grid__grid">
+      <div class="card-grid__grid" data-animate-stagger>
 
-        <article class="card card--featured">
+        <article class="card card--featured" data-animate>
           <div class="card__image">
             <img src="../assets/images/card/national-road-safety-tracker.png" alt="National Road Safety Tracker dashboard screenshot">
             <span class="badge badge--mint card__image-badge">Featured</span>
@@ -249,7 +299,7 @@
           </div>
         </article>
 
-        <article class="card card--featured">
+        <article class="card card--featured" data-animate>
           <div class="card__image">
             <img src="../assets/images/card/experimental-gross-regional-product-estimates.png" alt="Experimental Gross Regional Product estimates dashboard screenshot">
             <span class="badge badge--mint card__image-badge">Featured</span>
@@ -264,7 +314,7 @@
           </div>
         </article>
 
-        <article class="card card--featured">
+        <article class="card card--featured" data-animate>
           <div class="card__image">
             <img src="../assets/images/card/cultural-and-creative-activity.png" alt="Cultural and Creative activity dashboard screenshot">
             <span class="badge badge--mint card__image-badge">Featured</span>
@@ -290,10 +340,10 @@
 ========================================================================== -->
 <section class="new-releases" aria-labelledby="new-releases-heading">
   <div class="new-releases__inner">
-    <h2 class="new-releases__heading" id="new-releases-heading">New Releases</h2>
-    <div class="new-releases__grid">
+    <h2 class="new-releases__heading" id="new-releases-heading" data-animate>New Releases</h2>
+    <div class="new-releases__grid" data-animate-stagger>
 
-      <article class="card card--report">
+      <article class="card card--report" data-animate>
         <div class="card__image">
           <img src="../assets/images/report/BITRE-RVSA-entry-recall-statistics-Dec-2023.jpg" alt="Road vehicle entry and recall statistics report cover">
         </div>
@@ -303,7 +353,7 @@
         </div>
       </article>
 
-      <article class="card card--report">
+      <article class="card card--report" data-animate>
         <div class="card__image">
           <img src="../assets/images/report/bitre-cover--assessment-of-road-improvements-in-remote-and-regional-areas--5september2025--lowres.jpg" alt="Assessment of road improvements in remote and regional areas report cover">
         </div>
@@ -313,7 +363,7 @@
         </div>
       </article>
 
-      <article class="card card--report">
+      <article class="card card--report" data-animate>
         <div class="card__image">
           <img src="../assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Economic measures of general aviation in Australia report cover">
         </div>
@@ -323,7 +373,7 @@
         </div>
       </article>
 
-      <article class="card card--report">
+      <article class="card card--report" data-animate>
         <div class="card__image">
           <img src="../assets/images/report/trainline-12.jpg" alt="Trainline 12 report cover">
         </div>
@@ -333,7 +383,7 @@
         </div>
       </article>
 
-      <article class="card card--report">
+      <article class="card card--report" data-animate>
         <div class="card__image">
           <img src="../assets/images/report/asf-2023-24.jpg" alt="Australian Sea Freight 2023–24 report cover">
         </div>
@@ -352,10 +402,10 @@
 ========================================================================== -->
 <section class="data-hubs" aria-labelledby="data-hubs-heading">
   <div class="data-hubs__inner">
-    <h2 class="data-hubs__heading" id="data-hubs-heading">Data hubs</h2>
-    <div class="data-hubs__grid">
+    <h2 class="data-hubs__heading" id="data-hubs-heading" data-animate>Data hubs</h2>
+    <div class="data-hubs__grid" data-animate-stagger>
 
-      <article class="card card--hub">
+      <article class="card card--hub" data-animate>
         <div class="card__icon">
           <img src="../assets/images/icons/icon-cars.svg" alt="" aria-hidden="true">
         </div>
@@ -368,17 +418,17 @@
               <polyline points="15 3 21 3 21 9"/>
               <line x1="10" y1="14" x2="21" y2="3"/>
             </svg>
-            <span>Visit datahub.roadsafety.gov.au</span>
+            <span>Visit data hub</span>
           </a>
         </div>
       </article>
 
-      <article class="card card--hub">
+      <article class="card card--hub" data-animate>
         <div class="card__icon">
           <img src="../assets/images/icons/icon-plane-car.svg" alt="" aria-hidden="true">
         </div>
         <div class="card__body">
-          <h3 class="card__title">National Freight Data Hub (NFDH)</h3>
+          <h3 class="card__title">National Freight Data Hub</h3>
           <p class="card__excerpt">Aggregates and visualises Australia's freight data across road, rail, air, and maritime. Includes freight movement datasets, mapping tools, and dashboards.</p>
           <a href="#" class="card__link" target="_blank" rel="noopener noreferrer">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -386,12 +436,12 @@
               <polyline points="15 3 21 3 21 9"/>
               <line x1="10" y1="14" x2="21" y2="3"/>
             </svg>
-            <span>Visit freightdata.gov.au</span>
+            <span>Visit data hub</span>
           </a>
         </div>
       </article>
 
-      <article class="card card--hub">
+      <article class="card card--hub" data-animate>
         <div class="card__icon">
           <img src="../assets/images/icons/icon-world-australia.svg" alt="" aria-hidden="true">
         </div>
@@ -404,7 +454,7 @@
               <polyline points="15 3 21 3 21 9"/>
               <line x1="10" y1="14" x2="21" y2="3"/>
             </svg>
-            <span>Visit regionaldata.gov.au</span>
+            <span>Visit data hub</span>
           </a>
         </div>
       </article>
@@ -419,7 +469,7 @@
 ========================================================================== -->
 <section class="subscribe-banner" aria-label="Newsletter subscription">
   <div class="subscribe-banner__inner">
-    <div class="subscribe-banner__card">
+    <div class="subscribe-banner__card" data-animate>
       <img src="../assets/images/device-grid.svg" alt="" class="subscribe-banner__bg" aria-hidden="true">
       <p class="subscribe-banner__text">Subscribe for email notifications when new reports are published</p>
       <a href="#" class="subscribe-banner__btn">Subscribe</a>
@@ -499,10 +549,79 @@
 
     if (!burger || !menu) return;
 
+    var navBar  = document.querySelector('.site-header__nav-bar');
+    var header  = document.querySelector('.site-header');
+    var siteName = document.querySelector('.site-header__mobile-site-name');
+    var desktopMq = window.matchMedia('(min-width: 1024px)');
+    var mobileNavMq = window.matchMedia('(max-width: 1023px)');
+
+    function setMenuOffset() {
+      if (navBar) {
+        menu.style.setProperty('--mobile-menu-offset', navBar.getBoundingClientRect().height + 'px');
+      }
+    }
+
+    function closeMenu() {
+      menu.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (siteName) {
+        siteName.style.transition = '';
+        siteName.style.transform = '';
+      }
+      if (header) header.classList.remove('is-menu-open');
+    }
+
+    function animateSiteNameLayoutChange(mutate) {
+      if (!siteName || !mobileNavMq.matches) {
+        mutate();
+        return;
+      }
+
+      var firstRect = siteName.getBoundingClientRect();
+      mutate();
+      var lastRect = siteName.getBoundingClientRect();
+      var deltaX = firstRect.left - lastRect.left;
+
+      if (!deltaX) return;
+
+      siteName.style.transition = 'none';
+      siteName.style.transform = 'translateX(' + deltaX + 'px)';
+      siteName.getBoundingClientRect(); // force layout so the starting transform is applied
+
+      requestAnimationFrame(function () {
+        siteName.style.transition = '';
+        siteName.style.transform = '';
+      });
+    }
+
     burger.addEventListener('click', function () {
-      var isOpen = menu.classList.toggle('is-open');
-      burger.setAttribute('aria-expanded', isOpen);
-      menu.setAttribute('aria-hidden', !isOpen);
+      animateSiteNameLayoutChange(function () {
+        if (header) header.classList.remove('is-menu-open'); // reset before measuring
+        var isOpen = menu.classList.toggle('is-open');
+        burger.setAttribute('aria-expanded', isOpen);
+        menu.setAttribute('aria-hidden', !isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+        if (isOpen) {
+          window.scrollTo({ top: 0, behavior: 'auto' });
+          if (header) header.classList.add('is-menu-open');
+          setMenuOffset();
+        } else {
+          closeMenu();
+        }
+      });
+    });
+
+    window.addEventListener('resize', function () {
+      if (desktopMq.matches) {
+        closeMenu();
+        return;
+      }
+
+      if (menu.classList.contains('is-open')) {
+        setMenuOffset();
+      }
     });
   })();
 
@@ -566,6 +685,43 @@
 
     heroForm.addEventListener('click', function () {
       heroInput.focus();
+    });
+  })();
+
+  // Scroll-triggered fade-in animations
+  // Watches [data-animate] elements and adds .is-visible when they enter the viewport.
+  // [data-animate-stagger] containers auto-stagger their direct [data-animate] children.
+  (function () {
+    if (!('IntersectionObserver' in window)) {
+      // Fallback: immediately reveal all animated elements
+      document.querySelectorAll('[data-animate]').forEach(function (el) {
+        el.classList.add('is-visible');
+      });
+      return;
+    }
+
+    // Apply stagger delays to children of [data-animate-stagger] containers
+    document.querySelectorAll('[data-animate-stagger]').forEach(function (container) {
+      var children = container.querySelectorAll(':scope > [data-animate]');
+      children.forEach(function (child, index) {
+        child.style.setProperty('--animate-delay', (index * 80) + 'ms');
+      });
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target); // animate once only
+        }
+      });
+    }, {
+      threshold: 0.1,    // trigger when 10% of the element is visible
+      rootMargin: '0px 0px -40px 0px' // small bottom offset so items don't fire too early
+    });
+
+    document.querySelectorAll('[data-animate]').forEach(function (el) {
+      observer.observe(el);
     });
   })();
 </script>

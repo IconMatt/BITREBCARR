@@ -1,0 +1,58 @@
+// =============================================================================
+// ABSTRACTS / ANIMATIONS
+// Reusable keyframes and animation mixins.
+//
+// Usage (mixin):
+//   .my-element { @include anim-fade-in-down($delay: 100ms); }
+//
+// Usage (keyframe directly):
+//   animation: fade-in-down 0.22s ease forwards;
+// =============================================================================
+
+// Fade in from slightly above — used in mobile menu item stagger,
+// and available for any element that should appear top-down on mount.
+@keyframes fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Fade in from slightly below — for elements that rise into view.
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Simple opacity fade.
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+// --- Mixins ---
+
+@mixin anim-fade-in-down($duration: 0.22s, $easing: ease, $delay: 0ms, $fill: forwards) {
+  animation: fade-in-down $duration $easing $delay $fill;
+  opacity: 0; // hidden until animation runs
+}
+
+@mixin anim-fade-in-up($duration: 0.22s, $easing: ease, $delay: 0ms, $fill: forwards) {
+  animation: fade-in-up $duration $easing $delay $fill;
+  opacity: 0;
+}
+
+@mixin anim-fade-in($duration: 0.2s, $easing: ease, $delay: 0ms, $fill: forwards) {
+  animation: fade-in $duration $easing $delay $fill;
+  opacity: 0;
+}

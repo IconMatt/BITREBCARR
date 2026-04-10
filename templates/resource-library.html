@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resource Library — BITRE/BCARR</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body class="page-resource-library">
+
+<header class="site-header" role="banner">
+  <div class="site-header__utility-bar">
+    <div class="site-header__utility-bar-inner">
+      <a class="site-header__branding" href="/" aria-label="Australian Government — DITRDCSA home">
+        <img src="../assets/images/logo.svg" alt="DITRDCSA" width="403" height="75">
+      </a>
+
+      <nav class="site-header__utility-nav" aria-label="Utility navigation">
+        <a class="site-header__utility-link" href="#" target="_blank" rel="noopener noreferrer">
+          Ministers
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 3h6v6"/>
+            <path d="M10 14 21 3"/>
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          </svg>
+        </a>
+        <a class="site-header__utility-link" href="#" target="_blank" rel="noopener noreferrer">
+          Department
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 3h6v6"/>
+            <path d="M10 14 21 3"/>
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          </svg>
+        </a>
+        <a class="site-header__utility-link site-header__utility-link--bold" href="#">About us</a>
+        <button class="site-header__utility-search" aria-label="Open site search" aria-expanded="false" aria-controls="header-search-panel">
+          Search
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="m21 21-4.35-4.35"/>
+          </svg>
+        </button>
+        <a class="site-header__site-name" href="/" aria-label="BITRE/BCARR home">BITRE/BCARR</a>
+      </nav>
+    </div>
+
+    <div class="site-header__search-panel" id="header-search-panel" aria-hidden="true">
+      <div class="site-header__search-panel-inner">
+        <label class="site-header__search-label" for="header-search-input">Search resources</label>
+        <div class="site-header__search-row">
+          <form class="site-header__search-form" role="search" action="/search">
+            <div class="site-header__search-field">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.35-4.35"/>
+              </svg>
+              <input
+                type="search"
+                id="header-search-input"
+                name="q"
+                class="site-header__search-input"
+                placeholder="e.g. aviation, freight, data…"
+                autocomplete="off"
+                autocorrect="off"
+                spellcheck="false"
+              >
+              <button type="submit" class="site-header__search-submit">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+                <span class="u-visually-hidden">Search</span>
+              </button>
+            </div>
+          </form>
+          <button class="site-header__search-close">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 6 6 18M6 6l12 12"/>
+            </svg>
+            <span class="u-visually-hidden">Close search</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-header__nav-bar">
+    <div class="site-header__nav-bar-inner">
+      <a class="site-header__mobile-logo" href="/" aria-label="DITRDCSA home">
+        <img src="../assets/images/logo.svg" alt="DITRDCSA">
+      </a>
+
+      <a class="site-header__mobile-site-name" href="/" aria-label="BITRE/BCARR home">BITRE/BCARR</a>
+
+      <a class="site-header__home-link" href="/" aria-label="Home">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </a>
+
+      <nav class="site-header__nav" aria-label="Primary navigation">
+        <ul class="nav-list" role="list">
+          <li class="nav-item nav-item--indent"><a class="nav-item__link" href="#">Arts</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Aviation</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Communications</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Freight</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Infrastructure</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Maritime</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Rail</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Regions &amp; Cities</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Roads &amp; Road Vehicles</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Road Safety</a></li>
+        </ul>
+      </nav>
+
+      <button class="site-header__burger"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="site-header__mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="site-header__mobile-menu-inner">
+      <nav aria-label="Mobile navigation">
+        <ul class="nav-list nav-list--vertical" role="list">
+          <li class="nav-item nav-item--indent"><a class="nav-item__link" href="#">Arts</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Aviation</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Communications</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Freight</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Infrastructure</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Maritime</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Rail</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Regions &amp; Cities</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Roads &amp; Road Vehicles</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Road Safety</a></li>
+        </ul>
+      </nav>
+
+      <div class="site-header__mobile-utility">
+        <a class="site-header__mobile-utility-link site-header__mobile-utility-link--bold" href="#">About us</a>
+        <a class="site-header__mobile-utility-link" href="#" target="_blank" rel="noopener noreferrer">
+          Ministers
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 3h6v6"/>
+            <path d="M10 14 21 3"/>
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          </svg>
+        </a>
+        <a class="site-header__mobile-utility-link" href="#" target="_blank" rel="noopener noreferrer">
+          Department
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 3h6v6"/>
+            <path d="M10 14 21 3"/>
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          </svg>
+        </a>
+      </div>
+
+      <div class="site-header__mobile-search">
+        <form class="site-header__mobile-search-form search-box search-box--hero" role="search" action="/search">
+          <input
+            class="search-box__input"
+            type="search"
+            id="mobile-nav-search"
+            name="q"
+            placeholder="What are you looking for?"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+          >
+          <div class="search-box__footer">
+            <label class="search-box__label" for="mobile-nav-search">Search all resources</label>
+            <button class="search-box__submit" type="submit" aria-label="Search">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.35-4.35"/>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main-content">
+  <section class="hero hero--topic" aria-labelledby="resource-library-heading">
+    <div class="hero__left">
+      <img src="../assets/images/device-grid.svg" alt="" class="hero__device-grid hero__device-grid--right" aria-hidden="true">
+      <div class="hero__left-inner">
+        <nav class="hero__breadcrumb" aria-label="Breadcrumb" data-animate>
+          <a href="/">Home</a>
+          <span class="hero__breadcrumb-sep" aria-hidden="true">›</span>
+          <span class="hero__breadcrumb-current" aria-current="page">Resource library</span>
+        </nav>
+
+        <h1 class="hero__heading" id="resource-library-heading" data-animate style="--animate-delay: 80ms">Resource library</h1>
+
+        <p class="hero__body" data-animate style="--animate-delay: 160ms">Search, sort and filter BITRE/BCARR publications across transport, communications, arts and regional research.</p>
+
+        <form class="page-resource-library__search search-box search-box--hero" role="search" action="#" data-animate style="--animate-delay: 260ms">
+          <input
+            class="search-box__input"
+            type="search"
+            id="library-search"
+            name="q"
+            placeholder="What are you looking for?"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+          >
+          <div class="search-box__footer">
+            <label class="search-box__label" for="library-search">Search all resources</label>
+            <button class="search-box__submit" type="submit" aria-label="Search">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.35-4.35"/>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="page-resource-library__results" aria-label="Resource search results">
+    <div class="page-resource-library__results-inner">
+      <div class="page-resource-library__toolbar" data-animate>
+        <div class="page-resource-library__toolbar-top">
+          <div class="page-resource-library__filters">
+            <div class="page-resource-library__field">
+              <p class="page-resource-library__field-label">Topic</p>
+              <div class="page-resource-library__select-wrap">
+                <select class="page-resource-library__select" aria-label="Filter by topic">
+                  <option selected>All topics</option>
+                  <option>Arts</option>
+                  <option>Aviation</option>
+                  <option>Communications</option>
+                  <option>Freight</option>
+                  <option>Infrastructure</option>
+                  <option>Maritime</option>
+                  <option>Rail</option>
+                  <option>Regions &amp; Cities</option>
+                  <option>Roads &amp; Road Vehicles</option>
+                  <option>Road Safety</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="page-resource-library__field">
+              <p class="page-resource-library__field-label">Sub topic</p>
+              <div class="page-resource-library__select-wrap">
+                <select class="page-resource-library__select page-resource-library__select--subtopic" id="subtopic-select" aria-label="Filter by sub topic" disabled>
+                  <option selected>Select a topic first</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="page-resource-library__field">
+              <p class="page-resource-library__field-label">Release date</p>
+              <div class="page-resource-library__select-wrap">
+                <select class="page-resource-library__select" aria-label="Filter by release date">
+                  <option selected>Any time</option>
+                  <option>Past 12 months</option>
+                  <option>Past 2 years</option>
+                  <option>Past 5 years</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="page-resource-library__sort">
+            <div class="page-resource-library__field">
+              <p class="page-resource-library__field-label">Sort by</p>
+              <div class="page-resource-library__select-wrap">
+                <select class="page-resource-library__select" aria-label="Sort results">
+                  <option selected>Latest</option>
+                  <option>Oldest</option>
+                  <option>A to Z</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-resource-library__meta">
+          <div class="page-resource-library__chips" role="group" aria-label="Applied filters">
+            <button class="page-resource-library__chip" type="button">
+              Aviation
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 6 6 18M6 6l12 12"/>
+              </svg>
+            </button>
+            <button class="page-resource-library__chip" type="button">
+              Statistical report
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 6 6 18M6 6l12 12"/>
+              </svg>
+            </button>
+            <button class="page-resource-library__chip" type="button">
+              Past 2 years
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 6 6 18M6 6l12 12"/>
+              </svg>
+            </button>
+            <a class="page-resource-library__clear" href="#">Clear all</a>
+          </div>
+
+          <p class="page-resource-library__summary">Showing 1–8 of 68 resources</p>
+        </div>
+      </div>
+
+      <div class="page-resource-library__grid" data-animate-stagger>
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Australian Aircraft Activity report cover">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--blue">Statistical Report</span>
+            </div>
+            <h2 class="card__title"><a href="#">Australian Aircraft Activity (General aviation activity)</a></h2>
+            <p class="card__excerpt">This annual survey covers all Australian registered aircraft used in the Commercial Air Transport and General Aviation sectors of the Australian aviation industry.</p>
+            <p class="card__date">Published 18 November 2024</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Monthly%20Report.png" alt="Monthly report cover">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--neutral">Monthly Report</span>
+            </div>
+            <h2 class="card__title"><a href="#">Australian domestic aviation activity — monthly publications</a></h2>
+            <p class="card__excerpt">Monthly domestic and charter passenger movements, available seats, load factors, revenue passenger kilometres and available seat kilometres.</p>
+            <p class="card__date">Published 18 November 2024</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Data.png" alt="Data cover">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--navy">Data</span>
+            </div>
+            <h2 class="card__title"><a href="#">International airline activity — time series</a></h2>
+            <p class="card__excerpt">International time series covering passenger, freight and mail movements, flights, available seats and seat load factors.</p>
+            <p class="card__date">Published 18 November 2024</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Research%20Report.png" alt="Research report cover">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--blue">Research Report</span>
+            </div>
+            <h2 class="card__title"><a href="#">Consumer experience with broadband services in Australia</a></h2>
+            <p class="card__excerpt">Survey findings on consumer satisfaction, complaint rates, plan changes and switching behaviour across Australia’s fixed broadband market.</p>
+            <p class="card__date">Published 5 June 2024</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Dashboard.png" alt="Dashboard cover">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--lime">Dashboard</span>
+            </div>
+            <h2 class="card__title"><a href="#">National Road Safety Tracker</a></h2>
+            <p class="card__excerpt">Interactive dashboard tracking road safety performance indicators across Australia, including fatalities, serious injuries and vehicle trends.</p>
+            <p class="card__date">Updated monthly</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/report/trainline-12.jpg" alt="Rail freight report cover">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--blue">Statistical Report</span>
+            </div>
+            <h2 class="card__title"><a href="#">Rail freight movements by corridor 2023–24</a></h2>
+            <p class="card__excerpt">Annual statistics on freight volumes, directional flows and corridor-level rail performance across key national freight routes.</p>
+            <p class="card__date">Published 9 October 2024</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/report/BITRE-RVSA-entry-recall-statistics-Dec-2023.jpg" alt="Vehicle safety recall statistics report cover">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--navy">Data</span>
+            </div>
+            <h2 class="card__title"><a href="#">Regional vehicle safety recall statistics</a></h2>
+            <p class="card__excerpt">Dataset and supporting notes on recall volumes, affected vehicle classes and regional distribution across the Australian vehicle fleet.</p>
+            <p class="card__date">Published 14 December 2023</p>
+          </div>
+        </article>
+
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/report/bitre-cover--assessment-of-road-improvements-in-remote-and-regional-areas--5september2025--lowres.jpg" alt="Assessment of road improvements report cover">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--blue">Research Report</span>
+            </div>
+            <h2 class="card__title"><a href="#">Assessment of road improvements in remote and regional areas</a></h2>
+            <p class="card__excerpt">Evaluates the performance of road investment programs in remote and regional Australia, including safety outcomes, resilience and network access.</p>
+            <p class="card__date">Published 5 September 2025</p>
+          </div>
+        </article>
+      </div>
+
+      <nav class="page-resource-library__pagination" aria-label="Results pagination" data-animate>
+        <ul class="page-resource-library__pagination-list" role="list">
+          <li>
+            <a class="page-resource-library__page-link page-resource-library__page-link--nav" href="#" aria-label="Previous page" aria-disabled="true" tabindex="-1">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M19 12H5"/>
+                <path d="m12 19-7-7 7-7"/>
+              </svg>
+            </a>
+          </li>
+          <li><span class="page-resource-library__page-current" aria-current="page">1</span></li>
+          <li><a class="page-resource-library__page-link" href="#" aria-label="Page 2">2</a></li>
+          <li><a class="page-resource-library__page-link" href="#" aria-label="Page 3">3</a></li>
+          <li><span class="page-resource-library__page-gap" aria-hidden="true">…</span></li>
+          <li><a class="page-resource-library__page-link" href="#" aria-label="Page 67">67</a></li>
+          <li><a class="page-resource-library__page-link" href="#" aria-label="Page 68">68</a></li>
+          <li>
+            <a class="page-resource-library__page-link page-resource-library__page-link--nav" href="#" aria-label="Next page">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14"/>
+                <path d="m12 5 7 7-7 7"/>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer__inner">
+    <div class="site-footer__main">
+      <div class="site-footer__brand">
+        <p class="site-footer__org-name">Bureau of Infrastructure and<br> Transport Research Economics<br> &amp; Bureau of Communications,<br> Arts and Regional Research</p>
+      </div>
+
+      <nav class="site-footer__nav-col" aria-label="Footer navigation">
+        <a class="site-footer__nav-link" href="#">Resource library</a>
+        <a class="site-footer__nav-link" href="#">Subscribe</a>
+      </nav>
+
+      <nav class="site-footer__nav-col" aria-label="Footer secondary navigation">
+        <a class="site-footer__nav-link" href="#">About us</a>
+        <a class="site-footer__nav-link" href="#">Contact us</a>
+      </nav>
+    </div>
+
+    <div class="site-footer__legal">
+      <div class="site-footer__gov-brand">
+        <img src="../assets/images/logo.svg" alt="" class="site-footer__gov-crest" aria-hidden="true">
+      </div>
+
+      <div class="site-footer__legal-links">
+        <a class="site-footer__legal-link" href="#" target="_blank" rel="noopener noreferrer">
+          Privacy
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+        <a class="site-footer__legal-link" href="#" target="_blank" rel="noopener noreferrer">
+          Copyright
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+        <a class="site-footer__legal-link" href="#" target="_blank" rel="noopener noreferrer">
+          Disclaimer
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/>
+            <line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var burger = document.querySelector('.site-header__burger');
+    var menu = document.querySelector('.site-header__mobile-menu');
+
+    if (!burger || !menu) return;
+
+    var navBar = document.querySelector('.site-header__nav-bar');
+    var header = document.querySelector('.site-header');
+    var siteName = document.querySelector('.site-header__mobile-site-name');
+    var desktopMq = window.matchMedia('(min-width: 1024px)');
+    var mobileNavMq = window.matchMedia('(max-width: 1023px)');
+
+    function setMenuOffset() {
+      if (navBar) {
+        menu.style.setProperty('--mobile-menu-offset', navBar.getBoundingClientRect().height + 'px');
+      }
+    }
+
+    function closeMenu() {
+      menu.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (siteName) {
+        siteName.style.transition = '';
+        siteName.style.transform = '';
+      }
+      if (header) header.classList.remove('is-menu-open');
+    }
+
+    function animateSiteNameLayoutChange(mutate) {
+      if (!siteName || !mobileNavMq.matches) {
+        mutate();
+        return;
+      }
+
+      var firstRect = siteName.getBoundingClientRect();
+      mutate();
+      var lastRect = siteName.getBoundingClientRect();
+      var deltaX = firstRect.left - lastRect.left;
+
+      if (!deltaX) return;
+
+      siteName.style.transition = 'none';
+      siteName.style.transform = 'translateX(' + deltaX + 'px)';
+      siteName.getBoundingClientRect();
+
+      requestAnimationFrame(function () {
+        siteName.style.transition = '';
+        siteName.style.transform = '';
+      });
+    }
+
+    burger.addEventListener('click', function () {
+      animateSiteNameLayoutChange(function () {
+        if (header) header.classList.remove('is-menu-open');
+        var isOpen = menu.classList.toggle('is-open');
+        burger.setAttribute('aria-expanded', isOpen);
+        menu.setAttribute('aria-hidden', !isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+        if (isOpen) {
+          window.scrollTo({ top: 0, behavior: 'auto' });
+          if (header) header.classList.add('is-menu-open');
+          setMenuOffset();
+        } else {
+          closeMenu();
+        }
+      });
+    });
+
+    window.addEventListener('resize', function () {
+      if (desktopMq.matches) {
+        closeMenu();
+        return;
+      }
+
+      if (menu.classList.contains('is-open')) {
+        setMenuOffset();
+      }
+    });
+  })();
+
+  (function () {
+    var searchBtn = document.querySelector('.site-header__utility-search');
+    var panel = document.getElementById('header-search-panel');
+    var input = document.getElementById('header-search-input');
+    var closeBtn = panel ? panel.querySelector('.site-header__search-close') : null;
+
+    if (!searchBtn || !panel || !input) return;
+
+    function openPanel() {
+      panel.classList.add('is-open');
+      panel.setAttribute('aria-hidden', 'false');
+      searchBtn.setAttribute('aria-expanded', 'true');
+      requestAnimationFrame(function () { input.focus(); });
+    }
+
+    function closePanel() {
+      panel.classList.remove('is-open');
+      panel.setAttribute('aria-hidden', 'true');
+      searchBtn.setAttribute('aria-expanded', 'false');
+      searchBtn.focus();
+    }
+
+    searchBtn.addEventListener('click', function () {
+      panel.classList.contains('is-open') ? closePanel() : openPanel();
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closePanel);
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && panel.classList.contains('is-open')) {
+        closePanel();
+      }
+    });
+
+    document.addEventListener('click', function (e) {
+      if (
+        panel.classList.contains('is-open') &&
+        !panel.contains(e.target) &&
+        !searchBtn.contains(e.target)
+      ) {
+        closePanel();
+      }
+    });
+  })();
+
+  (function () {
+    var libraryForm = document.querySelector('.page-resource-library__search');
+    var libraryInput = document.getElementById('library-search');
+
+    if (!libraryForm || !libraryInput) return;
+
+    libraryForm.addEventListener('click', function (e) {
+      if (e.target.closest('.search-box__submit')) return;
+      libraryInput.focus();
+    });
+  })();
+
+  (function () {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('[data-animate]').forEach(function (el) {
+        el.classList.add('is-visible');
+      });
+      return;
+    }
+
+    document.querySelectorAll('[data-animate-stagger]').forEach(function (container) {
+      var children = container.querySelectorAll(':scope > [data-animate]');
+      children.forEach(function (child, index) {
+        child.style.setProperty('--animate-delay', (index * 80) + 'ms');
+      });
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('[data-animate]').forEach(function (el) {
+      observer.observe(el);
+    });
+  })();
+</script>
+<script src="../js/main.js"></script>
+
+<script>
+  // Sub topic dropdown — enable and populate once a topic is selected
+  (function () {
+    var topicSelect   = document.querySelector('[aria-label="Filter by topic"]');
+    var subtopicSelect = document.getElementById('subtopic-select');
+    var subtopicWrap  = subtopicSelect ? subtopicSelect.closest('.page-resource-library__select-wrap') : null;
+
+    // Demo sub-topics keyed by topic (fallback for unlisted topics)
+    var subTopics = {
+      'Communications': ['Broadband & performance', 'Affordability', 'Access & inclusion', 'Streaming & SVOD']
+    };
+
+    function populateSubtopic(topic) {
+      var options = subTopics[topic] || [];
+      subtopicSelect.innerHTML = '';
+
+      if (!options.length) {
+        var placeholder = document.createElement('option');
+        placeholder.textContent = 'All sub topics';
+        placeholder.selected = true;
+        subtopicSelect.appendChild(placeholder);
+      } else {
+        var all = document.createElement('option');
+        all.textContent = 'All sub topics';
+        all.selected = true;
+        subtopicSelect.appendChild(all);
+        options.forEach(function (label) {
+          var opt = document.createElement('option');
+          opt.textContent = label;
+          subtopicSelect.appendChild(opt);
+        });
+      }
+    }
+
+    if (!topicSelect || !subtopicSelect) return;
+
+    topicSelect.addEventListener('change', function () {
+      var selected = topicSelect.value;
+      if (selected === 'All topics') {
+        subtopicSelect.innerHTML = '<option selected>Select a topic first</option>';
+        subtopicSelect.disabled = true;
+      } else {
+        populateSubtopic(selected);
+        subtopicSelect.disabled = false;
+      }
+    });
+  })();
+
+  // Parallax for hero device-grid SVG (right only)
+  (function () {
+    var right = document.querySelector('.hero__device-grid--right');
+    if (!right) return;
+
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(function () {
+          right.style.transform = 'translateY(calc(-50% + ' + (-window.scrollY * 0.12) + 'px))';
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  })();
+</script>
+
+</body>
+</html>

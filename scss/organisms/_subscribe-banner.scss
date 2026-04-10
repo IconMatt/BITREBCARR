@@ -27,7 +27,7 @@
     justify-content: center;
     gap: $spacing-md;
     flex-wrap: wrap;
-    background: linear-gradient(to right, $color-brand-secondary-deep-teal, $color-brand-teal);
+    background: linear-gradient(to right, $color-brand-teal, $color-brand-mint);
     border-radius: $radius-xl;
     padding: $spacing-xl;
 
@@ -61,7 +61,7 @@
     z-index: 1;
     font-size: $font-size-xl;
     font-weight: $font-weight-bold;
-    color: $color-text-inverse;
+    color: $color-brand-navy;
     line-height: $line-height-heading;
     margin: 0;
     text-wrap: balance;

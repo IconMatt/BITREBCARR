@@ -1,0 +1,10 @@
+// =============================================================================
+// UTILITIES / ACCESSIBILITY
+// Single-purpose helpers for screen reader support and focus management.
+// =============================================================================
+
+// Visually hidden — readable by screen readers, invisible on screen.
+// Use on elements that provide accessible text for icon-only controls.
+.u-visually-hidden {
+  @include visually-hidden;
+}

@@ -19,6 +19,7 @@
 @import 'abstracts/variables';
 @import 'abstracts/breakpoints';
 @import 'abstracts/mixins';
+@import 'abstracts/animations';
 
 // --- 3. ATOMS ——————————————————————————————————————————————————————————————
 // The smallest, indivisible UI elements.
@@ -49,7 +50,13 @@
 @import 'organisms/featured-resources';
 @import 'organisms/sub-topics';
 
-// --- 6. PAGES ——————————————————————————————————————————————————————————————
+// --- 6. UTILITIES ——————————————————————————————————————————————————————————
+// Single-purpose helper classes.
+@import 'utilities/accessibility';
+@import 'utilities/scroll-animations';
+
+// --- 7. PAGES ——————————————————————————————————————————————————————————————
 // Page-specific layout overrides only.
 @import 'pages/home';
 @import 'pages/article';
+@import 'pages/resource-library';

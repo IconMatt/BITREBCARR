@@ -62,6 +62,53 @@
 })();
 
 // =============================================================================
+// Subscribe banner — decorative device grid slow rotation on scroll
+// Rotates the bg SVG a few degrees as the banner scrolls through the viewport.
+// =============================================================================
+
+(function () {
+  'use strict';
+
+  function initSubscribeRotate() {
+    var bg = document.querySelector('.subscribe-banner__bg');
+    if (!bg) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    var banner = bg.closest('.subscribe-banner');
+    if (!banner) return;
+
+    var ticking = false;
+
+    function update() {
+      var rect = banner.getBoundingClientRect();
+      // Progress: 0 when banner bottom enters viewport, 1 when top leaves
+      var progress = 1 - (rect.bottom / (window.innerHeight + rect.height));
+      // Clamp to [-0.1, 1.1] to avoid jank at edges
+      progress = Math.max(-0.1, Math.min(1.1, progress));
+      // Map to a small rotation range: -4deg to +4deg
+      var deg = (progress - 0.5) * 24;
+      bg.style.transform = 'translateY(-50%) rotate(' + deg.toFixed(2) + 'deg)';
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        requestAnimationFrame(update);
+        ticking = true;
+      }
+    }, { passive: true });
+
+    update();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSubscribeRotate);
+  } else {
+    initSubscribeRotate();
+  }
+})();
+
+// =============================================================================
 // Touch hover — card components
 // Adds .is-touched on finger down (mirrors :hover styles), removes it after
 // a short delay on finger up so the state clears when the tap ends.
@@ -104,5 +151,65 @@
     document.addEventListener('DOMContentLoaded', initCardTouch);
   } else {
     initCardTouch();
+  }
+})();
+
+// =============================================================================
+// Back to top
+// Reveals a floating back-to-top button after the lead section has been passed.
+// Safe on pages without the trigger element.
+// =============================================================================
+
+(function () {
+  'use strict';
+
+  function initBackToTop() {
+    var buttons = document.querySelectorAll('.js-back-to-top');
+    if (!buttons.length) return;
+
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    buttons.forEach(function (button) {
+      var selector = button.getAttribute('data-show-after');
+      var anchor = selector ? document.querySelector(selector) : null;
+      var ticking = false;
+
+      function getThreshold() {
+        if (anchor) {
+          return Math.max(anchor.offsetTop + anchor.offsetHeight - 96, 280);
+        }
+
+        return Math.max(window.innerHeight * 0.6, 280);
+      }
+
+      function update() {
+        button.classList.toggle('is-visible', window.scrollY > getThreshold());
+        ticking = false;
+      }
+
+      window.addEventListener('scroll', function () {
+        if (!ticking) {
+          requestAnimationFrame(update);
+          ticking = true;
+        }
+      }, { passive: true });
+
+      window.addEventListener('resize', update);
+
+      button.addEventListener('click', function () {
+        window.scrollTo({
+          top: 0,
+          behavior: prefersReducedMotion.matches ? 'auto' : 'smooth'
+        });
+      });
+
+      update();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBackToTop);
+  } else {
+    initBackToTop();
   }
 })();

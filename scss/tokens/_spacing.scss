@@ -3,12 +3,11 @@
 // Source: Figma Variables export — size.mode1
 // =============================================================================
 // Scale maps to a named spacing system for semantic use.
-// NOTE: size-2 exported as 1px (smaller than size-1 at 2px). Preserved as exported.
 // =============================================================================
 
 $size-0: 0px;
-$size-1: 2px;
-$size-2: 1px;  // ⚠ exported as 1 — verify in Figma (smaller than size-1)
+$size-1: 1px;
+$size-2: 2px;
 $size-3: 4px;
 $size-4: 8px;
 $size-5: 16px;

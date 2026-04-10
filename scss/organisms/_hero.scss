@@ -43,7 +43,7 @@
   }
 
   &__heading {
-    font-size: $font-size-2xl;       // 32px mobile
+    font-size: 1.8rem;               // mobile
     font-weight: $font-weight-semibold;
     line-height: $line-height-tight; // 1.25
     color: $color-text-inverse;
@@ -99,9 +99,9 @@
   }
 
   &__body {
-    font-size: $font-size-md;
+    font-size: 1rem;               // mobile
     line-height: $line-height-loose; // 1.55 — Big spec
-    color: $color-neutral-400;
+    color: $color-text-inverse;
     text-align: center;
     text-wrap: balance;
 
@@ -318,6 +318,29 @@
 
     .hero__heading {
       max-width: 1160px;
+    }
+
+    // --- Entrance animations ---
+    .hero__heading,
+    .hero__body,
+    .search-box--hero,
+    .hero__alert {
+      @include anim-fade-in-up($duration: 0.55s, $easing: ease);
+    }
+
+    .hero__heading  { animation-delay: 0ms; }
+    .hero__body     { animation-delay: 100ms; }
+    .search-box--hero { animation-delay: 200ms; }
+    .hero__alert    { animation-delay: 320ms; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero__heading,
+      .hero__body,
+      .search-box--hero,
+      .hero__alert {
+        animation: none;
+        opacity: 1;
+      }
     }
   }
 

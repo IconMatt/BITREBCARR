@@ -17,7 +17,7 @@
     @include transition(color background-color);
 
     position: relative;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: $size-3;
     padding: 0 $spacing-sm;
@@ -149,19 +149,34 @@
   &--vertical {
     flex-direction: column;
     align-items: flex-start;
+    padding-top: $spacing-md;   // space above first item matches space below last
 
     .nav-item {
       width: 100%;
     }
 
     .nav-item__link {
-      padding: $spacing-sm $spacing-md;
+      padding: $spacing-sm 0;   // vertical breathing room; no horizontal (container handles it)
       width: 100%;
+      text-align: left;
+      font-size: 1.05rem;
+      line-height: $line-height-base;
 
       // No bottom indicator in vertical/mobile mode
       &::after {
         display: none;
       }
+
+      // Hover: mint text only, no background
+      &:hover {
+        background-color: transparent;
+        color: $color-brand-mint;
+      }
+    }
+
+    // Active item in mobile menu
+    .nav-item--active > .nav-item__link {
+      color: $color-brand-mint;
     }
   }
 }
