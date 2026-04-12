@@ -676,10 +676,11 @@
     });
   })();
 
-  // Focus hero search input when clicking anywhere on the search form wrapper
+  // Focus hero search input when clicking anywhere on the hero search form wrapper
+  // Scope to the hero section only — mobile menu also uses .search-box--hero
   (function () {
-    var heroForm  = document.querySelector('.search-box--hero');
     var heroInput = document.getElementById('hero-search');
+    var heroForm  = heroInput ? heroInput.closest('form') : null;
 
     if (!heroForm || !heroInput) return;
 
