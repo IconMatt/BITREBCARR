@@ -4668,6 +4668,14 @@ hr {
   min-width: 44px;
   min-height: 44px;
   padding-inline: 0;
+  background-color: #dee2e6;
+  border-radius: 8px;
+}
+.page-resource-library__page-link--nav:hover {
+  background-color: #ced4da;
+}
+.page-resource-library__page-link--nav[aria-disabled=true] {
+  background-color: #e9ecef;
 }
 .page-resource-library__page-link--nav svg {
   width: 20px;
@@ -4678,8 +4686,11 @@ hr {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
   background-color: #081e3f;
   color: #ffffff;
+  border-radius: 8px;
 }
 .page-resource-library__page-gap {
   display: inline-flex;

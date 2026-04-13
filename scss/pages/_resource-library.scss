@@ -457,6 +457,16 @@
     min-width: 44px;
     min-height: 44px;
     padding-inline: 0;
+    background-color: $color-neutral-300;
+    border-radius: $radius-lg;
+
+    &:hover {
+      background-color: $color-neutral-400;
+    }
+
+    &[aria-disabled='true'] {
+      background-color: $color-neutral-200;
+    }
 
     svg {
       width: 20px;
@@ -469,8 +479,11 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
     background-color: $color-brand-navy;
     color: $color-neutral-0;
+    border-radius: $radius-lg;
   }
 
   &__page-gap {
