@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Article — BITRE/BCARR</title>
+
+  <!-- Google Fonts — Mulish (400, 500, 600, 700, 800 + italics) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<!-- =========================================================================
+  HEADER — Dual bar: utility (white) + nav bar (navy)
+========================================================================== -->
+<header class="site-header" role="banner">
+
+  <!-- 1. Utility bar (desktop only) -->
+  <div class="site-header__utility-bar">
+    <div class="site-header__utility-bar-inner">
+
+      <!-- Branding: logo + dept name -->
+      <a class="site-header__branding" href="/" aria-label="Australian Government — DITRDCSA home">
+        <img src="../assets/images/logo.svg" alt="DITRDCSA" width="403" height="75">
+      </a>
+
+      <!-- Utility links -->
+      <nav class="site-header__utility-nav" aria-label="Utility navigation">
+        <a class="site-header__utility-link" href="#" target="_blank" rel="noopener noreferrer">
+          Ministers
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 3h6v6"/>
+            <path d="M10 14 21 3"/>
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          </svg>
+        </a>
+        <a class="site-header__utility-link" href="#" target="_blank" rel="noopener noreferrer">
+          Department
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 3h6v6"/>
+            <path d="M10 14 21 3"/>
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          </svg>
+        </a>
+        <a class="site-header__utility-link site-header__utility-link--bold" href="#">About us</a>
+        <button class="site-header__utility-search" aria-label="Open site search" aria-expanded="false" aria-controls="header-search-panel">
+          Search
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+        <a class="site-header__site-name" href="/" aria-label="BITRE/BCARR home">BITRE/BCARR</a>
+      </nav>
+
+    </div>
+
+    <!-- Search panel (toggled by Search button in utility nav) -->
+    <div class="site-header__search-panel" id="header-search-panel" aria-hidden="true">
+      <div class="site-header__search-panel-inner">
+        <label class="site-header__search-label" for="header-search-input">Search topics</label>
+        <div class="site-header__search-row">
+          <form class="site-header__search-form" role="search" action="/search">
+            <div class="site-header__search-field">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input
+                type="search"
+                id="header-search-input"
+                name="q"
+                class="site-header__search-input"
+                placeholder="e.g. road safety, freight…"
+                autocomplete="off"
+                autocorrect="off"
+                spellcheck="false"
+              >
+              <button type="submit" class="site-header__search-submit">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                <span class="u-visually-hidden">Search</span>
+              </button>
+            </div>
+          </form>
+          <button class="site-header__search-close">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            <span class="u-visually-hidden">Close search</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 2. Nav bar (sticky, navy) -->
+  <div class="site-header__nav-bar">
+    <div class="site-header__nav-bar-inner">
+
+      <!-- Mobile logo (md breakpoint only) -->
+      <a class="site-header__mobile-logo" href="/" aria-label="DITRDCSA home">
+        <img src="../assets/images/logo.svg" alt="DITRDCSA">
+      </a>
+
+      <!-- Mobile site name (hidden on desktop) -->
+      <a class="site-header__mobile-site-name" href="/" aria-label="BITRE/BCARR home">BITRE/BCARR</a>
+
+      <!-- Home icon (desktop) -->
+      <a class="site-header__home-link" href="/" aria-label="Home">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9 22 9 12 15 12 15 22"/>
+        </svg>
+      </a>
+
+      <!-- Primary navigation (desktop) -->
+      <nav class="site-header__nav" aria-label="Primary navigation">
+        <ul class="nav-list" role="list">
+          <li class="nav-item nav-item--indent"><a class="nav-item__link" href="#">Arts</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Aviation</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Communications</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Freight</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Infrastructure</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Maritime</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Rail</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Regions &amp; Cities</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Roads &amp; Road Vehicles</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Road Safety</a></li>
+        </ul>
+      </nav>
+
+      <!-- Mobile hamburger -->
+      <button class="site-header__burger"
+              aria-label="Open navigation menu"
+              aria-expanded="false"
+              aria-controls="mobile-menu">
+        <span></span>
+        <span></span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- Mobile menu panel -->
+  <div class="site-header__mobile-menu" id="mobile-menu" aria-hidden="true">
+    <div class="site-header__mobile-menu-inner">
+
+      <!-- Primary nav links -->
+      <nav aria-label="Mobile navigation">
+        <ul class="nav-list nav-list--vertical" role="list">
+          <li class="nav-item nav-item--indent"><a class="nav-item__link" href="#">Arts</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Aviation</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Communications</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Freight</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Infrastructure</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Maritime</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Rail</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Regions &amp; Cities</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Roads &amp; Road Vehicles</a></li>
+          <li class="nav-item"><a class="nav-item__link" href="#">Road Safety</a></li>
+        </ul>
+      </nav>
+
+      <!-- Utility links -->
+      <div class="site-header__mobile-utility">
+        <a class="site-header__mobile-utility-link site-header__mobile-utility-link--bold" href="#">Resource library</a>
+        <a class="site-header__mobile-utility-link site-header__mobile-utility-link--bold" href="#">About us</a>
+        <a class="site-header__mobile-utility-link site-header__mobile-utility-link--bold" href="#">Subscribe</a>
+        <a class="site-header__mobile-utility-link site-header__mobile-utility-link--bold" href="#">Contact us</a>
+        <a class="site-header__mobile-utility-link" href="#" target="_blank" rel="noopener noreferrer">
+          Ministers
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          </svg>
+        </a>
+        <a class="site-header__mobile-utility-link" href="#" target="_blank" rel="noopener noreferrer">
+          Department
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Search -->
+      <div class="site-header__mobile-search">
+        <form class="site-header__mobile-search-form search-box search-box--hero" role="search" action="/search">
+          <input
+            class="search-box__input"
+            type="search"
+            id="mobile-nav-search"
+            name="q"
+            placeholder="What are you looking for?"
+            autocomplete="off"
+            autocorrect="off"
+            spellcheck="false"
+          >
+          <div class="search-box__footer">
+            <label class="search-box__label" for="mobile-nav-search">Search all resources</label>
+            <button class="search-box__submit" type="submit" aria-label="Search">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/>
+                <path d="m21 21-4.35-4.35"/>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+</header>
+
+<!-- =========================================================================
+  MAIN CONTENT
+========================================================================== -->
+<main id="main-content">
+
+  <!-- Breadcrumb — sits flush below nav, navy bg merges with hero -->
+  <nav class="article__breadcrumb" aria-label="Breadcrumb">
+    <div class="article__breadcrumb-inner" data-animate>
+      <a href="/">Home</a>
+      <span class="article__breadcrumb-sep" aria-hidden="true">›</span>
+      <a href="#">Communications</a>
+      <span class="article__breadcrumb-sep" aria-hidden="true">›</span>
+      <span class="article__breadcrumb-current" aria-current="page">Article name</span>
+    </div>
+  </nav>
+
+  <!-- =========================================================================
+    ARTICLE HERO — navy band, H1 only (cover floats up from body below)
+  ========================================================================== -->
+  <div class="article__hero">
+    <div class="article__hero-inner">
+      <div class="article__heading-wrap" data-animate style="--animate-delay: 80ms">
+        <h1 class="article__heading">Article name</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+    ARTICLE BODY — white band: cover card (left, floats into hero) + metadata + content (right)
+    Change `data-article-type` to any type key to auto-update the cover image and type badge.
+    Available types: "Annual Report", "Monthly Report", "Research Report",
+                     "Dashboard", "Statistics", "Data"
+  ========================================================================== -->
+  <div class="article__body" data-article-type="Monthly Report">
+    <div class="article__body-inner">
+
+      <!-- Cover card — data-default-cover flag allows JS to swap src based on type -->
+      <div class="article__cover-col" data-animate style="--animate-delay: 160ms">
+        <div class="article__cover-sentinel" aria-hidden="true"></div>
+        <div class="article__cover">
+          <div class="article__cover-card">
+            <img data-default-cover src="../assets/images/default_covers/Monthly%20Report.svg" alt="">
+          </div>
+          <div class="article__cover-caption"></div>
+        </div>
+      </div>
+
+      <!-- Metadata + prose -->
+      <div class="article__body-right">
+
+        <div class="article__meta" data-animate style="--animate-delay: 240ms">
+          <p class="article__meta-row">Type <span class="badge badge--blue" data-type-badge>Monthly Report</span></p>
+          <div class="article__tags">
+            <a href="#" class="badge badge--neutral badge--link">Maritime</a>
+            <a href="#" class="badge badge--neutral badge--link">Freight</a>
+            <a href="#" class="badge badge--neutral badge--link">Waterline</a>
+          </div>
+          <p class="article__meta-row">Release date <strong>14 November 2025</strong></p>
+          <p class="article__meta-row">ISBN <strong>978-1-922879-62-2</strong></p>
+          <p class="article__meta-row">ISSN <strong>2208-9101</strong></p>
+        </div>
+
+        <div class="article__content" data-animate>
+          <p>Waterline reports on trends in (a) throughput, (b) container handling productivity on the waterfront and the land side of ports in Australia, and (c) the cost of importing and exporting containers via five container ports. It covers both the loading and unloading of container ships and the transport of containers from container terminals.</p>
+          <p>This issue covers port terminal activity up to the June quarter 2023.</p>
+        </div>
+
+        <!-- Downloads -->
+        <div class="download-list" data-animate>
+
+          <a href="#" class="download-item" download>
+            <svg class="download-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/>
+              <line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="12" y2="17"/>
+            </svg>
+            <span class="download-item__name">Waterline 70</span>
+            <span class="download-item__type">PDF</span>
+            <span class="download-item__size">3.51 MB</span>
+            <svg class="download-item__action" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+          </a>
+
+          <a href="#" class="download-item" download>
+            <svg class="download-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/>
+              <path d="M8 12l1.5 5 2.5-4 2.5 4 1.5-5"/>
+            </svg>
+            <span class="download-item__name">Waterline 70</span>
+            <span class="download-item__type">DOCX</span>
+            <span class="download-item__size">3.51 MB</span>
+            <svg class="download-item__action" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+          </a>
+
+          <a href="#" class="download-item" download>
+            <svg class="download-item__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/>
+              <rect x="8" y="12" width="3" height="3"/><rect x="13" y="12" width="3" height="3"/>
+              <rect x="8" y="16" width="3" height="3"/><rect x="13" y="16" width="3" height="3"/>
+            </svg>
+            <span class="download-item__name">Waterline 70</span>
+            <span class="download-item__type">XLSX</span>
+            <span class="download-item__size">45.17 KB</span>
+            <svg class="download-item__action" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+  // Article type → default cover image + badge colour.
+  // Change data-article-type on .article__body to update both automatically.
+  (function () {
+    var TYPE_MAP = {
+      'Annual Report':    { img: 'Annual Report.svg',    badge: 'badge--blue' },
+      'Monthly Report':  { img: 'Monthly Report.svg',   badge: 'badge--blue' },
+      'Research Report': { img: 'Research Report.svg',  badge: 'badge--blue' },
+      'Dashboard':       { img: 'Dashboard.svg',        badge: 'badge--lime' },
+      'Statistics':      { img: 'Statistics.svg',       badge: 'badge--teal' },
+      'Data':            { img: 'Data.svg',              badge: 'badge--navy' },
+    };
+    var COVER_BASE = '../assets/images/default_covers/';
+    var ALL_VARIANTS = ['badge--mint','badge--lime','badge--blue','badge--navy','badge--teal','badge--neutral'];
+
+    var wrapper = document.querySelector('[data-article-type]');
+    if (!wrapper) return;
+    var type = wrapper.dataset.articleType;
+    var map = TYPE_MAP[type];
+    if (!map) return;
+
+    var coverImg = wrapper.querySelector('[data-default-cover]');
+    if (coverImg) {
+      coverImg.src = COVER_BASE + encodeURIComponent(map.img);
+      coverImg.alt = type + ' default cover';
+    }
+
+    var badge = wrapper.querySelector('[data-type-badge]');
+    if (badge) {
+      badge.textContent = type;
+      ALL_VARIANTS.forEach(function (v) { badge.classList.remove(v); });
+      badge.classList.add(map.badge);
+    }
+  }());
+  </script>
+
+  <script>
+  // Show cover caption only when the cover is stuck (scrolled past its natural position).
+  // Populates the caption from the existing H1 and type badge — no duplicate markup needed.
+  (function () {
+    var sentinel = document.querySelector('.article__cover-sentinel');
+    var cover = document.querySelector('.article__cover');
+    var caption = document.querySelector('.article__cover-caption');
+    if (!sentinel || !cover || !caption) return;
+
+    // Clone the type badge and H1 text into the caption
+    var typeBadge = document.querySelector('.article__meta .badge[data-type-badge]');
+    var heading = document.querySelector('.article__heading');
+
+    if (typeBadge) caption.appendChild(typeBadge.cloneNode(true));
+    if (heading) {
+      var title = document.createElement('p');
+      title.className = 'article__cover-title';
+      title.textContent = heading.textContent;
+      caption.appendChild(title);
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      cover.classList.toggle('is-stuck', !entries[0].isIntersecting);
+    }, { threshold: 0 });
+
+    observer.observe(sentinel);
+  }());
+  </script>
+
+  <script>
+  // Position the cover so it always aligns with the H1, regardless of title length.
+  // Pulls the cover-col up by exactly the hero height so its top meets the hero top.
+  (function () {
+    var hero = document.querySelector('.article__hero');
+    var coverCol = document.querySelector('.article__cover-col');
+    if (!hero || !coverCol) return;
+
+    var heroInner = hero.querySelector('.article__hero-inner');
+
+    function position() {
+      if (window.matchMedia('(min-width: 768px)').matches) {
+        var paddingTop = parseFloat(getComputedStyle(heroInner).paddingTop) || 0;
+        coverCol.style.marginTop = '-' + (hero.offsetHeight - paddingTop) + 'px';
+      } else {
+        coverCol.style.marginTop = '';
+      }
+    }
+    position();
+    window.addEventListener('resize', position);
+  }());
+  </script>
+
+  <!-- =========================================================================
+    RELATED — 2-col grid of topic-resource cards, uses sub-topics organism
+  ========================================================================== -->
+  <section class="sub-topics article__related" aria-labelledby="related-heading" data-animate>
+    <div class="sub-topics__inner">
+
+      <div class="sub-topics__header">
+        <h2 class="sub-topics__heading" id="related-heading">Related</h2>
+        <a href="#" class="badge badge--neutral badge--link">Waterline</a>
+      </div>
+
+      <div class="sub-topics__grid" data-animate-stagger>
+
+        <!-- Card 1 -->
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Research%20Report.svg" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span class="badge badge--blue">Report</span></div>
+            <h3 class="card__title"><a href="#">Australia's Broadband Performance statistical snapshot</a></h3>
+            <p class="card__excerpt">A statistical snapshot released alongside the Broadband Performance Dashboard.</p>
+            <p class="card__date">Published 18 November 2024</p>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Research%20Report.svg" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span class="badge badge--blue">Report</span></div>
+            <h3 class="card__title"><a href="#">Measuring Australia's fixed broadband performance</a></h3>
+            <p class="card__excerpt">Use of digital technologies among First Nations children—Findings from the Longitudinal Study of Indigenous Children</p>
+            <p class="card__date">Published 18 November 2024</p>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Data.svg" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span class="badge badge--navy">Data</span></div>
+            <h3 class="card__title"><a href="#">Measuring Australia's fixed broadband performance</a></h3>
+            <p class="card__excerpt">Use of digital technologies among First Nations children—Findings from the Longitudinal Study of Indigenous Children</p>
+            <p class="card__date">Published 18 November 2024</p>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Statistics.svg" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span class="badge badge--teal">Statistics</span></div>
+            <h3 class="card__title"><a href="#">Measuring Australia's fixed broadband performance</a></h3>
+            <p class="card__excerpt">Use of digital technologies among First Nations children—Findings from the Longitudinal Study of Indigenous Children</p>
+            <p class="card__date">Published 18 November 2024</p>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Dashboard.svg" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span class="badge badge--lime">Dashboard</span></div>
+            <h3 class="card__title"><a href="#">Australia's Broadband Performance Dashboard</a></h3>
+            <p class="card__excerpt">Offers widely used datasets and tools focused on regional Australia — population, housing, economy, social outcomes, and more. Supports regional planning and analysis.</p>
+            <p class="card__date">Published 18 November 2024</p>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Research%20Report.svg" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span class="badge badge--blue">Report</span></div>
+            <h3 class="card__title"><a href="#">Measuring Australia's fixed broadband performance</a></h3>
+            <p class="card__excerpt">Use of digital technologies among First Nations children—Findings from the Longitudinal Study of Indigenous Children</p>
+            <p class="card__date">Published 18 November 2024</p>
+          </div>
+        </article>
+
+        <!-- Card 7 -->
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Research%20Report.svg" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span class="badge badge--blue">Report</span></div>
+            <h3 class="card__title"><a href="#">Australia's Broadband Performance statistical snapshot</a></h3>
+            <p class="card__excerpt">A statistical snapshot released alongside the Broadband Performance Dashboard.</p>
+            <p class="card__date">Published 18 November 2024</p>
+          </div>
+        </article>
+
+        <!-- Card 8 -->
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Research%20Report.svg" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span class="badge badge--blue">Report</span></div>
+            <h3 class="card__title"><a href="#">Measuring Australia's fixed broadband performance</a></h3>
+            <p class="card__excerpt">Use of digital technologies among First Nations children—Findings from the Longitudinal Study of Indigenous Children</p>
+            <p class="card__date">Published 18 November 2024</p>
+          </div>
+        </article>
+
+        <!-- Card 9 -->
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Data.svg" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span class="badge badge--navy">Data</span></div>
+            <h3 class="card__title"><a href="#">Measuring Australia's fixed broadband performance</a></h3>
+            <p class="card__excerpt">Use of digital technologies among First Nations children—Findings from the Longitudinal Study of Indigenous Children</p>
+            <p class="card__date">Published 18 November 2024</p>
+          </div>
+        </article>
+
+        <!-- Card 10 -->
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Statistics.svg" alt="">
+          </div>
+          <div class="card__body">
+            <div class="card__meta"><span class="badge badge--teal">Statistics</span></div>
+            <h3 class="card__title"><a href="#">Measuring Australia's fixed broadband performance</a></h3>
+            <p class="card__excerpt">Use of digital technologies among First Nations children—Findings from the Longitudinal Study of Indigenous Children</p>
+            <p class="card__date">Published 18 November 2024</p>
+          </div>
+        </article>
+
+      </div>
+
+      <a class="sub-topics__more sub-topics__more--bottom" href="#">
+        More
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- =========================================================================
+  SUBSCRIBE BANNER
+========================================================================== -->
+<section class="subscribe-banner" aria-label="Newsletter subscription">
+  <div class="subscribe-banner__inner">
+    <div class="subscribe-banner__card" data-animate>
+      <img src="../assets/images/device-grid.svg" alt="" class="subscribe-banner__bg" aria-hidden="true">
+      <p class="subscribe-banner__text">Subscribe for email notifications when new reports are published</p>
+      <a href="#" class="subscribe-banner__btn">Subscribe</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================================
+  FOOTER
+========================================================================== -->
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer__inner">
+
+    <!-- Main columns: org name + nav links -->
+    <div class="site-footer__main">
+
+      <div class="site-footer__brand">
+        <p class="site-footer__org-name">Bureau of Infrastructure and<br> Transport Research Economics<br> &amp; Bureau of Communications,<br> Arts and Regional Research</p>
+      </div>
+
+      <nav class="site-footer__nav-col" aria-label="Footer navigation">
+        <a class="site-footer__nav-link" href="#">Resource library</a>
+        <a class="site-footer__nav-link" href="#">Subscribe</a>
+      </nav>
+
+      <nav class="site-footer__nav-col" aria-label="Footer secondary navigation">
+        <a class="site-footer__nav-link" href="#">About us</a>
+        <a class="site-footer__nav-link" href="#">Contact us</a>
+      </nav>
+
+    </div>
+
+    <!-- Legal bar: gov branding + legal links -->
+    <div class="site-footer__legal">
+
+      <div class="site-footer__gov-brand">
+        <img src="../assets/images/logo.svg" alt="" class="site-footer__gov-crest" aria-hidden="true">
+      </div>
+
+      <div class="site-footer__legal-links">
+        <a class="site-footer__legal-link" href="#" target="_blank" rel="noopener noreferrer">
+          Privacy
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+        <a class="site-footer__legal-link" href="#" target="_blank" rel="noopener noreferrer">
+          Copyright
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+        <a class="site-footer__legal-link" href="#" target="_blank" rel="noopener noreferrer">
+          Disclaimer
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<!-- =========================================================================
+  Scripts
+========================================================================== -->
+<script>
+  // Mobile menu toggle
+  (function () {
+    var burger = document.querySelector('.site-header__burger');
+    var menu   = document.querySelector('.site-header__mobile-menu');
+
+    if (!burger || !menu) return;
+
+    var navBar  = document.querySelector('.site-header__nav-bar');
+    var header  = document.querySelector('.site-header');
+    var siteName = document.querySelector('.site-header__mobile-site-name');
+    var desktopMq = window.matchMedia('(min-width: 1024px)');
+    var mobileNavMq = window.matchMedia('(max-width: 1023px)');
+
+    function setMenuOffset() {
+      if (navBar) {
+        menu.style.setProperty('--mobile-menu-offset', navBar.getBoundingClientRect().height + 'px');
+      }
+    }
+
+    function closeMenu() {
+      menu.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      if (siteName) {
+        siteName.style.transition = '';
+        siteName.style.transform = '';
+      }
+      if (header) header.classList.remove('is-menu-open');
+    }
+
+    function animateSiteNameLayoutChange(mutate) {
+      if (!siteName || !mobileNavMq.matches) {
+        mutate();
+        return;
+      }
+
+      var firstRect = siteName.getBoundingClientRect();
+      mutate();
+      var lastRect = siteName.getBoundingClientRect();
+      var deltaX = firstRect.left - lastRect.left;
+
+      if (!deltaX) return;
+
+      siteName.style.transition = 'none';
+      siteName.style.transform = 'translateX(' + deltaX + 'px)';
+      requestAnimationFrame(function () {
+        siteName.style.transition = 'transform 0.28s cubic-bezier(0.4, 0, 0.2, 1)';
+        siteName.style.transform = '';
+      });
+    }
+
+    setMenuOffset();
+
+    burger.addEventListener('click', function () {
+      animateSiteNameLayoutChange(function () {
+        if (header) header.classList.remove('is-menu-open');
+        var isOpen = menu.classList.toggle('is-open');
+        burger.setAttribute('aria-expanded', String(isOpen));
+        menu.setAttribute('aria-hidden', String(!isOpen));
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+        setMenuOffset();
+        if (isOpen) {
+          if (header) header.classList.add('is-menu-open');
+        }
+      });
+    });
+
+    window.addEventListener('resize', function () {
+      setMenuOffset();
+      if (desktopMq.matches) {
+        closeMenu();
+      }
+      if (menu.classList.contains('is-open')) {
+        document.body.style.overflow = 'hidden';
+      }
+    });
+
+    // Header search panel
+    var searchBtn = document.querySelector('.site-header__utility-search');
+    var panel     = document.getElementById('header-search-panel');
+    var input     = document.getElementById('header-search-input');
+    var closeBtn  = panel ? panel.querySelector('.site-header__search-close') : null;
+
+    if (searchBtn && panel && input) {
+      function openPanel()  {
+        panel.classList.add('is-open');
+        searchBtn.setAttribute('aria-expanded', 'true');
+        requestAnimationFrame(function () { input.focus(); });
+      }
+      function closePanel() {
+        panel.classList.remove('is-open');
+        searchBtn.setAttribute('aria-expanded', 'false');
+        searchBtn.focus();
+      }
+
+      searchBtn.addEventListener('click', function () {
+        panel.classList.contains('is-open') ? closePanel() : openPanel();
+      });
+
+      if (closeBtn) {
+        closeBtn.addEventListener('click', closePanel);
+      }
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && panel.classList.contains('is-open')) {
+          closePanel();
+        }
+      });
+
+      document.addEventListener('click', function (e) {
+        if (
+          panel.classList.contains('is-open') &&
+          !panel.contains(e.target) &&
+          !searchBtn.contains(e.target)
+        ) {
+          closePanel();
+        }
+      });
+    }
+  })();
+
+  // Staggered entrance animations
+  (function () {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('[data-animate]').forEach(function (el) {
+        el.classList.add('is-visible');
+      });
+      return;
+    }
+
+    document.querySelectorAll('[data-animate-stagger]').forEach(function (container) {
+      var children = container.querySelectorAll(':scope > [data-animate]');
+      children.forEach(function (child, index) {
+        child.style.setProperty('--animate-delay', (index * 80) + 'ms');
+      });
+    });
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('[data-animate]').forEach(function (el) {
+      observer.observe(el);
+    });
+  })();
+</script>
+
+</body>
+</html>

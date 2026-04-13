@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Resource Library — BITRE/BCARR</title>
+  <title>Content Page — BITRE/BCARR</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,10 +11,13 @@
 
   <link rel="stylesheet" href="../css/main.css">
 </head>
-<body class="page-resource-library">
+<body class="page-content">
 
 <a href="#main-content" class="skip-link">Skip to main content</a>
 
+<!-- =========================================================================
+  HEADER — Dual bar: utility (white) + nav bar (navy)
+========================================================================== -->
 <header class="site-header" role="banner">
   <div class="site-header__utility-bar">
     <div class="site-header__utility-bar-inner">
@@ -53,7 +56,7 @@
 
     <div class="site-header__search-panel" id="header-search-panel" aria-hidden="true">
       <div class="site-header__search-panel-inner">
-        <label class="site-header__search-label" for="header-search-input">Search resources</label>
+        <label class="site-header__search-label" for="header-search-input">Search topics</label>
         <div class="site-header__search-row">
           <form class="site-header__search-form" role="search" action="/search">
             <div class="site-header__search-field">
@@ -66,7 +69,7 @@
                 id="header-search-input"
                 name="q"
                 class="site-header__search-input"
-                placeholder="e.g. aviation, freight, data…"
+                placeholder="e.g. road safety, freight…"
                 autocomplete="off"
                 autocorrect="off"
                 spellcheck="false"
@@ -198,275 +201,200 @@
 </header>
 
 <main id="main-content">
-  <section class="hero hero--topic" aria-labelledby="resource-library-heading">
+
+  <!-- =========================================================================
+    HERO — navy band with breadcrumb + H1 (same as resource library, no search)
+  ========================================================================== -->
+  <section class="hero hero--topic" aria-labelledby="content-heading">
     <div class="hero__left">
       <img src="../assets/images/device-grid.svg" alt="" class="hero__device-grid hero__device-grid--right" aria-hidden="true">
       <div class="hero__left-inner">
         <nav class="hero__breadcrumb" aria-label="Breadcrumb" data-animate>
           <a href="/">Home</a>
           <span class="hero__breadcrumb-sep" aria-hidden="true">›</span>
-          <span class="hero__breadcrumb-current" aria-current="page">Resource library</span>
+          <a href="#">About us</a>
+          <span class="hero__breadcrumb-sep" aria-hidden="true">›</span>
+          <span class="hero__breadcrumb-current" aria-current="page">Page title</span>
         </nav>
 
-        <h1 class="hero__heading" id="resource-library-heading" data-animate style="--animate-delay: 80ms">Resource library</h1>
+        <h1 class="hero__heading" id="content-heading" data-animate style="--animate-delay: 80ms">Page title</h1>
 
-        <p class="hero__body" data-animate style="--animate-delay: 160ms">Search, sort and filter BITRE/BCARR publications across transport, communications, arts and regional research.</p>
-
-        <form class="page-resource-library__search search-box search-box--hero" role="search" action="#" data-animate style="--animate-delay: 260ms">
-          <input
-            class="search-box__input"
-            type="search"
-            id="library-search"
-            name="q"
-            placeholder="What are you looking for?"
-            autocomplete="off"
-            autocorrect="off"
-            spellcheck="false"
-          >
-          <div class="search-box__footer">
-            <label class="search-box__label" for="library-search">Search all resources</label>
-            <button class="search-box__submit" type="submit" aria-label="Search">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <circle cx="11" cy="11" r="8"/>
-                <path d="m21 21-4.35-4.35"/>
-              </svg>
-            </button>
-          </div>
-        </form>
+        <p class="hero__body" data-animate style="--animate-delay: 160ms">A short introduction or summary for this content page. This text provides context for the reader.</p>
       </div>
     </div>
-
   </section>
 
-  <section class="page-resource-library__results" aria-label="Resource search results">
-    <div class="page-resource-library__results-inner">
-      <div class="page-resource-library__toolbar" data-animate>
-        <div class="page-resource-library__toolbar-top">
-          <div class="page-resource-library__filters">
-            <div class="page-resource-library__field">
-              <p class="page-resource-library__field-label">Topic</p>
-              <div class="page-resource-library__select-wrap">
-                <select class="page-resource-library__select" aria-label="Filter by topic">
-                  <option selected>All topics</option>
-                  <option>Arts</option>
-                  <option>Aviation</option>
-                  <option>Communications</option>
-                  <option>Freight</option>
-                  <option>Infrastructure</option>
-                  <option>Maritime</option>
-                  <option>Rail</option>
-                  <option>Regions &amp; Cities</option>
-                  <option>Roads &amp; Road Vehicles</option>
-                  <option>Road Safety</option>
-                </select>
-              </div>
-            </div>
+  <!-- =========================================================================
+    BODY — content column (left) + sub-navigation sidebar (right)
+  ========================================================================== -->
+  <div class="page-content__body">
+    <div class="page-content__body-inner">
 
-            <div class="page-resource-library__field">
-              <p class="page-resource-library__field-label">Sub topic</p>
-              <div class="page-resource-library__select-wrap">
-                <select class="page-resource-library__select page-resource-library__select--subtopic" id="subtopic-select" aria-label="Filter by sub topic" disabled>
-                  <option selected>Select a topic first</option>
-                </select>
-              </div>
-            </div>
+      <!-- Main content column — all WYSIWYG elements demonstrated -->
+      <div class="page-content__main">
 
-            <div class="page-resource-library__field">
-              <p class="page-resource-library__field-label">Release date</p>
-              <div class="page-resource-library__select-wrap">
-                <select class="page-resource-library__select" aria-label="Filter by release date">
-                  <option selected>Any time</option>
-                  <option>Past 12 months</option>
-                  <option>Past 2 years</option>
-                  <option>Past 5 years</option>
-                </select>
-              </div>
-            </div>
-          </div>
+        <!-- SECTION: Overview (paragraphs, bold, italic, links) -->
+        <section id="overview" class="page-content__section" data-animate>
+          <h2>Overview</h2>
+          <p>The Bureau of Infrastructure and Transport Research Economics (BITRE) provides <strong>independent research</strong>, analysis and statistics on infrastructure, transport and related issues. Our work supports <em>evidence-based policy development</em> within the Australian Government.</p>
+          <p>BITRE produces a wide range of publications including statistical reports, research reports, information sheets and working papers covering transport modes, infrastructure, regional development and related areas.</p>
+          <p>Our publications are publicly available through the <a href="#">Resource library</a> and are used by government departments, industry bodies, researchers and the broader community.</p>
+        </section>
 
-          <div class="page-resource-library__sort">
-            <div class="page-resource-library__field">
-              <p class="page-resource-library__field-label">Sort by</p>
-              <div class="page-resource-library__select-wrap">
-                <select class="page-resource-library__select" aria-label="Sort results">
-                  <option selected>Latest</option>
-                  <option>Oldest</option>
-                  <option>A to Z</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
+        <!-- SECTION: What we do (h3, h4, bulleted + numbered lists, nested lists) -->
+        <section id="what-we-do" class="page-content__section" data-animate>
+          <h2>What we do</h2>
+          <p>We collect, analyse and publish data and research on Australia's transport system and infrastructure.</p>
 
-        <div class="page-resource-library__meta">
-          <div class="page-resource-library__chips" role="group" aria-label="Applied filters">
-            <button class="page-resource-library__chip" type="button">
-              Aviation
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M18 6 6 18M6 6l12 12"/>
-              </svg>
-            </button>
-            <button class="page-resource-library__chip" type="button">
-              Statistical report
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M18 6 6 18M6 6l12 12"/>
-              </svg>
-            </button>
-            <button class="page-resource-library__chip" type="button">
-              Past 2 years
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M18 6 6 18M6 6l12 12"/>
-              </svg>
-            </button>
-            <a class="page-resource-library__clear" href="#">Clear all</a>
-          </div>
+          <h3>Key activities</h3>
+          <ul>
+            <li>Collecting and publishing transport statistics</li>
+            <li>Analysing infrastructure investment and performance</li>
+            <li>Researching transport safety and regulation</li>
+            <li>Monitoring freight supply chains and logistics
+              <ul>
+                <li>Road freight movements</li>
+                <li>Rail freight volumes</li>
+                <li>Coastal shipping activity</li>
+              </ul>
+            </li>
+            <li>Assessing regional connectivity and access</li>
+          </ul>
 
-          <p class="page-resource-library__summary">Showing 1–8 of 68 resources</p>
-        </div>
+          <h3>Publication schedule</h3>
+          <p>Our reports follow a regular release cycle:</p>
+          <ol>
+            <li>Monthly statistical bulletins (aviation, maritime)</li>
+            <li>Quarterly freight and logistics updates</li>
+            <li>Annual yearbook and statistical summary
+              <ol>
+                <li>Transport infrastructure yearbook</li>
+                <li>Regional connectivity report</li>
+              </ol>
+            </li>
+            <li>Ad-hoc research reports and working papers</li>
+          </ol>
+
+          <h4>Data availability</h4>
+          <p>Most datasets are published in both PDF and machine-readable formats (XLSX, CSV). Historical data is available on request.</p>
+
+          <h5>Embargo policy</h5>
+          <p>Pre-release access to statistical data may be provided to the Minister's office under strict embargo conditions.</p>
+
+          <h6>Revision history</h6>
+          <p>All corrections and revisions to published data are noted in the relevant publication's errata section.</p>
+        </section>
+
+        <!-- SECTION: Blockquote -->
+        <section id="our-research" class="page-content__section" data-animate>
+          <h2>Our research areas</h2>
+          <p>BITRE's research spans a range of topics critical to Australia's economic and social wellbeing.</p>
+
+          <blockquote>
+            <p>Good transport policy depends on good data. BITRE's research provides the evidence base that helps governments make informed decisions about infrastructure investment and regulatory reform.</p>
+            <cite>BITRE Director, 2024 Annual Report</cite>
+          </blockquote>
+
+          <h3>Aviation</h3>
+          <p>Domestic and international aviation statistics, airline performance, airport activity and air service accessibility for regional communities.</p>
+
+          <h3>Maritime</h3>
+          <p>Port activity, coastal shipping, <a href="#">waterline reports</a> on container handling productivity, and analysis of maritime freight movements.</p>
+
+          <h3>Road transport</h3>
+          <p>Vehicle fleet statistics, road safety analysis, traffic congestion measurement, and the <strong>economic costs of road crashes</strong>.</p>
+        </section>
+
+        <!-- SECTION: Table -->
+        <section id="publications" class="page-content__section" data-animate>
+          <h2>Publications</h2>
+          <p>BITRE produces a variety of publication types to support evidence-based policy:</p>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Frequency</th>
+                <th>Formats</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Statistical reports</strong></td>
+                <td>Monthly / Quarterly</td>
+                <td>PDF, XLSX</td>
+              </tr>
+              <tr>
+                <td><strong>Research reports</strong></td>
+                <td>As completed</td>
+                <td>PDF</td>
+              </tr>
+              <tr>
+                <td><strong>Information sheets</strong></td>
+                <td>As required</td>
+                <td>PDF</td>
+              </tr>
+              <tr>
+                <td><strong>Working papers</strong></td>
+                <td>As completed</td>
+                <td>PDF</td>
+              </tr>
+              <tr>
+                <td><strong>Datasets</strong></td>
+                <td>Varies</td>
+                <td>XLSX, CSV</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>All publications are available for download from the <a href="#">Resource library</a>.</p>
+        </section>
+
+        <!-- SECTION: Image -->
+        <section id="media" class="page-content__section" data-animate>
+          <h2>Media and resources</h2>
+          <p>BITRE regularly publishes data visualisations, charts and maps to accompany our research.</p>
+
+          <figure>
+            <img src="../assets/images/banner/communications.png" alt="Communications sector imagery">
+            <figcaption>Figure 1: Example placeholder image demonstrating figure and caption styling within the content area.</figcaption>
+          </figure>
+
+          <p>For high-resolution images and media enquiries, please contact the communications team.</p>
+
+          <hr>
+
+          <p><em>Last updated: April 2026</em></p>
+        </section>
+
+        <!-- SECTION: Contact -->
+        <section id="contact" class="page-content__section" data-animate>
+          <h2>Contact</h2>
+          <p>For enquiries about BITRE research and publications, please contact us:</p>
+          <ul>
+            <li><strong>Email:</strong> <a href="mailto:bitre@infrastructure.gov.au">bitre@infrastructure.gov.au</a></li>
+            <li><strong>Phone:</strong> (02) 6274 7210</li>
+            <li><strong>Post:</strong> GPO Box 501, Canberra ACT 2601</li>
+          </ul>
+        </section>
+
       </div>
 
-      <div class="page-resource-library__grid" data-animate-stagger>
-        <article class="card card--topic-resource" data-animate>
-          <div class="card__image">
-            <img src="../assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Australian Aircraft Activity report cover">
-          </div>
-          <div class="card__body">
-            <div class="card__meta">
-              <span class="badge badge--blue">Statistical Report</span>
-            </div>
-            <h2 class="card__title"><a href="#">Australian Aircraft Activity (General aviation activity)</a></h2>
-            <p class="card__excerpt">This annual survey covers all Australian registered aircraft used in the Commercial Air Transport and General Aviation sectors of the Australian aviation industry.</p>
-            <p class="card__date">Published 18 November 2024</p>
-          </div>
-        </article>
+      <!-- Sub-navigation sidebar — links to sibling pages in this section -->
+      <aside class="page-content__sidebar" aria-label="Section navigation" data-animate>
+        <nav class="page-content__subnav">
+          <p class="page-content__subnav-label">About us</p>
+          <ul class="page-content__subnav-links">
+            <li><a class="page-content__subnav-link is-active" href="#" aria-current="page">About us</a></li>
+            <li><a class="page-content__subnav-link" href="#">Subscribe</a></li>
+            <li><a class="page-content__subnav-link" href="#">Contact us</a></li>
+          </ul>
+        </nav>
+      </aside>
 
-        <article class="card card--topic-resource" data-animate>
-          <div class="card__image">
-            <img src="../assets/images/default_covers/Monthly%20Report.svg" alt="Monthly report cover">
-          </div>
-          <div class="card__body">
-            <div class="card__meta">
-              <span class="badge badge--neutral">Monthly Report</span>
-            </div>
-            <h2 class="card__title"><a href="#">Australian domestic aviation activity — monthly publications</a></h2>
-            <p class="card__excerpt">Monthly domestic and charter passenger movements, available seats, load factors, revenue passenger kilometres and available seat kilometres.</p>
-            <p class="card__date">Published 18 November 2024</p>
-          </div>
-        </article>
-
-        <article class="card card--topic-resource" data-animate>
-          <div class="card__image">
-            <img src="../assets/images/default_covers/Data.svg" alt="Data cover">
-          </div>
-          <div class="card__body">
-            <div class="card__meta">
-              <span class="badge badge--navy">Data</span>
-            </div>
-            <h2 class="card__title"><a href="#">International airline activity — time series</a></h2>
-            <p class="card__excerpt">International time series covering passenger, freight and mail movements, flights, available seats and seat load factors.</p>
-            <p class="card__date">Published 18 November 2024</p>
-          </div>
-        </article>
-
-        <article class="card card--topic-resource" data-animate>
-          <div class="card__image">
-            <img src="../assets/images/default_covers/Research%20Report.svg" alt="Research report cover">
-          </div>
-          <div class="card__body">
-            <div class="card__meta">
-              <span class="badge badge--blue">Research Report</span>
-            </div>
-            <h2 class="card__title"><a href="#">Consumer experience with broadband services in Australia</a></h2>
-            <p class="card__excerpt">Survey findings on consumer satisfaction, complaint rates, plan changes and switching behaviour across Australia’s fixed broadband market.</p>
-            <p class="card__date">Published 5 June 2024</p>
-          </div>
-        </article>
-
-        <article class="card card--topic-resource" data-animate>
-          <div class="card__image">
-            <img src="../assets/images/default_covers/Dashboard.svg" alt="Dashboard cover">
-          </div>
-          <div class="card__body">
-            <div class="card__meta">
-              <span class="badge badge--lime">Dashboard</span>
-            </div>
-            <h2 class="card__title"><a href="#">National Road Safety Tracker</a></h2>
-            <p class="card__excerpt">Interactive dashboard tracking road safety performance indicators across Australia, including fatalities, serious injuries and vehicle trends.</p>
-            <p class="card__date">Updated monthly</p>
-          </div>
-        </article>
-
-        <article class="card card--topic-resource" data-animate>
-          <div class="card__image">
-            <img src="../assets/images/report/trainline-12.jpg" alt="Rail freight report cover">
-          </div>
-          <div class="card__body">
-            <div class="card__meta">
-              <span class="badge badge--blue">Statistical Report</span>
-            </div>
-            <h2 class="card__title"><a href="#">Rail freight movements by corridor 2023–24</a></h2>
-            <p class="card__excerpt">Annual statistics on freight volumes, directional flows and corridor-level rail performance across key national freight routes.</p>
-            <p class="card__date">Published 9 October 2024</p>
-          </div>
-        </article>
-
-        <article class="card card--topic-resource" data-animate>
-          <div class="card__image">
-            <img src="../assets/images/report/BITRE-RVSA-entry-recall-statistics-Dec-2023.jpg" alt="Vehicle safety recall statistics report cover">
-          </div>
-          <div class="card__body">
-            <div class="card__meta">
-              <span class="badge badge--navy">Data</span>
-            </div>
-            <h2 class="card__title"><a href="#">Regional vehicle safety recall statistics</a></h2>
-            <p class="card__excerpt">Dataset and supporting notes on recall volumes, affected vehicle classes and regional distribution across the Australian vehicle fleet.</p>
-            <p class="card__date">Published 14 December 2023</p>
-          </div>
-        </article>
-
-        <article class="card card--topic-resource" data-animate>
-          <div class="card__image">
-            <img src="../assets/images/report/bitre-cover--assessment-of-road-improvements-in-remote-and-regional-areas--5september2025--lowres.jpg" alt="Assessment of road improvements report cover">
-          </div>
-          <div class="card__body">
-            <div class="card__meta">
-              <span class="badge badge--blue">Research Report</span>
-            </div>
-            <h2 class="card__title"><a href="#">Assessment of road improvements in remote and regional areas</a></h2>
-            <p class="card__excerpt">Evaluates the performance of road investment programs in remote and regional Australia, including safety outcomes, resilience and network access.</p>
-            <p class="card__date">Published 5 September 2025</p>
-          </div>
-        </article>
-      </div>
-
-      <nav class="page-resource-library__pagination" aria-label="Results pagination" data-animate>
-        <ul class="page-resource-library__pagination-list" role="list">
-          <li>
-            <a class="page-resource-library__page-link page-resource-library__page-link--nav" href="#" aria-label="Previous page" aria-disabled="true" tabindex="-1">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M19 12H5"/>
-                <path d="m12 19-7-7 7-7"/>
-              </svg>
-            </a>
-          </li>
-          <li><span class="page-resource-library__page-current" aria-current="page">1</span></li>
-          <li><a class="page-resource-library__page-link" href="#" aria-label="Page 2">2</a></li>
-          <li><a class="page-resource-library__page-link" href="#" aria-label="Page 3">3</a></li>
-          <li><span class="page-resource-library__page-gap" aria-hidden="true">…</span></li>
-          <li><a class="page-resource-library__page-link" href="#" aria-label="Page 67">67</a></li>
-          <li><a class="page-resource-library__page-link" href="#" aria-label="Page 68">68</a></li>
-          <li>
-            <a class="page-resource-library__page-link page-resource-library__page-link--nav" href="#" aria-label="Next page">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M5 12h14"/>
-                <path d="m12 5 7 7-7 7"/>
-              </svg>
-            </a>
-          </li>
-        </ul>
-      </nav>
     </div>
-  </section>
+  </div>
+
 </main>
 
 <!-- =========================================================================
@@ -482,6 +410,9 @@
   </div>
 </section>
 
+<!-- =========================================================================
+  FOOTER
+========================================================================== -->
 <footer class="site-footer" role="contentinfo">
   <div class="site-footer__inner">
     <div class="site-footer__main">
@@ -535,7 +466,11 @@
   </div>
 </footer>
 
+<!-- =========================================================================
+  SCRIPTS
+========================================================================== -->
 <script>
+  // Mobile menu toggle
   (function () {
     var burger = document.querySelector('.site-header__burger');
     var menu = document.querySelector('.site-header__mobile-menu');
@@ -618,6 +553,7 @@
     });
   })();
 
+  // Header search panel
   (function () {
     var searchBtn = document.querySelector('.site-header__utility-search');
     var panel = document.getElementById('header-search-panel');
@@ -665,18 +601,7 @@
     });
   })();
 
-  (function () {
-    var libraryForm = document.querySelector('.page-resource-library__search');
-    var libraryInput = document.getElementById('library-search');
-
-    if (!libraryForm || !libraryInput) return;
-
-    libraryForm.addEventListener('click', function (e) {
-      if (e.target.closest('.search-box__submit')) return;
-      libraryInput.focus();
-    });
-  })();
-
+  // Staggered entrance animations
   (function () {
     if (!('IntersectionObserver' in window)) {
       document.querySelectorAll('[data-animate]').forEach(function (el) {
@@ -684,13 +609,6 @@
       });
       return;
     }
-
-    document.querySelectorAll('[data-animate-stagger]').forEach(function (container) {
-      var children = container.querySelectorAll(':scope > [data-animate]');
-      children.forEach(function (child, index) {
-        child.style.setProperty('--animate-delay', (index * 80) + 'ms');
-      });
-    });
 
     var observer = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -708,58 +626,8 @@
       observer.observe(el);
     });
   })();
-</script>
-<script src="../js/main.js"></script>
 
-<script>
-  // Sub topic dropdown — enable and populate once a topic is selected
-  (function () {
-    var topicSelect   = document.querySelector('[aria-label="Filter by topic"]');
-    var subtopicSelect = document.getElementById('subtopic-select');
-    var subtopicWrap  = subtopicSelect ? subtopicSelect.closest('.page-resource-library__select-wrap') : null;
-
-    // Demo sub-topics keyed by topic (fallback for unlisted topics)
-    var subTopics = {
-      'Communications': ['Broadband & performance', 'Affordability', 'Access & inclusion', 'Streaming & SVOD']
-    };
-
-    function populateSubtopic(topic) {
-      var options = subTopics[topic] || [];
-      subtopicSelect.innerHTML = '';
-
-      if (!options.length) {
-        var placeholder = document.createElement('option');
-        placeholder.textContent = 'All sub topics';
-        placeholder.selected = true;
-        subtopicSelect.appendChild(placeholder);
-      } else {
-        var all = document.createElement('option');
-        all.textContent = 'All sub topics';
-        all.selected = true;
-        subtopicSelect.appendChild(all);
-        options.forEach(function (label) {
-          var opt = document.createElement('option');
-          opt.textContent = label;
-          subtopicSelect.appendChild(opt);
-        });
-      }
-    }
-
-    if (!topicSelect || !subtopicSelect) return;
-
-    topicSelect.addEventListener('change', function () {
-      var selected = topicSelect.value;
-      if (selected === 'All topics') {
-        subtopicSelect.innerHTML = '<option selected>Select a topic first</option>';
-        subtopicSelect.disabled = true;
-      } else {
-        populateSubtopic(selected);
-        subtopicSelect.disabled = false;
-      }
-    });
-  })();
-
-  // Parallax for hero device-grid SVG (right only)
+  // Parallax for hero device-grid SVG
   (function () {
     var right = document.querySelector('.hero__device-grid--right');
     if (!right) return;
@@ -775,7 +643,9 @@
       }
     }, { passive: true });
   })();
+
 </script>
+<script src="../js/main.js"></script>
 
 </body>
 </html>

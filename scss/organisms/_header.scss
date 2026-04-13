@@ -663,7 +663,8 @@
   &__mobile-utility {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: $spacing-sm $spacing-lg;
     align-items: center;
     margin-top: $spacing-sm;
     padding-top: $spacing-lg + $spacing-xs; // match mobile menu gap (28px)

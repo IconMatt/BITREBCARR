@@ -1,154 +1,436 @@
 // =============================================================================
 // PAGES / ARTICLE
-// Page-specific layout for Drupal article/node pages.
-// Drupal: node--type-article.html.twig
+// Publication/article detail page.
+// Breadcrumb strip → navy hero (H1 only) → white body (floating cover + meta)
 // =============================================================================
 
-.page-article {
+// -----------------------------------------------------------------------------
+// BREADCRUMB — navy strip, merges with hero band below
+// -----------------------------------------------------------------------------
 
-  &__header {
-    background-color: $color-brand-navy;
-    padding-block: $spacing-xl;
+.article__breadcrumb {
+  background-color: $color-brand-navy;
+}
+
+.article__breadcrumb-inner {
+  @include container;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: $spacing-xs;
+  padding-top: $spacing-lg;
+  padding-bottom: 0;
+  font-size: $font-size-sm;
+  overflow: hidden;
+
+  // Mobile: hide all but the last 3 children (parent link + sep + current)
+  > :not(:nth-last-child(-n+3)) {
+    display: none;
 
     @include respond-to('md') {
-      padding-block: $spacing-2xl;
-    }
-
-    &-inner {
-      @include container;
-      display: flex;
-      flex-direction: column;
-      gap: $spacing-md;
-      max-width: 800px;
+      display: inline;
     }
   }
 
-  &__meta {
-    display: flex;
-    align-items: center;
-    gap: $spacing-sm;
+  @include respond-to('md') {
     flex-wrap: wrap;
+    overflow: visible;
   }
 
-  &__date {
-    font-size: $font-size-sm;
-    color: $color-neutral-500;
-  }
+  a {
+    @include transition(color);
 
-  &__title {
-    font-size: $font-size-3xl;
-    font-weight: $font-weight-bold;
-    color: $color-text-inverse;
-    line-height: $line-height-tight;
+    color: rgba($color-neutral-0, 0.6);
+    text-decoration: none;
 
-    @include respond-to('md') {
-      font-size: $font-size-3xl;
+    &:hover {
+      color: $color-text-inverse;
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+
+      border-radius: $radius-sm;
     }
   }
 
-  &__summary {
-    font-size: $font-size-md;
-    color: $color-neutral-400;
-    line-height: $line-height-loose;
+}
+
+.article__breadcrumb-sep {
+  color: rgba($color-neutral-0, 0.4);
+}
+
+.article__breadcrumb-current {
+  color: rgba($color-neutral-0, 0.6);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+
+  @include respond-to('md') {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: normal;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// HERO BAND — navy background, H1 only
+// Cover card from the body section floats up into this band at desktop.
+// -----------------------------------------------------------------------------
+
+.article__hero {
+  background-color: $color-brand-navy;
+}
+
+.article__hero-inner {
+  @include container;
+
+  padding-block: $spacing-lg; // 24px top and bottom
+}
+
+// At desktop, indent H1 right to leave visual space for the floating cover card
+.article__heading-wrap {
+  @include respond-to('md') {
+    margin-left: calc(200px + #{$spacing-xl});
   }
 
-  // --- Featured image ---
-  &__hero-image {
-    @include aspect-ratio(16, 7);
-    background-color: $color-neutral-200;
+  @include respond-to('lg') {
+    margin-left: calc(230px + #{$spacing-xl});
+  }
+}
 
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+// -----------------------------------------------------------------------------
+// H1
+// -----------------------------------------------------------------------------
+
+.article__heading {
+  margin: 0;
+  font-size: 1.8rem;               // mobile — matches hero__heading
+  font-weight: $font-weight-semibold;
+  line-height: $line-height-tight; // 1.25
+  color: $color-text-inverse;
+  text-align: left;
+  max-width: none;
+  text-wrap: pretty;
+
+  @include respond-to('md') {
+    font-size: 2.25rem;
+    line-height: $line-height-h1;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// BODY — white background
+// -----------------------------------------------------------------------------
+
+.article__body {
+  background-color: $color-neutral-0;
+}
+
+.article__body-inner {
+  @include container;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+  padding-block: $spacing-xl $spacing-3xl;
+  align-items: start;
+
+  @include respond-to('md') {
+    grid-template-columns: 200px 1fr;
+    gap: $spacing-xl;
+    padding-block: 0 $spacing-3xl; // top=0: cover's negative margin handles position
   }
 
-  // --- Body layout ---
-  &__body {
-    padding-block: $spacing-xl;
-
-    @include respond-to('md') {
-      padding-block: $spacing-2xl;
-    }
-
-    &-inner {
-      @include container;
-      display: grid;
-      gap: $spacing-xl;
-
-      @include respond-to('lg') {
-        grid-template-columns: minmax(0, 1fr) 320px;
-        gap: $spacing-2xl;
-      }
-    }
+  @include respond-to('lg') {
+    grid-template-columns: 230px 1fr;
   }
+}
 
-  // --- Main content column ---
-  &__content {
-    max-width: 720px;
+// -----------------------------------------------------------------------------
+// COVER — floats up into the hero band at desktop
+// -----------------------------------------------------------------------------
+
+.article__cover-col {
+  max-width: 160px;
+
+  @include respond-to('md') {
+    max-width: none;
+    // margin-top set by JS to match hero height — CSS fallback for no-JS
+    margin-top: -$spacing-3xl;
+    align-self: stretch; // must stretch to full grid height for sticky to work
   }
+}
 
-  // --- Sidebar ---
-  &__sidebar {
+.article__cover {
+  @include respond-to('md') {
+    position: sticky;
+    top: $spacing-lg;
+  }
+}
+
+.article__cover-card {
+  background: $color-neutral-0;
+  border-radius: $radius-xl;
+  aspect-ratio: 210 / 297; // A4 portrait
+  box-shadow:
+    0 4px 12px rgba($color-brand-navy, 0.12),
+    0 16px 48px rgba($color-brand-navy, 0.18);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// COVER CAPTION — badge + title below cover, desktop only (sticky sidebar)
+// Matches card--report body styling
+// -----------------------------------------------------------------------------
+
+.article__cover-caption {
+  display: none;
+
+  @include respond-to('md') {
     display: flex;
     flex-direction: column;
-    gap: $spacing-lg;
+    align-items: flex-start;
+    gap: $spacing-xs;
+    padding-top: $spacing-lg;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.35s ease-in-out, visibility 0.35s ease-in-out;
+  }
 
-    @include respond-below('lg') {
-      order: -1; // Show sidebar above content on mobile
+  // Fade in when the cover is stuck
+  .article__cover.is-stuck & {
+    @include respond-to('md') {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+
+.article__cover-title {
+  margin: 0;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  line-height: $line-height-heading;
+  color: $color-text-primary;
+  text-wrap: balance;
+}
+
+// -----------------------------------------------------------------------------
+// BODY RIGHT COLUMN — metadata + prose
+// -----------------------------------------------------------------------------
+
+.article__body-right {
+  max-width: 84ch;
+
+  @include respond-to('md') {
+    padding-top: $spacing-xl; // breathing room below the hero navy band
+  }
+}
+
+// -----------------------------------------------------------------------------
+// METADATA — publication type, tags, dates, identifiers
+// -----------------------------------------------------------------------------
+
+.article__meta {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  margin-bottom: $spacing-xl;
+}
+
+.article__meta-row {
+  display: flex;
+  align-items: baseline;
+  gap: $spacing-xs;
+  font-size: $font-size-base;
+  color: $color-neutral-600;
+  margin: 0;
+
+  strong {
+    color: $color-text-primary;
+    font-weight: $font-weight-semibold;
+  }
+}
+
+.article__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+}
+
+// -----------------------------------------------------------------------------
+// PROSE CONTENT
+// -----------------------------------------------------------------------------
+
+.article__content {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-lg;
+
+  p {
+    margin: 0;
+    font-size: $font-size-md;
+    line-height: $line-height-loose;
+    color: $color-text-secondary;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: $font-size-xl;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    line-height: $line-height-heading;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+  }
+
+  ul,
+  ol {
+    margin: 0;
+    padding-left: 1.5rem;
+    color: $color-text-secondary;
+    line-height: $line-height-loose;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// DOWNLOAD LIST
+// -----------------------------------------------------------------------------
+
+.download-list {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  margin-top: $spacing-lg;
+}
+
+.download-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $spacing-xs $spacing-md;
+  padding: $spacing-md $spacing-lg;
+  background-color: $color-neutral-0;
+  border: $border-default;
+  border-radius: $radius-lg;
+  text-decoration: none;
+  color: $color-text-primary;
+  @include transition(background-color box-shadow transform);
+
+  @include respond-to('md') {
+    flex-wrap: nowrap;
+  }
+
+  &:hover {
+    background-color: $color-neutral-100;
+    box-shadow: $shadow-sm;
+    transform: translateY(-1px);
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    color: $color-brand-teal;
+    align-self: flex-start;
+    margin-top: 2px;
+
+    @include respond-to('md') {
+      align-self: center;
+      margin-top: 0;
     }
   }
 
-  &__sidebar-widget {
-    @include surface;
-    padding: $spacing-lg;
-  }
-
-  &__sidebar-title {
+  &__name {
+    // Mobile: fill the row so type/size/action wrap to next line
+    width: calc(100% - 20px - #{$spacing-md});
     font-size: $font-size-base;
     font-weight: $font-weight-semibold;
     color: $color-text-primary;
-    margin-bottom: $spacing-md;
+
+    @include respond-to('md') {
+      width: auto;
+      flex: 1;
+    }
   }
 
-  // --- Author block ---
-  &__author {
+  &__type {
+    // Mobile: indent to align under name (icon width + gap)
+    margin-left: calc(20px + #{$spacing-md});
+    font-size: $font-size-sm;
+    font-weight: $font-weight-bold;
+    color: $color-brand-teal;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wide;
+
+    @include respond-to('md') {
+      margin-left: 0;
+      min-width: 3rem;
+      text-align: right;
+    }
+  }
+
+  &__size {
+    font-size: $font-size-sm;
+    color: $color-text-secondary;
+
+    @include respond-to('md') {
+      min-width: 4.5rem;
+      text-align: right;
+    }
+  }
+
+  &__action {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    color: $color-brand-teal;
+    @include transition(transform);
+  }
+
+  &:hover &__action {
+    transform: translateY(2px);
+  }
+}
+
+// -----------------------------------------------------------------------------
+// RELATED SECTION — sub-topics variant for article page
+// Badge next to heading, More button at bottom, no description
+// -----------------------------------------------------------------------------
+
+.article__related {
+  border-top: none;
+
+  .sub-topics__header {
     display: flex;
-    align-items: center;
-    gap: $spacing-md;
-    padding: $spacing-lg;
-    @include surface;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-xl;
+  }
+
+  .sub-topics__more--bottom {
+    position: static;
     margin-top: $spacing-xl;
-
-    &-avatar {
-      width: 56px;
-      height: 56px;
-      border-radius: $radius-pill;
-      overflow: hidden;
-      flex-shrink: 0;
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-
-    &-info {
-      display: flex;
-      flex-direction: column;
-      gap: $spacing-xs;
-    }
-
-    &-name {
-      font-weight: $font-weight-semibold;
-      color: $color-text-primary;
-    }
-
-    &-bio {
-      font-size: $font-size-sm;
-      color: $color-text-secondary;
-    }
+    margin-bottom: 0;
   }
 }

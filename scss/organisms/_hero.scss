@@ -121,7 +121,8 @@
   // --- Alert banner (sits below search box inside hero__inner) ---
   &__alert {
     display: flex;
-    align-items: center;
+    flex-direction: column;  // mobile: stack icon above text
+    align-items: flex-start;
     gap: $spacing-md;
     width: 100%;
     background-color: mix(#fff, $color-brand-navy, 10%);
@@ -130,6 +131,11 @@
     position: relative;
     z-index: $z-raised;
     transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    @include respond-to('sm') {
+      flex-direction: row;
+      align-items: flex-start;
+    }
 
     &:hover {
       background-color: mix(#fff, $color-brand-navy, 12%);
@@ -149,11 +155,6 @@
     img {
       width: 22px;
       height: auto;
-    }
-
-    // Hide on mobile to save space
-    @media (max-width: 599px) {
-      display: none;
     }
   }
 
@@ -270,18 +271,18 @@
   }
 
   &__device-grid--left {
-    left: -110px;
+    left: -200px;
     top: 42%; // mobile — above right SVG to avoid clash
     transform: translateY(-50%) scale(-1, -1) rotate(15deg);
 
     @include respond-to('md') {
       top: 58%;
-      left: -100px;
+      left: -180px;
     }
 
     @include respond-to('lg') {
       top: 50%;
-      left: -40px;
+      left: -160px;
     }
   }
 
@@ -410,10 +411,10 @@
     background-color: $color-brand-navy;
     display: flex;
     justify-content: flex-end;
-    padding: $spacing-lg $container-padding;
+    padding: $spacing-lg $container-padding ($spacing-lg * 2);
 
     @include respond-to('md') {
-      padding: $spacing-lg $container-padding-md;
+      padding: $spacing-lg $container-padding-md ($spacing-lg * 2);
     }
 
     @include respond-to('lg') {
@@ -423,7 +424,7 @@
     @include respond-to('xl') {
       // Left padding tracks the container's auto-margin so content stays aligned
       // at viewports wider than $container-max-width
-      padding: $spacing-lg $spacing-3xl $spacing-lg
+      padding: $spacing-lg $spacing-3xl ($spacing-lg * 2)
         max(#{$container-padding-xl}, calc((100vw - #{$container-max-width}) / 2 + #{$container-padding-xl}));
     }
   }

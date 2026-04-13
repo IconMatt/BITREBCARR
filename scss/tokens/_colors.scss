@@ -35,7 +35,8 @@ $color-ui-surface: #ffffff;
 $color-ui-border:  #dee2e6;
 $color-ui-link:    #337b7e;
 $color-ui-accent:  #4eb2b4;
-$color-ui-focus:   #78d1f5;
+$color-ui-focus:   #0d6efd;  // 4.6:1 on white — passes WCAG 3:1 focus contrast
+$color-ui-focus-outer: #78d1f5;
 $color-ui-error:   #c0392b;
 
 // --- CSS Custom Properties (for runtime theming / Drupal overrides) ---

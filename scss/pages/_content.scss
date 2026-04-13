@@ -1,0 +1,386 @@
+// =============================================================================
+// PAGES / CONTENT
+// Generic content page with prose (left) and sticky sub-navigation sidebar (right)
+// =============================================================================
+
+// -----------------------------------------------------------------------------
+// BODY — white background, two-column layout
+// -----------------------------------------------------------------------------
+
+.page-content__body {
+  background-color: $color-neutral-0;
+}
+
+.page-content__body-inner {
+  @include container;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $spacing-xl;
+  padding-block: $spacing-xl $spacing-3xl;
+
+  @include respond-to('lg') {
+    grid-template-columns: 1fr 240px;
+    gap: $spacing-3xl;
+  }
+}
+
+// -----------------------------------------------------------------------------
+// MAIN CONTENT COLUMN — prose sections
+// -----------------------------------------------------------------------------
+
+.page-content__main {
+  max-width: 84ch;
+  min-width: 0; // prevent grid blowout
+}
+
+// -----------------------------------------------------------------------------
+// WYSIWYG PROSE STYLES — all Drupal CKEditor output lives inside .page-content__section
+// Covers: h2–h6, p, strong, em, a, ul, ol, blockquote, img, figure, table
+// -----------------------------------------------------------------------------
+
+.page-content__section {
+  padding-bottom: $spacing-xl;
+  margin-bottom: $spacing-xl;
+  border-bottom: 1px solid $color-ui-border;
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  // --- Headings (h2–h6) ---
+
+  h2 {
+    margin: 0 0 $spacing-lg;
+    font-size: $font-size-2xl; // 32px
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    line-height: $line-height-heading;
+  }
+
+  h3 {
+    margin: $spacing-xl 0 $spacing-sm;
+    font-size: $font-size-xl; // 24px
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    line-height: $line-height-heading;
+  }
+
+  h4 {
+    margin: $spacing-lg 0 $spacing-sm;
+    font-size: $font-size-lg; // 20px
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    line-height: $line-height-heading;
+  }
+
+  h5 {
+    margin: $spacing-lg 0 $spacing-xs;
+    font-size: $font-size-base; // 16px
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    line-height: $line-height-heading;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wider;
+  }
+
+  h6 {
+    margin: $spacing-lg 0 $spacing-xs;
+    font-size: $font-size-sm; // 14px
+    font-weight: $font-weight-bold;
+    color: $color-text-secondary;
+    line-height: $line-height-heading;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-wider;
+  }
+
+  // First heading in a section shouldn't have top margin
+  > h2:first-child,
+  > h3:first-child,
+  > h4:first-child,
+  > h5:first-child,
+  > h6:first-child {
+    margin-top: 0;
+  }
+
+  // --- Paragraph ---
+
+  p {
+    margin: 0 0 $spacing-md;
+    font-size: $font-size-md; // 18px
+    line-height: $line-height-loose;
+    color: $color-text-secondary;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  // --- Inline styles ---
+
+  strong,
+  b {
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+  }
+
+  em,
+  i {
+    font-style: italic;
+  }
+
+  // --- Links ---
+
+  a {
+    color: $color-brand-secondary-deep-teal;
+    text-decoration: none;
+    padding-bottom: 1px;
+    background:
+      linear-gradient($color-brand-secondary-deep-teal, $color-brand-secondary-deep-teal) no-repeat 0 100% / 0% 2px,
+      linear-gradient($color-brand-teal, $color-brand-teal) no-repeat 0 100% / 100% 2px;
+    transition: color 0.25s ease, background-size 0.35s ease;
+
+    &:hover {
+      color: $color-brand-navy;
+      background-size: 100% 2px, 100% 2px;
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+      border-radius: $radius-sm;
+    }
+  }
+
+  // --- Lists (bulleted + numbered) ---
+
+  ul,
+  ol {
+    margin: 0 0 $spacing-md;
+    padding-left: 1.5rem;
+    font-size: $font-size-md;
+    line-height: $line-height-loose;
+    color: $color-text-secondary;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    li + li {
+      margin-top: $spacing-xs;
+    }
+
+    // Nested lists
+    ul,
+    ol {
+      margin-top: $spacing-xs;
+      margin-bottom: 0;
+    }
+  }
+
+  ul {
+    list-style-type: disc;
+
+    ul {
+      list-style-type: circle;
+
+      ul {
+        list-style-type: square;
+      }
+    }
+  }
+
+  ol {
+    list-style-type: decimal;
+
+    ol {
+      list-style-type: lower-alpha;
+
+      ol {
+        list-style-type: lower-roman;
+      }
+    }
+  }
+
+  // --- Blockquote ---
+
+  blockquote {
+    margin: $spacing-lg 0;
+    padding: $spacing-md $spacing-lg;
+    border-left: 4px solid $color-brand-teal;
+    background-color: $color-neutral-100;
+    border-radius: 0 $radius-md $radius-md 0;
+
+    p {
+      font-size: $font-size-md;
+      font-style: italic;
+      color: $color-text-primary;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    cite {
+      display: block;
+      margin-top: $spacing-sm;
+      font-size: $font-size-sm;
+      font-style: normal;
+      font-weight: $font-weight-semibold;
+      color: $color-text-secondary;
+
+      &::before {
+        content: '— ';
+      }
+    }
+  }
+
+  // --- Images ---
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: $radius-lg;
+    margin: $spacing-lg 0;
+  }
+
+  figure {
+    margin: $spacing-lg 0;
+    padding: 0;
+
+    img {
+      margin: 0;
+    }
+
+    figcaption {
+      margin-top: $spacing-sm;
+      font-size: $font-size-sm;
+      color: $color-text-secondary;
+      line-height: $line-height-base;
+    }
+  }
+
+  // --- Tables ---
+
+  table {
+    width: 100%;
+    margin: $spacing-lg 0;
+    border-collapse: collapse;
+    font-size: $font-size-sm;
+    line-height: $line-height-base;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  thead {
+    th {
+      padding: $spacing-sm $spacing-md;
+      background-color: $color-brand-navy;
+      color: $color-neutral-0;
+      font-weight: $font-weight-semibold;
+      text-align: left;
+      white-space: nowrap;
+    }
+  }
+
+  tbody {
+    td {
+      padding: $spacing-sm $spacing-md;
+      border-bottom: 1px solid $color-ui-border;
+      color: $color-text-secondary;
+      vertical-align: top;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:nth-child(even) {
+      background-color: $color-neutral-100;
+    }
+  }
+
+  // --- Horizontal rule ---
+
+  hr {
+    margin: $spacing-xl 0;
+    border: none;
+    border-top: 1px solid $color-ui-border;
+  }
+}
+
+// Section heading — convenience class (optional, h2 inside section works too)
+.page-content__section-heading {
+  margin: 0 0 $spacing-lg;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  line-height: $line-height-heading;
+}
+
+// -----------------------------------------------------------------------------
+// SIDEBAR — sticky "On this page" sub-navigation
+// -----------------------------------------------------------------------------
+
+.page-content__sidebar {
+  display: none; // hidden on mobile — content is linear
+
+  @include respond-to('lg') {
+    display: block;
+    align-self: start;
+    position: sticky;
+    top: $spacing-lg;
+  }
+}
+
+.page-content__subnav {
+  padding: $spacing-lg;
+  background-color: $color-neutral-100;
+  border-radius: $radius-xl;
+}
+
+.page-content__subnav-label {
+  margin: 0 0 $spacing-md;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing-wider;
+}
+
+.page-content__subnav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.page-content__subnav-link {
+  @include transition(color);
+
+  display: block;
+  padding: $spacing-xs $spacing-sm;
+  border-left: 3px solid transparent;
+  border-radius: 0 $radius-sm $radius-sm 0;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-secondary;
+  text-decoration: none;
+
+  &:hover {
+    color: $color-brand-navy;
+  }
+
+  &.is-active {
+    color: $color-brand-navy;
+    font-weight: $font-weight-semibold;
+    border-left-color: $color-brand-teal;
+    background-color: rgba($color-brand-teal, 0.06);
+  }
+}

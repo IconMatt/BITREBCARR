@@ -8,3 +8,34 @@
 .u-visually-hidden {
   @include visually-hidden;
 }
+
+// Skip link — bypass-block pattern (WCAG 2.4.1 / GovCMS requirement).
+// Hidden off-screen until focused, then slides into view at top of viewport.
+.skip-link {
+  @include visually-hidden;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  padding: $spacing-sm $spacing-lg;
+  background-color: $color-brand-navy;
+  color: $color-neutral-0;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+  border-radius: 0 0 $radius-md 0;
+
+  &:focus {
+    width: auto;
+    height: auto;
+    margin: 0;
+    clip: auto;
+    overflow: visible;
+    white-space: normal;
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+  }
+}

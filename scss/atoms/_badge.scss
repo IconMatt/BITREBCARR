@@ -6,55 +6,83 @@
 .badge {
   display: inline-flex;
   align-items: center;
-  padding: $size-2 $spacing-xs;       // 2px 4px — mobile
+  padding: $spacing-xs $spacing-md;   // 4px 16px — matches page-nav__link
   border-radius: $radius-pill;
-  font-size: 0.625rem;                // 10px — mobile
-  font-weight: $font-weight-bold;
-  letter-spacing: $letter-spacing-wide;
-  text-transform: uppercase;
+  font-size: $font-size-sm;           // 14px — matches page-nav__link
+  font-weight: $font-weight-semibold; // matches page-nav__link
   line-height: 1;
   white-space: nowrap;
-
-  @include respond-to('md') {
-    font-size: $font-size-xs;         // 12px — tablet+
-    padding-inline: $spacing-sm;      // 8px
-  }
+  color: var(--badge-color, currentColor); // variants set --badge-color
 
   // --- Variants ---
 
   // Mint green bg — navy text (e.g. FEATURED)
   &--mint {
+    --badge-color: #{$color-brand-navy};
     background-color: $color-brand-mint;
-    color: $color-brand-navy;
+    color: var(--badge-color);
   }
 
   // Lime green bg — navy text (e.g. DASHBOARD)
   &--lime {
+    --badge-color: #{$color-brand-navy};
     background-color: $color-brand-secondary-lime;
-    color: $color-brand-navy;
+    color: var(--badge-color);
   }
 
   // Light blue bg — navy text (e.g. REPORT)
   &--blue {
+    --badge-color: #{$color-brand-navy};
     background-color: $color-brand-blue;
-    color: $color-brand-navy;
+    color: var(--badge-color);
   }
 
   // Dark navy bg — mint text (e.g. DATA)
   &--navy {
+    --badge-color: #{$color-brand-mint};
     background-color: $color-brand-navy;
-    color: $color-brand-mint;
+    color: var(--badge-color);
   }
 
   // Solid deep-teal bg — white text (e.g. STATISTICS)
   &--teal {
+    --badge-color: #{$color-text-inverse};
     background-color: $color-brand-secondary-deep-teal;
-    color: $color-text-inverse;
+    color: var(--badge-color);
   }
 
   // Neutral grey bg — muted text (e.g. NEUTRAL)
   &--neutral {
+    --badge-color: #{$color-text-secondary};
     background-color: $color-neutral-200;
-    color: $color-text-secondary;
+    color: var(--badge-color);
+  }
+
+  // Linked badge — white overlay on hover, text colour locked to variant
+  &--link {
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      color: var(--badge-color); // reference variant's own colour, not parent's
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-color: rgba(#fff, 0);
+      @include transition(background-color);
+    }
+
+    &:hover::after {
+      background-color: rgba(#fff, 0.2);
+    }
+
+    &:focus-visible {
+      @include focus-ring;
+    }
   }
 }

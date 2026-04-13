@@ -463,7 +463,7 @@
     // Portrait cover — sits inside card with its own radius + shadow
     .card__image {
       width: 160px;
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 210 / 297; // A4 portrait
       flex-shrink: 0;
       align-self: flex-start;
       border-radius: $radius-lg;
@@ -600,7 +600,7 @@
       float: right;
       width: 90px;
       margin-left: $spacing-md;
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 210 / 297; // A4 portrait
       border-radius: $radius-lg;
       overflow: hidden;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
@@ -690,7 +690,7 @@
     }
 
     .card__image {
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 210 / 297; // A4 portrait
       overflow: hidden;
       border-radius: $radius-xl;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);

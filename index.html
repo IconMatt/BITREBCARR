@@ -654,6 +654,30 @@
         </div>
       </a>
 
+      <a href="templates/article.html" target="_blank" class="ks-template-card">
+        <div class="ks-template-card__media" style="height:220px;overflow:hidden">
+          <img src="assets/images/screenshots/article.jpg" alt="Article / Publication template screenshot" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block">
+        </div>
+        <div class="ks-template-card__content">
+          <div class="ks-template-card__path">templates/article.html</div>
+          <div class="ks-template-card__name">Article / Publication</div>
+          <div class="ks-template-card__desc">Publication detail page. Navy breadcrumb + hero band, floating cover card, metadata with type badge. Set <code style="font-family:var(--ks-mono);font-size:10px">data-article-type</code> on <code style="font-family:var(--ks-mono);font-size:10px">.article__body</code> to auto-swap cover image and badge. See badges section 2.2 for type map.</div>
+          <div class="ks-template-card__cta">Open ↗</div>
+        </div>
+      </a>
+
+      <a href="templates/content.html" target="_blank" class="ks-template-card">
+        <div class="ks-template-card__media" style="height:220px;overflow:hidden">
+          <img src="assets/images/screenshots/content.jpg" alt="Content Page template screenshot" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block">
+        </div>
+        <div class="ks-template-card__content">
+          <div class="ks-template-card__path">templates/content.html</div>
+          <div class="ks-template-card__name">Content Page</div>
+          <div class="ks-template-card__desc">Generic content page with prose column and sticky sidebar sub-navigation. Includes full WYSIWYG styles (h2–h6, lists, blockquote, table, figure) for Drupal CKEditor output.</div>
+          <div class="ks-template-card__cta">Open ↗</div>
+        </div>
+      </a>
+
     </div>
   </div>
 </section>
@@ -794,6 +818,29 @@
       <span class="badge badge--teal">Statistics</span>
       <span class="badge badge--neutral">Neutral</span>
     </div>
+
+    <p class="ks-muted" style="margin-top:16px">Add <code style="font-family:var(--ks-mono);font-size:11px;background:#f4f5f7;padding:2px 5px;border-radius:3px">badge--link</code> to make a badge a clickable link with a subtle white overlay on hover.</p>
+
+    <p class="ks-sub__label" style="margin-top:24px">Article publication type → badge + default cover</p>
+    <p class="ks-muted" style="margin-bottom:12px">On <code style="font-family:var(--ks-mono);font-size:11px;background:#f4f5f7;padding:2px 5px;border-radius:3px">templates/article.html</code>, set <code style="font-family:var(--ks-mono);font-size:11px;background:#f4f5f7;padding:2px 5px;border-radius:3px">data-article-type</code> on <code style="font-family:var(--ks-mono);font-size:11px;background:#f4f5f7;padding:2px 5px;border-radius:3px">.article__body</code> — JS auto-updates the cover image and type badge to match.</p>
+    <table style="width:100%;border-collapse:collapse;font-size:12px;font-family:'Mulish',sans-serif">
+      <thead>
+        <tr style="background:#f4f5f7;text-align:left">
+          <th style="padding:8px 12px;font-weight:700;color:#081e3f;border:1px solid #dee2e6">data-article-type</th>
+          <th style="padding:8px 12px;font-weight:700;color:#081e3f;border:1px solid #dee2e6">Default cover</th>
+          <th style="padding:8px 12px;font-weight:700;color:#081e3f;border:1px solid #dee2e6">Badge variant</th>
+          <th style="padding:8px 12px;font-weight:700;color:#081e3f;border:1px solid #dee2e6">Preview</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td style="padding:8px 12px;border:1px solid #dee2e6;font-family:var(--ks-mono)">Annual Report</td><td style="padding:8px 12px;border:1px solid #dee2e6;color:#6c757d">Annual Report.png</td><td style="padding:8px 12px;border:1px solid #dee2e6;font-family:var(--ks-mono);color:#6c757d">badge--blue</td><td style="padding:8px 12px;border:1px solid #dee2e6"><span class="badge badge--blue">Annual Report</span></td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #dee2e6;font-family:var(--ks-mono)">Monthly Report</td><td style="padding:8px 12px;border:1px solid #dee2e6;color:#6c757d">Monthly Report.png</td><td style="padding:8px 12px;border:1px solid #dee2e6;font-family:var(--ks-mono);color:#6c757d">badge--blue</td><td style="padding:8px 12px;border:1px solid #dee2e6"><span class="badge badge--blue">Monthly Report</span></td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #dee2e6;font-family:var(--ks-mono)">Research Report</td><td style="padding:8px 12px;border:1px solid #dee2e6;color:#6c757d">Research Report.png</td><td style="padding:8px 12px;border:1px solid #dee2e6;font-family:var(--ks-mono);color:#6c757d">badge--blue</td><td style="padding:8px 12px;border:1px solid #dee2e6"><span class="badge badge--blue">Research Report</span></td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #dee2e6;font-family:var(--ks-mono)">Dashboard</td><td style="padding:8px 12px;border:1px solid #dee2e6;color:#6c757d">Dashboard.png</td><td style="padding:8px 12px;border:1px solid #dee2e6;font-family:var(--ks-mono);color:#6c757d">badge--lime</td><td style="padding:8px 12px;border:1px solid #dee2e6"><span class="badge badge--lime">Dashboard</span></td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #dee2e6;font-family:var(--ks-mono)">Statistics</td><td style="padding:8px 12px;border:1px solid #dee2e6;color:#6c757d">Statistics.png</td><td style="padding:8px 12px;border:1px solid #dee2e6;font-family:var(--ks-mono);color:#6c757d">badge--teal</td><td style="padding:8px 12px;border:1px solid #dee2e6"><span class="badge badge--teal">Statistics</span></td></tr>
+        <tr><td style="padding:8px 12px;border:1px solid #dee2e6;font-family:var(--ks-mono)">Data</td><td style="padding:8px 12px;border:1px solid #dee2e6;color:#6c757d">Data.png</td><td style="padding:8px 12px;border:1px solid #dee2e6;font-family:var(--ks-mono);color:#6c757d">badge--navy</td><td style="padding:8px 12px;border:1px solid #dee2e6"><span class="badge badge--navy">Data</span></td></tr>
+      </tbody>
+    </table>
   </div>
 
 
@@ -1027,7 +1074,7 @@
 
       <article class="card card--topic-resource">
         <div class="card__image">
-          <img src="assets/images/default_covers/Dashboard.png" alt="">
+          <img src="assets/images/default_covers/Dashboard.svg" alt="">
         </div>
         <div class="card__body">
           <div class="card__meta">
@@ -1041,7 +1088,7 @@
 
       <article class="card card--topic-resource">
         <div class="card__image">
-          <img src="assets/images/default_covers/Research%20Report.png" alt="">
+          <img src="assets/images/default_covers/Research%20Report.svg" alt="">
         </div>
         <div class="card__body">
           <div class="card__meta">
@@ -1055,7 +1102,7 @@
 
       <article class="card card--topic-resource">
         <div class="card__image">
-          <img src="assets/images/default_covers/Data.png" alt="">
+          <img src="assets/images/default_covers/Data.svg" alt="">
         </div>
         <div class="card__body">
           <div class="card__meta">
@@ -1258,7 +1305,7 @@
 
       <article class="card card--topic-resource">
         <div class="card__image">
-          <img src="assets/images/default_covers/Dashboard.png" alt="">
+          <img src="assets/images/default_covers/Dashboard.svg" alt="">
         </div>
         <div class="card__body">
           <div class="card__meta">
@@ -1272,7 +1319,7 @@
 
       <article class="card card--topic-resource">
         <div class="card__image">
-          <img src="assets/images/default_covers/Research%20Report.png" alt="">
+          <img src="assets/images/default_covers/Research%20Report.svg" alt="">
         </div>
         <div class="card__body">
           <div class="card__meta">
@@ -1286,7 +1333,7 @@
 
       <article class="card card--topic-resource">
         <div class="card__image">
-          <img src="assets/images/default_covers/Data.png" alt="">
+          <img src="assets/images/default_covers/Data.svg" alt="">
         </div>
         <div class="card__body">
           <div class="card__meta">
@@ -1300,7 +1347,7 @@
 
       <article class="card card--topic-resource">
         <div class="card__image">
-          <img src="assets/images/default_covers/Statistics.png" alt="">
+          <img src="assets/images/default_covers/Statistics.svg" alt="">
         </div>
         <div class="card__body">
           <div class="card__meta">
@@ -1314,11 +1361,11 @@
 
       <article class="card card--topic-resource">
         <div class="card__image">
-          <img src="assets/images/default_covers/Annual%20Report.png" alt="">
+          <img src="assets/images/default_covers/Annual%20Report.svg" alt="">
         </div>
         <div class="card__body">
           <div class="card__meta">
-            <span class="badge badge--navy">Annual Report</span>
+            <span class="badge badge--blue">Annual Report</span>
           </div>
           <h3 class="card__title"><a href="#">Consumer experience with broadband services in Australia</a></h3>
           <p class="card__excerpt">Surveys consumer satisfaction, complaint rates, and switching behaviour across Australia's fixed broadband market to understand service quality trends.</p>
@@ -1328,7 +1375,7 @@
 
       <article class="card card--topic-resource">
         <div class="card__image">
-          <img src="assets/images/default_covers/Data.png" alt="">
+          <img src="assets/images/default_covers/Data.svg" alt="">
         </div>
         <div class="card__body">
           <div class="card__meta">
@@ -1385,16 +1432,25 @@
             <p class="page-resource-library__field-label">Topic</p>
             <div class="page-resource-library__select-wrap">
               <select class="page-resource-library__select" aria-label="Filter by topic">
-                <option>All topics</option>
+                <option selected>All topics</option>
+                <option>Arts</option>
+                <option>Aviation</option>
                 <option>Communications</option>
+                <option>Freight</option>
+                <option>Infrastructure</option>
+                <option>Maritime</option>
+                <option>Rail</option>
+                <option>Regions &amp; Cities</option>
+                <option>Roads &amp; Road Vehicles</option>
+                <option>Road Safety</option>
               </select>
             </div>
           </div>
           <div class="page-resource-library__field">
             <p class="page-resource-library__field-label">Sub topic</p>
             <div class="page-resource-library__select-wrap">
-              <select class="page-resource-library__select page-resource-library__select--subtopic" aria-label="Filter by sub topic" disabled>
-                <option>Select a topic first</option>
+              <select class="page-resource-library__select page-resource-library__select--subtopic" id="subtopic-select" aria-label="Filter by sub topic" disabled>
+                <option selected>Select a topic first</option>
               </select>
             </div>
           </div>
@@ -1402,8 +1458,10 @@
             <p class="page-resource-library__field-label">Release date</p>
             <div class="page-resource-library__select-wrap">
               <select class="page-resource-library__select" aria-label="Filter by release date">
-                <option>Any time</option>
+                <option selected>Any time</option>
                 <option>Past 12 months</option>
+                <option>Past 2 years</option>
+                <option>Past 5 years</option>
               </select>
             </div>
           </div>
@@ -1413,8 +1471,9 @@
             <p class="page-resource-library__field-label">Sort by</p>
             <div class="page-resource-library__select-wrap">
               <select class="page-resource-library__select" aria-label="Sort results">
-                <option>Latest</option>
+                <option selected>Latest</option>
                 <option>Oldest</option>
+                <option>A to Z</option>
               </select>
             </div>
           </div>
@@ -1425,13 +1484,23 @@
         <div class="page-resource-library__chips" role="group" aria-label="Applied filters">
           <button class="page-resource-library__chip" type="button">
             Aviation
-            <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M1 1l9 9M10 1l-9 9"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 6 6 18M6 6l12 12"/>
+            </svg>
+          </button>
+          <button class="page-resource-library__chip" type="button">
+            Statistical report
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 6 6 18M6 6l12 12"/>
+            </svg>
           </button>
           <button class="page-resource-library__chip" type="button">
             Past 2 years
-            <svg viewBox="0 0 11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M1 1l9 9M10 1l-9 9"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 6 6 18M6 6l12 12"/>
+            </svg>
           </button>
-          <a href="#" class="page-resource-library__clear">Clear all</a>
+          <a class="page-resource-library__clear" href="#">Clear all</a>
         </div>
         <p class="page-resource-library__summary">Showing 1–8 of 68 resources</p>
       </div>

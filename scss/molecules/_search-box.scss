@@ -28,7 +28,7 @@
 
   &:focus-within {
     border-color: $color-ui-focus;
-    box-shadow: 0 0 0 3px rgba($color-ui-focus, 0.2);
+    box-shadow: 0 0 0 3px rgba($color-ui-focus-outer, 0.35);
   }
 
   &__input {
