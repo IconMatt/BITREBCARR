@@ -636,7 +636,7 @@
     window.addEventListener('scroll', function () {
       if (!ticking) {
         requestAnimationFrame(function () {
-          right.style.transform = 'translateY(calc(-50% + ' + (-window.scrollY * 0.12) + 'px))';
+          right.style.transform = 'translateY(' + (-window.scrollY * 0.12) + 'px)';
           ticking = false;
         });
         ticking = true;

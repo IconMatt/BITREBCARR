@@ -2787,17 +2787,17 @@ hr {
 }
 .hero__device-grid--right {
   right: -110px;
-  top: 18%;
+  top: 5%;
 }
 @media screen and (min-width: 768px) {
   .hero__device-grid--right {
-    top: 28%;
+    top: 8%;
     right: -100px;
   }
 }
 @media screen and (min-width: 1024px) {
   .hero__device-grid--right {
-    top: 20%;
+    top: 0;
     right: -40px;
   }
 }
@@ -3060,6 +3060,7 @@ hr {
 }
 .hero--topic .hero__body {
   text-align: left;
+  max-width: 60ch;
 }
 .hero--light {
   background-color: #f4f5f7;
@@ -4686,6 +4687,20 @@ hr {
   justify-content: center;
   min-width: 24px;
   color: #495057;
+}
+
+.page-content .hero__device-grid--right {
+  top: -10%;
+}
+@media screen and (min-width: 768px) {
+  .page-content .hero__device-grid--right {
+    top: -15%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .page-content .hero__device-grid--right {
+    top: -20%;
+  }
 }
 
 .page-content__body {

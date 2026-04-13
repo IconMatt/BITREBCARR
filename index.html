@@ -67,6 +67,14 @@
 
     .ks-section:last-child { border-bottom: none; }
 
+    .ks-section--white {
+      background: #ffffff;
+      box-shadow: 0 0 0 100vmax #ffffff;
+      clip-path: inset(0 -100vmax);
+      border-bottom-color: #eaeced;
+      padding-top: 32px;
+    }
+
     .ks-section__layer {
       font-family: var(--ks-mono);
       font-size: 11px;
@@ -612,7 +620,7 @@
 <section id="templates" class="ks-section">
   <p class="ks-section__layer">Start Here</p>
   <h2 class="ks-section__title">Templates</h2>
-  <p class="ks-section__intro">These are the highest-value references for build handoff. A Drupal developer should be able to scan this section first, understand the intended page families, and then use the sections below to confirm the design decisions that sit underneath them.</p>
+  <p class="ks-section__intro">These are the highest-value references for build handoff. For a Drupal developer, scan this section first to understand the intended page families, then use the sections below to confirm the design decisions that sit underneath them.</p>
 
   <div class="ks-sub">
     <p class="ks-sub__label">Page templates</p>
@@ -686,7 +694,7 @@
 <!-- ============================================================
   1. TOKENS
 ============================================================ -->
-<section id="tokens" class="ks-section">
+<section id="tokens" class="ks-section ks-section--white">
   <p class="ks-section__layer">Foundations</p>
   <h2 class="ks-section__title">Tokens</h2>
   <p class="ks-section__intro">These values should stay stable across templates and components. They define the visual language of the system and are the best place to sanity-check consistency before implementation starts.</p>
@@ -776,7 +784,7 @@
 <!-- ============================================================
   2. ATOMS
 ============================================================ -->
-<section id="atoms" class="ks-section">
+<section id="atoms" class="ks-section ks-section--white">
   <p class="ks-section__layer">Core Elements</p>
   <h2 class="ks-section__title">Atoms</h2>
   <p class="ks-section__intro">This section covers the smallest reusable UI pieces: headings, text styles, and badges. These are the building blocks that all larger components depend on.</p>
@@ -850,7 +858,7 @@
 <!-- ============================================================
   3. MOLECULES
 ============================================================ -->
-<section id="molecules" class="ks-section">
+<section id="molecules" class="ks-section ks-section--white">
   <p class="ks-section__layer">Reusable Components</p>
   <h2 class="ks-section__title">Molecules</h2>
   <p class="ks-section__intro">These are combinations of core elements that are likely to recur throughout the site. Showing them both as standalone components and in richer contexts makes the handoff more useful than a pure style tile.</p>
@@ -903,7 +911,7 @@
   </div>
 </div>
 
-<section id="molecules-cont" class="ks-section" style="padding-top:48px">
+<section id="molecules-cont" class="ks-section ks-section--white" style="padding-top:48px">
 
   <!-- 3.2 Card — Report -->
   <div class="ks-sub">

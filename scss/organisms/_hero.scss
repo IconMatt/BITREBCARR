@@ -257,15 +257,15 @@
 
   &__device-grid--right {
     right: -110px;
-    top: 18%; // mobile — sits behind the search box
+    top: 5%;
 
     @include respond-to('md') {
-      top: 28%;
+      top: 8%;
       right: -100px;
     }
 
     @include respond-to('lg') {
-      top: 20%;
+      top: 0;
       right: -40px;
     }
   }
@@ -570,6 +570,7 @@
 
   &--topic &__body {
     text-align: left;
+    max-width: 60ch;
   }
 
   // =========================================================================
