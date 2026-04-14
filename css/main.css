@@ -2953,6 +2953,7 @@ hr {
   overflow: hidden;
   position: relative;
   aspect-ratio: 16/9;
+  margin-top: -1px;
 }
 @media screen and (min-width: 768px) {
   .hero--topic .hero__right {
@@ -3008,9 +3009,9 @@ hr {
 @media screen and (max-width: 1023px) {
   .hero__banner-device--mobile {
     height: auto;
-    width: 100%;
+    width: calc(100% + 2px);
     top: 0;
-    left: 0;
+    left: -1px;
     transform: none;
     transform-origin: unset;
   }

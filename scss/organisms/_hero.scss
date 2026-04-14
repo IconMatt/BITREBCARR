@@ -445,6 +445,7 @@
     overflow: hidden;
     position: relative; // contain absolutely-positioned banner images at all breakpoints
     aspect-ratio: 16 / 9; // mobile height driven by aspect ratio
+    margin-top: -1px; // close sub-pixel gap between stacked hero panels on mobile
 
     @include respond-to('md') {
       aspect-ratio: 21 / 9; // shallower at tablet
@@ -506,9 +507,9 @@
 
     @include respond-below('lg') {
       height: auto;
-      width: 100%;
+      width: calc(100% + 2px);
       top: 0;
-      left: 0;
+      left: -1px;
       transform: none;
       transform-origin: unset;
     }
