@@ -3009,11 +3009,11 @@ hr {
 @media screen and (max-width: 1023px) {
   .hero__banner-device--mobile {
     height: auto;
-    width: calc(100% + 2px);
+    width: 100%;
     top: 0;
-    left: -1px;
-    transform: none;
-    transform-origin: unset;
+    left: 0;
+    transform: scale(1.005);
+    transform-origin: center top;
   }
 }
 @media screen and (max-width: 1023px) {
