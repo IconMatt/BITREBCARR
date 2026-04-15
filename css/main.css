@@ -4445,7 +4445,7 @@ hr {
 }
 @media screen and (min-width: 1024px) {
   .page-resource-library__toolbar-top {
-    grid-template-columns: 1fr 1fr minmax(0, 160px) minmax(0, 160px);
+    grid-template-columns: 1fr 1fr minmax(0, 160px) minmax(0, 160px) minmax(0, 160px);
     align-items: end;
   }
 }
@@ -4701,6 +4701,10 @@ hr {
   color: #495057;
 }
 
+.page-content {
+  scroll-behavior: smooth;
+}
+
 .page-content .hero__device-grid--right {
   top: -10%;
 }
@@ -4757,6 +4761,7 @@ hr {
   padding-bottom: 48px;
   margin-bottom: 48px;
   border-bottom: 1px solid #dee2e6;
+  scroll-margin-top: 24px;
 }
 .page-content__section:last-child {
   border-bottom: none;

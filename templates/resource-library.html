@@ -272,6 +272,20 @@
             </div>
 
             <div class="page-resource-library__field">
+              <p class="page-resource-library__field-label">Type</p>
+              <div class="page-resource-library__select-wrap">
+                <select class="page-resource-library__select" aria-label="Filter by type">
+                  <option selected>All types</option>
+                  <option>Research Report</option>
+                  <option>Monthly Report</option>
+                  <option>Annual Report</option>
+                  <option>Dashboard</option>
+                  <option>Data</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="page-resource-library__field">
               <p class="page-resource-library__field-label">Release date</p>
               <div class="page-resource-library__select-wrap">
                 <select class="page-resource-library__select" aria-label="Filter by release date">
@@ -321,32 +335,34 @@
             <a class="page-resource-library__clear" href="#">Clear all</a>
           </div>
 
-          <p class="page-resource-library__summary">Showing 1–8 of 68 resources</p>
+          <p class="page-resource-library__summary">Showing 1–16 of 685 resources</p>
         </div>
       </div>
 
       <div class="page-resource-library__grid" data-animate-stagger>
+        <!-- 1. Annual Report -->
         <article class="card card--topic-resource" data-animate>
           <div class="card__image">
-            <img src="../assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Australian Aircraft Activity report cover">
+            <img src="../assets/images/report/asf-2023-24.jpg" alt="Australian infrastructure statistics yearbook cover">
           </div>
           <div class="card__body">
             <div class="card__meta">
-              <span class="badge badge--blue">Statistical Report</span>
+              <span class="badge badge--blue">Annual Report</span>
             </div>
-            <h2 class="card__title"><a href="#">Australian Aircraft Activity (General aviation activity)</a></h2>
-            <p class="card__excerpt">This annual survey covers all Australian registered aircraft used in the Commercial Air Transport and General Aviation sectors of the Australian aviation industry.</p>
-            <p class="card__date">Published 18 November 2024</p>
+            <h2 class="card__title"><a href="#">Australian Infrastructure and Transport Statistics Yearbook 2024</a></h2>
+            <p class="card__excerpt">The annual flagship reference for transport and infrastructure statistics, covering aviation, maritime, rail, road and urban transport.</p>
+            <p class="card__date">Published 12 December 2024</p>
           </div>
         </article>
 
+        <!-- 2. Monthly Report -->
         <article class="card card--topic-resource" data-animate>
           <div class="card__image">
             <img src="../assets/images/default_covers/Monthly%20Report.svg" alt="Monthly report cover">
           </div>
           <div class="card__body">
             <div class="card__meta">
-              <span class="badge badge--neutral">Monthly Report</span>
+              <span class="badge badge--blue">Monthly Report</span>
             </div>
             <h2 class="card__title"><a href="#">Australian domestic aviation activity — monthly publications</a></h2>
             <p class="card__excerpt">Monthly domestic and charter passenger movements, available seats, load factors, revenue passenger kilometres and available seat kilometres.</p>
@@ -354,6 +370,7 @@
           </div>
         </article>
 
+        <!-- 3. Data -->
         <article class="card card--topic-resource" data-animate>
           <div class="card__image">
             <img src="../assets/images/default_covers/Data.svg" alt="Data cover">
@@ -368,20 +385,22 @@
           </div>
         </article>
 
+        <!-- 4. Research Report -->
         <article class="card card--topic-resource" data-animate>
           <div class="card__image">
-            <img src="../assets/images/default_covers/Research%20Report.svg" alt="Research report cover">
+            <img src="../assets/images/report/bitre-rr159-economic-measures-of-general-aviation-in-australia.jpg" alt="Economic measures of general aviation report cover">
           </div>
           <div class="card__body">
             <div class="card__meta">
               <span class="badge badge--blue">Research Report</span>
             </div>
-            <h2 class="card__title"><a href="#">Consumer experience with broadband services in Australia</a></h2>
-            <p class="card__excerpt">Survey findings on consumer satisfaction, complaint rates, plan changes and switching behaviour across Australia’s fixed broadband market.</p>
+            <h2 class="card__title"><a href="#">Economic measures of general aviation in Australia (RR159)</a></h2>
+            <p class="card__excerpt">Quantifies the economic contribution of the general aviation sector, covering employment, expenditure and industry linkages.</p>
             <p class="card__date">Published 5 June 2024</p>
           </div>
         </article>
 
+        <!-- 5. Dashboard -->
         <article class="card card--topic-resource" data-animate>
           <div class="card__image">
             <img src="../assets/images/default_covers/Dashboard.svg" alt="Dashboard cover">
@@ -396,23 +415,40 @@
           </div>
         </article>
 
+        <!-- 6. Statistics -->
         <article class="card card--topic-resource" data-animate>
           <div class="card__image">
-            <img src="../assets/images/report/trainline-12.jpg" alt="Rail freight report cover">
+            <img src="../assets/images/default_covers/Statistics.svg" alt="Statistics cover">
           </div>
           <div class="card__body">
             <div class="card__meta">
-              <span class="badge badge--blue">Statistical Report</span>
+              <span class="badge badge--teal">Statistics</span>
             </div>
-            <h2 class="card__title"><a href="#">Rail freight movements by corridor 2023–24</a></h2>
-            <p class="card__excerpt">Annual statistics on freight volumes, directional flows and corridor-level rail performance across key national freight routes.</p>
+            <h2 class="card__title"><a href="#">Australian aircraft activity — general aviation summary</a></h2>
+            <p class="card__excerpt">Annual summary statistics covering hours flown, fleet size and activity by aircraft class across the general aviation sector.</p>
+            <p class="card__date">Published 18 November 2024</p>
+          </div>
+        </article>
+
+        <!-- 7. Research Report -->
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/report/trainline-12.jpg" alt="Trainline rail freight report cover">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--blue">Research Report</span>
+            </div>
+            <h2 class="card__title"><a href="#">Trainline 12 — Australian rail transport statistics</a></h2>
+            <p class="card__excerpt">Flagship rail statistical compendium covering freight volumes, passenger movements and corridor-level performance across national networks.</p>
             <p class="card__date">Published 9 October 2024</p>
           </div>
         </article>
 
+        <!-- 8. Data -->
         <article class="card card--topic-resource" data-animate>
           <div class="card__image">
-            <img src="../assets/images/report/BITRE-RVSA-entry-recall-statistics-Dec-2023.jpg" alt="Vehicle safety recall statistics report cover">
+            <img src="../assets/images/report/BITRE-RVSA-entry-recall-statistics-Dec-2023.jpg" alt="Vehicle safety recall statistics cover">
           </div>
           <div class="card__body">
             <div class="card__meta">
@@ -424,6 +460,7 @@
           </div>
         </article>
 
+        <!-- 9. Research Report -->
         <article class="card card--topic-resource" data-animate>
           <div class="card__image">
             <img src="../assets/images/report/bitre-cover--assessment-of-road-improvements-in-remote-and-regional-areas--5september2025--lowres.jpg" alt="Assessment of road improvements report cover">
@@ -435,6 +472,111 @@
             <h2 class="card__title"><a href="#">Assessment of road improvements in remote and regional areas</a></h2>
             <p class="card__excerpt">Evaluates the performance of road investment programs in remote and regional Australia, including safety outcomes, resilience and network access.</p>
             <p class="card__date">Published 5 September 2025</p>
+          </div>
+        </article>
+
+        <!-- 10. Annual Report -->
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Annual%20Report.svg" alt="Annual report cover">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--blue">Annual Report</span>
+            </div>
+            <h2 class="card__title"><a href="#">Australian sea freight 2022–23</a></h2>
+            <p class="card__excerpt">Annual report on coastal and international seaborne trade, covering cargo volumes, commodity mix and port-level movements.</p>
+            <p class="card__date">Published 22 August 2024</p>
+          </div>
+        </article>
+
+        <!-- 11. Monthly Report -->
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Monthly%20Report.svg" alt="Monthly report cover">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--blue">Monthly Report</span>
+            </div>
+            <h2 class="card__title"><a href="#">International airline activity — monthly publications</a></h2>
+            <p class="card__excerpt">Monthly international passenger, freight and mail movements between Australia and overseas ports by airline and route.</p>
+            <p class="card__date">Published 18 November 2024</p>
+          </div>
+        </article>
+
+        <!-- 12. Dashboard -->
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Dashboard.svg" alt="Dashboard cover">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--lime">Dashboard</span>
+            </div>
+            <h2 class="card__title"><a href="#">Freight activity dashboard</a></h2>
+            <p class="card__excerpt">Interactive view of freight task performance across road, rail, sea and air modes, with commodity and corridor filters.</p>
+            <p class="card__date">Updated quarterly</p>
+          </div>
+        </article>
+
+        <!-- 13. Statistics -->
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Statistics.svg" alt="Statistics cover">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--teal">Statistics</span>
+            </div>
+            <h2 class="card__title"><a href="#">Road deaths Australia — monthly bulletin</a></h2>
+            <p class="card__excerpt">Monthly statistics on road crash fatalities by jurisdiction, road user type, age group and crash type.</p>
+            <p class="card__date">Published 1 November 2024</p>
+          </div>
+        </article>
+
+        <!-- 14. Research Report -->
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Research%20Report.svg" alt="Research report cover">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--blue">Research Report</span>
+            </div>
+            <h2 class="card__title"><a href="#">Consumer experience with broadband services in Australia</a></h2>
+            <p class="card__excerpt">Survey findings on consumer satisfaction, complaint rates, plan changes and switching behaviour across Australia’s fixed broadband market.</p>
+            <p class="card__date">Published 5 June 2024</p>
+          </div>
+        </article>
+
+        <!-- 15. Data -->
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Data.svg" alt="Data cover">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--navy">Data</span>
+            </div>
+            <h2 class="card__title"><a href="#">Domestic airline on-time performance — dataset</a></h2>
+            <p class="card__excerpt">Time-series data on on-time arrivals, departures, cancellations and delays across Australian domestic routes and carriers.</p>
+            <p class="card__date">Published 28 October 2024</p>
+          </div>
+        </article>
+
+        <!-- 16. Annual Report -->
+        <article class="card card--topic-resource" data-animate>
+          <div class="card__image">
+            <img src="../assets/images/default_covers/Annual%20Report.svg" alt="Annual report cover">
+          </div>
+          <div class="card__body">
+            <div class="card__meta">
+              <span class="badge badge--blue">Annual Report</span>
+            </div>
+            <h2 class="card__title"><a href="#">Airport traffic data — annual summary 2023–24</a></h2>
+            <p class="card__excerpt">Yearly summary of passenger, aircraft and freight movements at Australia’s major and regional airports.</p>
+            <p class="card__date">Published 30 September 2024</p>
           </div>
         </article>
       </div>

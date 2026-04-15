@@ -383,11 +383,14 @@
       <!-- Sub-navigation sidebar — links to sibling pages in this section -->
       <aside class="page-content__sidebar" aria-label="Section navigation" data-animate>
         <nav class="page-content__subnav">
-          <p class="page-content__subnav-label">About us</p>
+          <p class="page-content__subnav-label">On this page</p>
           <ul class="page-content__subnav-links">
-            <li><a class="page-content__subnav-link is-active" href="#" aria-current="page">About us</a></li>
-            <li><a class="page-content__subnav-link" href="#">Subscribe</a></li>
-            <li><a class="page-content__subnav-link" href="#">Contact us</a></li>
+            <li><a class="page-content__subnav-link is-active" href="#overview">Overview</a></li>
+            <li><a class="page-content__subnav-link" href="#what-we-do">What we do</a></li>
+            <li><a class="page-content__subnav-link" href="#our-research">Our research areas</a></li>
+            <li><a class="page-content__subnav-link" href="#publications">Publications</a></li>
+            <li><a class="page-content__subnav-link" href="#media">Media and resources</a></li>
+            <li><a class="page-content__subnav-link" href="#contact">Contact</a></li>
           </ul>
         </nav>
       </aside>
@@ -625,6 +628,31 @@
     document.querySelectorAll('[data-animate]').forEach(function (el) {
       observer.observe(el);
     });
+  })();
+
+  // Subnav — highlight active section on scroll
+  (function () {
+    var links = document.querySelectorAll('.page-content__subnav-link');
+    var sections = [];
+    links.forEach(function (link) {
+      var id = link.getAttribute('href').replace('#', '');
+      var section = document.getElementById(id);
+      if (section) sections.push({ id: id, el: section, link: link });
+    });
+    if (!sections.length) return;
+
+    function update() {
+      var scrollY = window.scrollY + 120;
+      var current = sections[0];
+      for (var i = 0; i < sections.length; i++) {
+        if (sections[i].el.offsetTop <= scrollY) current = sections[i];
+      }
+      links.forEach(function (l) { l.classList.remove('is-active'); });
+      current.link.classList.add('is-active');
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    update();
   })();
 
   // Parallax for hero device-grid SVG

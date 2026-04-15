@@ -7,6 +7,10 @@
 // HERO — device-grid SVG positioned higher on shorter hero
 // -----------------------------------------------------------------------------
 
+.page-content {
+  scroll-behavior: smooth;
+}
+
 .page-content .hero__device-grid--right {
   top: -10%;
 
@@ -59,6 +63,7 @@
   padding-bottom: $spacing-xl;
   margin-bottom: $spacing-xl;
   border-bottom: 1px solid $color-ui-border;
+  scroll-margin-top: $spacing-lg;
 
   &:last-child {
     border-bottom: none;

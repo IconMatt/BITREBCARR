@@ -197,7 +197,7 @@
     gap: $spacing-md;
 
     @include respond-to('lg') {
-      grid-template-columns: 1fr 1fr minmax(0, 160px) minmax(0, 160px);
+      grid-template-columns: 1fr 1fr minmax(0, 160px) minmax(0, 160px) minmax(0, 160px);
       align-items: end;
     }
   }
