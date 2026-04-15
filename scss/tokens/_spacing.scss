@@ -3,27 +3,30 @@
 // Source: Figma Variables export — size.mode1
 // =============================================================================
 // Scale maps to a named spacing system for semantic use.
+//
+// All tokens use !default so a Drupal sub-theme can override any value
+// by re-declaring it BEFORE this file is imported.
 // =============================================================================
 
-$size-0: 0px;
-$size-1: 1px;
-$size-2: 2px;
-$size-3: 4px;
-$size-4: 8px;
-$size-5: 16px;
-$size-6: 24px;
-$size-7: 48px;
-$size-8: 96px;
+$size-0: 0px  !default;
+$size-1: 1px  !default;
+$size-2: 2px  !default;
+$size-3: 4px  !default;
+$size-4: 8px  !default;
+$size-5: 16px !default;
+$size-6: 24px !default;
+$size-7: 48px !default;
+$size-8: 96px !default;
 
 // --- Semantic spacing aliases ---
-$spacing-none:  $size-0;
-$spacing-xs:    $size-3;   // 4px
-$spacing-sm:    $size-4;   // 8px
-$spacing-md:    $size-5;   // 16px
-$spacing-lg:    $size-6;   // 24px
-$spacing-xl:    $size-7;   // 48px
-$spacing-3xl:   72px;      // 72px — tablet section padding (between xl and 2xl)
-$spacing-2xl:   $size-8;   // 96px
+$spacing-none:  $size-0 !default;
+$spacing-xs:    $size-3 !default;   // 4px
+$spacing-sm:    $size-4 !default;   // 8px
+$spacing-md:    $size-5 !default;   // 16px
+$spacing-lg:    $size-6 !default;   // 24px
+$spacing-xl:    $size-7 !default;   // 48px
+$spacing-3xl:   72px    !default;   // 72px — tablet section padding (between xl and 2xl)
+$spacing-2xl:   $size-8 !default;   // 96px
 
 // --- CSS Custom Properties ---
 :root {

@@ -6,19 +6,22 @@
 // Font sizes: rem, base 16px (respects user browser preferences)
 // Line heights: unitless ratios (best practice — scales with font size)
 //   Derived from Figma desktop values: line-height-px / font-size-px
+//
+// All tokens use !default so a Drupal sub-theme can override any value
+// by re-declaring it BEFORE this file is imported.
 // =============================================================================
 
 // --- Font families ---
-$font-family-base:    'Mulish', 'Helvetica Neue', Arial, sans-serif;
-$font-family-heading: 'Mulish', 'Helvetica Neue', Arial, sans-serif;
-$font-family-mono:    'Courier New', Courier, monospace;
+$font-family-base:    'Mulish', 'Helvetica Neue', Arial, sans-serif !default;
+$font-family-heading: 'Mulish', 'Helvetica Neue', Arial, sans-serif !default;
+$font-family-mono:    'Courier New', Courier, monospace !default;
 
 // --- Font weights ---
-$font-weight-regular:   400;
-$font-weight-medium:    500;
-$font-weight-semibold:  600;
-$font-weight-bold:      700;
-$font-weight-extrabold: 800;  // Available in Mulish — use for display/hero headings
+$font-weight-regular:   400 !default;
+$font-weight-medium:    500 !default;
+$font-weight-semibold:  600 !default;
+$font-weight-bold:      700 !default;
+$font-weight-extrabold: 800 !default;  // Available in Mulish — use for display/hero headings
 
 // --- Font sizes (desktop targets from Figma) ---
 // All values in rem. Mobile breakpoints are handled in atoms/_typography.scss
@@ -32,14 +35,14 @@ $font-weight-extrabold: 800;  // Available in Mulish — use for display/hero he
 // $font-size-2xl:  32px  — H2
 // $font-size-3xl:  48px  — H1
 
-$font-size-xs:   0.75rem;   // 12px
-$font-size-sm:   0.875rem;  // 14px — Small / Label
-$font-size-base: 1rem;      // 16px — Body / H5 / Nav-item
-$font-size-md:   1.125rem;  // 18px — Button text
-$font-size-lg:   1.25rem;   // 20px — H4 / Big
-$font-size-xl:   1.5rem;    // 24px — H3
-$font-size-2xl:  2rem;      // 32px — H2
-$font-size-3xl:  3rem;      // 48px — H1
+$font-size-xs:   0.75rem  !default; // 12px
+$font-size-sm:   0.875rem !default; // 14px — Small / Label
+$font-size-base: 1rem     !default; // 16px — Body / H5 / Nav-item
+$font-size-md:   1.125rem !default; // 18px — Button text
+$font-size-lg:   1.25rem  !default; // 20px — H4 / Big
+$font-size-xl:   1.5rem   !default; // 24px — H3
+$font-size-2xl:  2rem     !default; // 32px — H2
+$font-size-3xl:  3rem     !default; // 48px — H1
 
 // --- Line heights (unitless — from Figma: lh-px ÷ size-px) ---
 //
@@ -52,20 +55,20 @@ $font-size-3xl:  3rem;      // 48px — H1
 // $line-height-small:   1.429  — Small (20/14)
 // $line-height-loose:   1.55   — Big (31/20)
 
-$line-height-none:    1;      // Nav-item, Label, Button text
-$line-height-tight:   1.25;   // H2
-$line-height-snug:    1.333;  // H3
-$line-height-heading: 1.4;    // H4
-$line-height-h1:      1.417;  // H1
-$line-height-base:    1.5;    // Body, H5
-$line-height-small:   1.429;  // Small
-$line-height-loose:   1.55;   // Big / lead paragraph
+$line-height-none:    1     !default; // Nav-item, Label, Button text
+$line-height-tight:   1.25  !default; // H2
+$line-height-snug:    1.333 !default; // H3
+$line-height-heading: 1.4   !default; // H4
+$line-height-h1:      1.417 !default; // H1
+$line-height-base:    1.5   !default; // Body, H5
+$line-height-small:   1.429 !default; // Small
+$line-height-loose:   1.55  !default; // Big / lead paragraph
 
 // --- Letter spacing ---
-$letter-spacing-tight:  -0.02em;
-$letter-spacing-normal: 0;
-$letter-spacing-wide:   0.05em;
-$letter-spacing-wider:  0.1em;
+$letter-spacing-tight:  -0.02em !default;
+$letter-spacing-normal: 0       !default;
+$letter-spacing-wide:   0.05em  !default;
+$letter-spacing-wider:  0.1em   !default;
 
 // --- CSS Custom Properties ---
 :root {

@@ -1,43 +1,46 @@
 // =============================================================================
 // TOKENS / COLORS
 // Source: Figma Variables export (tokens.json)
+//
+// All tokens use !default so a Drupal sub-theme can override any value
+// by re-declaring it BEFORE this file is imported.
 // =============================================================================
 
 // --- Brand ---
-$color-brand-navy:               #081e3f;
-$color-brand-blue:               #78d1f5;
-$color-brand-teal:               #4eb2b4;
-$color-brand-mint:               #a1feb5;
-$color-brand-secondary-lime:     #c0dd92;
-$color-brand-secondary-deep-teal:#337b7e;
-$color-brand-secondary-green:    #6ec096;
-$color-brand-secondary-mint:     #a1feb5;
+$color-brand-navy:               #081e3f !default;
+$color-brand-blue:               #78d1f5 !default;
+$color-brand-teal:               #4eb2b4 !default;
+$color-brand-mint:               #a1feb5 !default;
+$color-brand-secondary-lime:     #c0dd92 !default;
+$color-brand-secondary-deep-teal:#337b7e !default;
+$color-brand-secondary-green:    #6ec096 !default;
+$color-brand-secondary-mint:     #a1feb5 !default;
 
 // --- Neutrals ---
-$color-neutral-0:   #ffffff;
-$color-neutral-100: #f4f5f7;
-$color-neutral-200: #e9ecef;
-$color-neutral-300: #dee2e6;
-$color-neutral-400: #ced4da;
-$color-neutral-500: #adb5bd;
-$color-neutral-600: #6c757d;
-$color-neutral-700: #495057;
-$color-neutral-800: #343a40;
-$color-neutral-900: #343a40;
+$color-neutral-0:   #ffffff !default;
+$color-neutral-100: #f4f5f7 !default;
+$color-neutral-200: #e9ecef !default;
+$color-neutral-300: #dee2e6 !default;
+$color-neutral-400: #ced4da !default;
+$color-neutral-500: #adb5bd !default;
+$color-neutral-600: #6c757d !default;
+$color-neutral-700: #495057 !default;
+$color-neutral-800: #343a40 !default;
+$color-neutral-900: #343a40 !default;
 
 // --- Text ---
-$color-text-primary:  #343a40;
-$color-text-secondary:#495057;
-$color-text-inverse:  #ffffff;
+$color-text-primary:  #343a40 !default;
+$color-text-secondary:#495057 !default;
+$color-text-inverse:  #ffffff !default;
 
 // --- UI Semantic ---
-$color-ui-surface: #ffffff;
-$color-ui-border:  #dee2e6;
-$color-ui-link:    #337b7e;
-$color-ui-accent:  #4eb2b4;
-$color-ui-focus:   #0d6efd;  // 4.6:1 on white — passes WCAG 3:1 focus contrast
-$color-ui-focus-outer: #78d1f5;
-$color-ui-error:   #c0392b;
+$color-ui-surface: #ffffff !default;
+$color-ui-border:  #dee2e6 !default;
+$color-ui-link:    #337b7e !default;
+$color-ui-accent:  #4eb2b4 !default;
+$color-ui-focus:   #0d6efd !default;  // 4.6:1 on white — passes WCAG 3:1 focus contrast
+$color-ui-focus-outer: #78d1f5 !default;
+$color-ui-error:   #c0392b !default;
 
 // --- CSS Custom Properties (for runtime theming / Drupal overrides) ---
 :root {

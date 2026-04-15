@@ -1,13 +1,16 @@
 // =============================================================================
 // TOKENS / RADIUS
 // Source: Figma Variables export — radius.mode1
+//
+// All tokens use !default so a Drupal sub-theme can override any value
+// by re-declaring it BEFORE this file is imported.
 // =============================================================================
 
-$radius-sm:   4px;
-$radius-md:   6px;
-$radius-lg:   8px;
-$radius-xl:   16px;
-$radius-pill: 999px;
+$radius-sm:   4px   !default;
+$radius-md:   6px   !default;
+$radius-lg:   8px   !default;
+$radius-xl:   16px  !default;
+$radius-pill: 999px !default;
 
 // --- CSS Custom Properties ---
 :root {

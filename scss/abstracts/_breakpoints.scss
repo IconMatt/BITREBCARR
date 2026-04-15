@@ -44,10 +44,10 @@ $breakpoints: (
 // --- Container ---
 // Figma grid: 12 cols × 93px + 11 × 48px gap = 1644px content
 // Practical container: 1440px max with padding giving ~1296px content at desktop
-$container-max-width:    1440px;
-$container-padding:      $spacing-md;   // 16px — mobile
-$container-padding-md:   $spacing-lg;   // 24px — tablet
-$container-padding-xl:   $size-7;       // 48px — desktop padding ($size-7 from spacing tokens)
+$container-max-width:    1440px      !default;
+$container-padding:      $spacing-md  !default;   // 16px — mobile
+$container-padding-md:   $spacing-lg  !default;   // 24px — tablet
+$container-padding-xl:   $size-7      !default;   // 48px — desktop padding ($size-7 from spacing tokens)
 
 // Override the container mixin from _mixins.scss to use xl padding
 // (Defined here so it can reference $container-padding-xl before mixins load)

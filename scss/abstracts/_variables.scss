@@ -2,55 +2,58 @@
 // ABSTRACTS / VARIABLES
 // Semantic aliases that reference raw tokens.
 // Change a token — everything updates. Change this — only the concept updates.
+//
+// All tokens use !default so a Drupal sub-theme can override any value
+// by re-declaring it BEFORE this file is imported.
 // =============================================================================
 
 // --- Page ---
-$page-bg:           $color-neutral-100;
-$page-color:        $color-text-primary;
+$page-bg:           $color-neutral-100   !default;
+$page-color:        $color-text-primary  !default;
 
 // --- Header ---
-$header-bg:         $color-brand-navy;
-$header-color:      $color-text-inverse;
-$header-height:     72px;  // mobile  — fits BITRE/BCARR site name
-$header-height-md:  96px;  // tablet  — fits 64px logo + 16px padding top/bottom
-$header-height-lg:  80px;  // desktop — no logo in nav-bar
+$header-bg:         $color-brand-navy    !default;
+$header-color:      $color-text-inverse  !default;
+$header-height:     72px !default;  // mobile  — fits BITRE/BCARR site name
+$header-height-md:  96px !default;  // tablet  — fits 64px logo + 16px padding top/bottom
+$header-height-lg:  80px !default;  // desktop — no logo in nav-bar
 
 // --- Footer ---
-$footer-bg:         $color-brand-navy;
-$footer-color:      $color-text-inverse;
+$footer-bg:         $color-brand-navy    !default;
+$footer-color:      $color-text-inverse  !default;
 
 // --- Nav ---
-$nav-link-color:         $color-text-inverse;
-$nav-link-color-hover:   $color-brand-teal;
-$nav-link-color-active:  $color-brand-blue;
+$nav-link-color:         $color-text-inverse !default;
+$nav-link-color-hover:   $color-brand-teal   !default;
+$nav-link-color-active:  $color-brand-blue   !default;
 
 // --- Links ---
-$link-color:        $color-ui-link;
-$link-color-hover:  $color-brand-secondary-deep-teal;
+$link-color:        $color-ui-link                    !default;
+$link-color-hover:  $color-brand-secondary-deep-teal  !default;
 
 // --- Borders ---
-$border-color:      $color-ui-border;
-$border-width:      1px;
-$border-style:      solid;
-$border-default:    $border-width $border-style $border-color;
+$border-color:      $color-ui-border !default;
+$border-width:      1px              !default;
+$border-style:      solid            !default;
+$border-default:    $border-width $border-style $border-color !default;
 
 // --- Shadows ---
-$shadow-sm:  0 1px 3px rgba(8, 30, 63, 0.08);
-$shadow-md:  0 4px 12px rgba(8, 30, 63, 0.12);
-$shadow-lg:  0 8px 24px rgba(8, 30, 63, 0.16);
+$shadow-sm:  0 1px 3px  rgba(8, 30, 63, 0.08) !default;
+$shadow-md:  0 4px 12px rgba(8, 30, 63, 0.12) !default;
+$shadow-lg:  0 8px 24px rgba(8, 30, 63, 0.16) !default;
 
 // --- Z-index scale ---
-$z-below:    -1;
-$z-base:      0;
-$z-raised:   10;
-$z-dropdown: 100;
-$z-sticky:   200;
-$z-overlay:  300;
-$z-modal:    400;
-$z-toast:    500;
+$z-below:    -1  !default;
+$z-base:      0  !default;
+$z-raised:   10  !default;
+$z-dropdown: 100 !default;
+$z-sticky:   200 !default;
+$z-overlay:  300 !default;
+$z-modal:    400 !default;
+$z-toast:    500 !default;
 
 // --- Transitions ---
-$transition-speed-fast:   0.15s;
-$transition-speed-base:   0.2s;
-$transition-speed-slow:   0.35s;
-$transition-easing:       ease-in-out;
+$transition-speed-fast:   0.15s     !default;
+$transition-speed-base:   0.2s      !default;
+$transition-speed-slow:   0.35s     !default;
+$transition-easing:       ease-in-out !default;
