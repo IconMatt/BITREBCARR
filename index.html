@@ -709,14 +709,14 @@
 
       <!-- Note 1 -->
       <div style="background:#ffffff;border-radius:12px;padding:24px 28px;border:1px solid #e3e5e8">
-        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#0a72a8">01 — Architecture</p>
+        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#337b7e">01 — Architecture</p>
         <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;color:#081e3f">Atoms → Molecules → Organisms → Pages</h3>
         <p style="margin:0;font-size:15px;line-height:1.6;color:#3a4252">SCSS is layered. Each layer only consumes the layer below it — no circular dependencies. When you add a new component, place it in the right folder (a button is an atom, a search box is a molecule, a hero is an organism). Pages should compose existing components, not redefine them.</p>
       </div>
 
       <!-- Note 2 -->
       <div style="background:#ffffff;border-radius:12px;padding:24px 28px;border:1px solid #e3e5e8">
-        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#0a72a8">02 — BEM is the contract</p>
+        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#337b7e">02 — BEM is the contract</p>
         <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;color:#081e3f">Keep the class names exactly as they are</h3>
         <p style="margin:0 0 12px;font-size:15px;line-height:1.6;color:#3a4252">Every component uses <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">block__element--modifier</code>. Don't rename, don't add utility classes (no <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">.mt-4</code>, no <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">.text-blue</code>). If a Twig template needs a new variant, add a modifier in SCSS (e.g. <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">.card--compact</code>) — that's how the system stays consistent.</p>
         <p style="margin:0;font-size:14px;line-height:1.55;color:#6c757d"><strong style="color:#081e3f">Why:</strong> a developer reading the markup can predict the SCSS without opening a file.</p>
@@ -724,7 +724,7 @@
 
       <!-- Note 3 -->
       <div style="background:#ffffff;border-radius:12px;padding:24px 28px;border:1px solid #e3e5e8">
-        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#0a72a8">03 — Tokens, not magic numbers</p>
+        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#337b7e">03 — Tokens, not magic numbers</p>
         <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;color:#081e3f">Never hard-code colours, spacing, or font sizes</h3>
         <p style="margin:0 0 12px;font-size:15px;line-height:1.6;color:#3a4252">All design decisions live in <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">scss/tokens/</code>. Use <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">$color-brand-navy</code>, <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">$spacing-lg</code>, <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">$font-size-md</code> — never <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">#081e3f</code> or <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">24px</code>. Need a new value? Add it as a token first, then reference it.</p>
         <p style="margin:0;font-size:14px;line-height:1.55;color:#6c757d"><strong style="color:#081e3f">Why:</strong> rebranding or accessibility tweaks become a one-file change.</p>
@@ -732,14 +732,14 @@
 
       <!-- Note 4 -->
       <div style="background:#ffffff;border-radius:12px;padding:24px 28px;border:1px solid #e3e5e8">
-        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#0a72a8">04 — Use the mixins</p>
+        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#337b7e">04 — Use the mixins</p>
         <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;color:#081e3f">Don't write raw media queries or focus rings</h3>
         <p style="margin:0;font-size:15px;line-height:1.6;color:#3a4252">Use <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">@include respond-to('lg')</code> instead of <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">@media (min-width: 1024px)</code>. Use <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">@include focus-ring</code> on every interactive element. Use <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">@include container</code> to wrap page content. The mixins are in <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">scss/abstracts/_mixins.scss</code> — read them once, then use them everywhere.</p>
       </div>
 
       <!-- Note 5 -->
       <div style="background:#ffffff;border-radius:12px;padding:24px 28px;border:1px solid #e3e5e8">
-        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#0a72a8">05 — Converting HTML to Twig</p>
+        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#337b7e">05 — Converting HTML to Twig</p>
         <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;color:#081e3f">Static markup is paste-ready — just wire up the placeholders</h3>
         <p style="margin:0 0 12px;font-size:15px;line-height:1.6;color:#3a4252">Each <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">templates/*.html</code> file is a complete reference page. Copy the markup into a Twig template, replace the dummy content with <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">{{ field_xxx }}</code> placeholders, and loop card grids with <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">{% for item in items %}</code>. Don't restructure the DOM — the SCSS depends on the nesting.</p>
         <p style="margin:0 0 12px;font-size:14px;line-height:1.55;color:#6c757d"><strong style="color:#081e3f">Tip:</strong> the BEM block on the outer element tells you which SCSS file to look at — <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">.hero--topic</code> → <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">scss/organisms/_hero.scss</code>.</p>
@@ -748,7 +748,7 @@
 
       <!-- Note 6 — Three-piece mapping pattern -->
       <div style="background:#ffffff;border-radius:12px;padding:24px 28px;border:1px solid #e3e5e8">
-        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#0a72a8">06 — The three-piece mapping pattern</p>
+        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#337b7e">06 — The three-piece mapping pattern</p>
         <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;color:#081e3f">Paragraph type → preprocess → thin Twig template</h3>
         <p style="margin:0 0 16px;font-size:15px;line-height:1.6;color:#3a4252">For every reusable component, follow the same three-piece pattern. This is the convention used by mature Drupal design systems like CivicTheme and it keeps the boundary between Drupal and the design system clean.</p>
 
@@ -795,35 +795,35 @@ fields:
 
       <!-- Note 7 -->
       <div style="background:#ffffff;border-radius:12px;padding:24px 28px;border:1px solid #e3e5e8">
-        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#0a72a8">07 — CKEditor / WYSIWYG output</p>
+        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#337b7e">07 — CKEditor / WYSIWYG output</p>
         <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;color:#081e3f">Wrap rich-text body fields in <code style="font-family:var(--ks-mono);font-size:15px;background:#f4f5f7;padding:2px 8px;border-radius:4px">.page-content__section</code></h3>
         <p style="margin:0;font-size:15px;line-height:1.6;color:#3a4252">All prose styling — h2 to h6, paragraphs, lists, blockquote, table, figure, links — lives inside <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">.page-content__section</code> in <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">scss/pages/_content.scss</code>. Render any CKEditor body field inside that wrapper and it will style correctly without extra CSS. See <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">templates/content.html</code> for the full reference.</p>
       </div>
 
       <!-- Note 8 -->
       <div style="background:#ffffff;border-radius:12px;padding:24px 28px;border:1px solid #e3e5e8">
-        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#0a72a8">08 — Accessibility is already wired</p>
+        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#337b7e">08 — Accessibility is already wired</p>
         <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;color:#081e3f">Don't strip the skip link, main landmark, or focus rings</h3>
         <p style="margin:0;font-size:15px;line-height:1.6;color:#3a4252">Every template includes a <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">.skip-link</code> as the first element after <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">&lt;body&gt;</code>, a <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">&lt;main id="main-content"&gt;</code> landmark, and a 4.6:1 contrast focus ring on every interactive element. Keep all three when porting to Twig — they're WCAG / GovCMS requirements.</p>
       </div>
 
       <!-- Note 9 -->
       <div style="background:#ffffff;border-radius:12px;padding:24px 28px;border:1px solid #e3e5e8">
-        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#0a72a8">09 — JavaScript is optional</p>
+        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#337b7e">09 — JavaScript is optional</p>
         <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;color:#081e3f">A few small vanilla snippets — keep, port, or drop</h3>
         <p style="margin:0;font-size:15px;line-height:1.6;color:#3a4252">There's no JS framework. Inline scripts handle: hero parallax (topic landing), active sub-nav tracking (content page), and the article-type cover/badge swap. Each is ~30 lines of vanilla JS with no dependencies. Lift them as-is into a Drupal behavior, or drop them — the templates degrade gracefully without them.</p>
       </div>
 
       <!-- Note 10 -->
       <div style="background:#ffffff;border-radius:12px;padding:24px 28px;border:1px solid #e3e5e8">
-        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#0a72a8">10 — Responsive states live in CSS</p>
+        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#337b7e">10 — Responsive states live in CSS</p>
         <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;color:#081e3f">Hover, focus, sticky, reduced-motion — all handled in SCSS</h3>
         <p style="margin:0;font-size:15px;line-height:1.6;color:#3a4252">Don't reach for JS to toggle classes for hover or breakpoint changes. Everything visual — including <code style="font-family:var(--ks-mono);font-size:13px;background:#f4f5f7;padding:1px 6px;border-radius:4px">prefers-reduced-motion</code>, sticky positioning, and disabled states — is handled in CSS. JS should only be used for genuinely interactive behaviour (form submission, AJAX filtering, etc.).</p>
       </div>
 
       <!-- Note 10 -->
       <div style="background:#081e3f;border-radius:12px;padding:24px 28px;color:#ffffff">
-        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#7fd4d4">In short</p>
+        <p style="margin:0 0 8px;font-family:var(--ks-mono);font-size:13px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#7fd4d4">In short</p>
         <h3 style="margin:0 0 10px;font-size:18px;font-weight:700;color:#ffffff">If you stay inside the system, the system stays consistent</h3>
         <p style="margin:0 0 14px;font-size:15px;line-height:1.6;color:rgba(255,255,255,0.85)">Use existing components before building new ones. Use tokens before hard-coding values. Use mixins before writing raw CSS. Add BEM modifiers before adding utility classes. The system was designed so a Drupal themer can follow these rules without thinking — and the result will look like the design.</p>
         <p style="margin:0;padding-top:14px;border-top:1px solid rgba(255,255,255,0.18);font-size:14px;line-height:1.6;color:rgba(255,255,255,0.75)"><strong style="color:#7fd4d4">Forward path:</strong> when this theme moves to Drupal 10.3+, each component can be lifted into a Single Directory Component (SDC) — the BEM markup, SCSS partial and a small <code style="font-family:var(--ks-mono);font-size:13px;background:rgba(255,255,255,0.08);padding:1px 6px;border-radius:4px">component.yml</code> manifest live together in one folder. The structure here was deliberately built to make that migration trivial.</p>
