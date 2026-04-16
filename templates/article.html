@@ -756,80 +756,91 @@
 
       siteName.style.transition = 'none';
       siteName.style.transform = 'translateX(' + deltaX + 'px)';
+      siteName.getBoundingClientRect(); // force layout so the starting transform is applied
+
       requestAnimationFrame(function () {
-        siteName.style.transition = 'transform 0.28s cubic-bezier(0.4, 0, 0.2, 1)';
+        siteName.style.transition = '';
         siteName.style.transform = '';
       });
     }
 
-    setMenuOffset();
-
     burger.addEventListener('click', function () {
       animateSiteNameLayoutChange(function () {
-        if (header) header.classList.remove('is-menu-open');
+        if (header) header.classList.remove('is-menu-open'); // reset before measuring
         var isOpen = menu.classList.toggle('is-open');
-        burger.setAttribute('aria-expanded', String(isOpen));
-        menu.setAttribute('aria-hidden', String(!isOpen));
+        burger.setAttribute('aria-expanded', isOpen);
+        menu.setAttribute('aria-hidden', !isOpen);
         document.body.style.overflow = isOpen ? 'hidden' : '';
-        setMenuOffset();
         if (isOpen) {
+          window.scrollTo({ top: 0, behavior: 'auto' });
           if (header) header.classList.add('is-menu-open');
+          setMenuOffset();
+        } else {
+          closeMenu();
         }
       });
     });
 
     window.addEventListener('resize', function () {
-      setMenuOffset();
       if (desktopMq.matches) {
         closeMenu();
+        return;
       }
+
       if (menu.classList.contains('is-open')) {
-        document.body.style.overflow = 'hidden';
+        setMenuOffset();
       }
     });
+  })();
 
-    // Header search panel
+  // Header search panel toggle
+  (function () {
     var searchBtn = document.querySelector('.site-header__utility-search');
     var panel     = document.getElementById('header-search-panel');
     var input     = document.getElementById('header-search-input');
     var closeBtn  = panel ? panel.querySelector('.site-header__search-close') : null;
 
-    if (searchBtn && panel && input) {
-      function openPanel()  {
-        panel.classList.add('is-open');
-        searchBtn.setAttribute('aria-expanded', 'true');
-        requestAnimationFrame(function () { input.focus(); });
-      }
-      function closePanel() {
-        panel.classList.remove('is-open');
-        searchBtn.setAttribute('aria-expanded', 'false');
-        searchBtn.focus();
-      }
+    if (!searchBtn || !panel || !input) return;
 
-      searchBtn.addEventListener('click', function () {
-        panel.classList.contains('is-open') ? closePanel() : openPanel();
-      });
-
-      if (closeBtn) {
-        closeBtn.addEventListener('click', closePanel);
-      }
-
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape' && panel.classList.contains('is-open')) {
-          closePanel();
-        }
-      });
-
-      document.addEventListener('click', function (e) {
-        if (
-          panel.classList.contains('is-open') &&
-          !panel.contains(e.target) &&
-          !searchBtn.contains(e.target)
-        ) {
-          closePanel();
-        }
-      });
+    function openPanel() {
+      panel.classList.add('is-open');
+      panel.setAttribute('aria-hidden', 'false');
+      searchBtn.setAttribute('aria-expanded', 'true');
+      requestAnimationFrame(function () { input.focus(); });
     }
+
+    function closePanel() {
+      panel.classList.remove('is-open');
+      panel.setAttribute('aria-hidden', 'true');
+      searchBtn.setAttribute('aria-expanded', 'false');
+      searchBtn.focus();
+    }
+
+    searchBtn.addEventListener('click', function () {
+      panel.classList.contains('is-open') ? closePanel() : openPanel();
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closePanel);
+    }
+
+    // ESC key closes panel
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && panel.classList.contains('is-open')) {
+        closePanel();
+      }
+    });
+
+    // Click outside closes panel
+    document.addEventListener('click', function (e) {
+      if (
+        panel.classList.contains('is-open') &&
+        !panel.contains(e.target) &&
+        !searchBtn.contains(e.target)
+      ) {
+        closePanel();
+      }
+    });
   })();
 
   // Staggered entrance animations
