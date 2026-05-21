@@ -155,6 +155,73 @@
 })();
 
 // =============================================================================
+// Page-nav scroll affordance
+// Toggles .has-scroll when the anchor-link bar overflows horizontally, and
+// .is-at-end once the user has scrolled to the right edge. SCSS uses these
+// to fade in / out the right-edge chevron + gradient indicator.
+// =============================================================================
+
+(function () {
+  'use strict';
+
+  function initPageNavScroll() {
+    var navs = document.querySelectorAll('.page-nav');
+    if (!navs.length) return;
+
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    navs.forEach(function (nav) {
+      var inner = nav.querySelector('.page-nav__inner');
+      if (!inner) return;
+
+      // Inject the scroll-cue button. Keyboard users navigate via the
+      // anchor links themselves, so the button is aria-hidden + tabindex=-1.
+      var cue = document.createElement('button');
+      cue.type = 'button';
+      cue.className = 'page-nav__scroll-cue';
+      cue.setAttribute('aria-hidden', 'true');
+      cue.setAttribute('tabindex', '-1');
+      cue.textContent = '›'; // ›
+      nav.appendChild(cue);
+
+      cue.addEventListener('click', function () {
+        inner.scrollBy({
+          left: Math.round(inner.clientWidth * 0.8),
+          behavior: prefersReducedMotion.matches ? 'auto' : 'smooth'
+        });
+      });
+
+      var ticking = false;
+
+      function update() {
+        var hasOverflow = inner.scrollWidth - inner.clientWidth > 1;
+        nav.classList.toggle('has-scroll', hasOverflow);
+        nav.classList.toggle('is-scrolled', hasOverflow && inner.scrollLeft > 0);
+        ticking = false;
+      }
+
+      function schedule() {
+        if (!ticking) {
+          requestAnimationFrame(update);
+          ticking = true;
+        }
+      }
+
+      inner.addEventListener('scroll', schedule, { passive: true });
+      window.addEventListener('resize', schedule);
+
+      update();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPageNavScroll);
+  } else {
+    initPageNavScroll();
+  }
+})();
+
+// =============================================================================
 // Back to top
 // Reveals a floating back-to-top button after the lead section has been passed.
 // Safe on pages without the trigger element.

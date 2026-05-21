@@ -11,6 +11,60 @@
   background-color: $color-neutral-100;
   border-bottom: 1px solid $color-ui-border;
 
+  // Scroll affordance: gradient fade + tappable chevron at the right edge.
+  // Visible only when JS detects horizontal overflow and the user hasn't
+  // scrolled yet. State classes toggled by initPageNavScroll().
+  &::after {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    right: 0;
+    width: 36px;
+    pointer-events: none;
+    opacity: 0;
+    @include transition(opacity);
+    background: linear-gradient(to right, rgba($color-neutral-100, 0), $color-neutral-100 55%);
+  }
+
+  &__scroll-cue {
+    @include button-reset;
+
+    position: absolute;
+    top: 50%;
+    right: $spacing-xs;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 32px;
+    padding: 0;
+    // Nudge up slightly so the chevron glyph optically aligns with the
+    // "On this page" label — `›` sits low on its em box.
+    transform: translateY(-57%);
+    color: $color-brand-navy;
+    font-size: 22px;
+    font-weight: $font-weight-bold;
+    line-height: 1;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    @include transition(opacity);
+
+    &:focus-visible {
+      @include focus-ring;
+    }
+  }
+
+  &.has-scroll:not(.is-scrolled)::after {
+    opacity: 1;
+  }
+
+  &.has-scroll:not(.is-scrolled) &__scroll-cue {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
   &__inner {
     @include container;
 
