@@ -746,7 +746,7 @@
     if (!right || !left) return;
 
     // Left SVG has existing CSS transforms — preserve them
-    const leftBase = 'translateY(-50%) scale(-1, -1) rotate(15deg)';
+    const leftBase = 'scale(-1, -1) rotate(15deg)';
 
     let ticking = false;
     window.addEventListener('scroll', function () {
@@ -754,7 +754,9 @@
         requestAnimationFrame(function () {
           const y = window.scrollY;
           right.style.transform = 'translateY(' + (-y * 0.12) + 'px)';
-          left.style.transform  = leftBase + ' translateY(' + (-y * 0.08) + 'px)';
+          // Parallax translateY must apply in screen space (left-most = applied last),
+          // otherwise the base scale(-1,-1) rotate(15deg) projects motion onto X.
+          left.style.transform  = 'translateY(' + (y * 0.08) + 'px) ' + leftBase;
           ticking = false;
         });
         ticking = true;

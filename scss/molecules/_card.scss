@@ -552,6 +552,7 @@
     height: auto;
     border: none;
     overflow: hidden; // clear the float
+    position: relative; // anchor for the stretched-link overlay
 
     @include respond-to('md') {
       padding: $spacing-lg;
@@ -566,6 +567,24 @@
     &.is-touched {
       transform: translateY(-2px);
       box-shadow: $shadow-md;
+    }
+
+    // Stretched link — clicking anywhere on the card follows the title link.
+    // Focus ring moves to the card surface so keyboard users see the whole hit area.
+    .card__title a {
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    &:focus-within {
+      @include focus-ring;
     }
 
     .card__body {
@@ -670,10 +689,29 @@
     border: none;
     box-shadow: none;
     overflow: visible; // allow shadow to bleed outside card bounds
+    position: relative; // anchor for the stretched-link overlay
 
     // Override base card's transition with the same smooth curve as --featured
     transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
+
+    // Stretched link — clicking anywhere on the card follows the title link.
+    // Focus ring moves to the card surface so keyboard users see the whole hit area.
+    .card__title a {
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    &:focus-within {
+      @include focus-ring;
+    }
 
     &:hover,
     &.is-touched {
