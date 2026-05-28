@@ -419,6 +419,25 @@
     padding: $spacing-lg;
     gap: $spacing-lg;
     border: none;
+    position: relative; // anchor for the stretched-link overlay
+
+    // Stretched link — clicking anywhere on the card follows the title link.
+    // Focus ring moves to the card surface so keyboard users see the whole hit area.
+    .card__title a {
+      &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+
+    &:focus-within {
+      @include focus-ring;
+    }
 
     // Below sm — adopt resource card styling (block + floated image)
     @include respond-below('sm') {

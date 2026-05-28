@@ -1065,6 +1065,19 @@ hr {
   padding: 24px;
   gap: 24px;
   border: none;
+  position: relative;
+}
+.card--resource-featured .card__title a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+.card--resource-featured .card__title a:focus-visible {
+  outline: none;
+}
+.card--resource-featured:focus-within {
+  outline: 2px solid #0d6efd;
+  outline-offset: 2px;
 }
 @media screen and (max-width: 479px) {
   .card--resource-featured {
@@ -2823,27 +2836,8 @@ hr {
 }
 @media screen and (min-width: 1024px) {
   .hero__device-grid--right {
-    top: 180px;
+    top: 40px;
     right: -340px;
-    width: 65%;
-    max-width: none;
-  }
-}
-.hero__device-grid--left {
-  left: -200px;
-  top: 50%;
-  transform: scale(-1, -1) rotate(15deg);
-}
-@media screen and (min-width: 768px) {
-  .hero__device-grid--left {
-    top: 60%;
-    left: -180px;
-  }
-}
-@media screen and (min-width: 1024px) {
-  .hero__device-grid--left {
-    top: 350px;
-    left: -420px;
     width: 65%;
     max-width: none;
   }
@@ -2853,9 +2847,13 @@ hr {
 }
 .hero--home .hero__inner {
   gap: 0;
+  align-items: flex-start;
   padding-bottom: 24px;
 }
 .hero--home .hero__inner .hero__content {
+  align-items: flex-start;
+  text-align: left;
+  padding-left: 24px;
   margin-bottom: 48px;
 }
 .hero--home .hero__inner .search-box--hero {
@@ -2873,6 +2871,10 @@ hr {
 }
 .hero--home .hero__heading {
   max-width: 1160px;
+  text-align: left;
+}
+.hero--home .hero__body {
+  text-align: left;
 }
 .hero--home .hero__heading,
 .hero--home .hero__body,
@@ -5122,3 +5124,5 @@ hr {
   border-left-color: #4eb2b4;
   background-color: rgba(78, 178, 180, 0.06);
 }
+
+/*# sourceMappingURL=main.css.map */

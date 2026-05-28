@@ -234,10 +234,9 @@
 ========================================================================== -->
 <section class="hero hero--home">
 
-  <!-- Background: device grid SVG (right + mirrored left) -->
+  <!-- Background: device grid SVG -->
   <div class="hero__bg" aria-hidden="true">
     <img src="../assets/images/device-grid.svg" alt="" class="hero__device-grid hero__device-grid--right">
-    <img src="../assets/images/device-grid.svg" alt="" class="hero__device-grid hero__device-grid--left">
   </div>
 
   <div class="hero__inner">
@@ -739,24 +738,16 @@
 
 
 <script>
-  // Parallax for hero device-grid SVGs
+  // Parallax for hero device-grid SVG
   (function () {
     const right = document.querySelector('.hero__device-grid--right');
-    const left  = document.querySelector('.hero__device-grid--left');
-    if (!right || !left) return;
-
-    // Left SVG has existing CSS transforms — preserve them
-    const leftBase = 'scale(-1, -1) rotate(15deg)';
+    if (!right) return;
 
     let ticking = false;
     window.addEventListener('scroll', function () {
       if (!ticking) {
         requestAnimationFrame(function () {
-          const y = window.scrollY;
-          right.style.transform = 'translateY(' + (-y * 0.12) + 'px)';
-          // Parallax translateY must apply in screen space (left-most = applied last),
-          // otherwise the base scale(-1,-1) rotate(15deg) projects motion onto X.
-          left.style.transform  = 'translateY(' + (y * 0.08) + 'px) ' + leftBase;
+          right.style.transform = 'translateY(' + (-window.scrollY * 0.12) + 'px)';
           ticking = false;
         });
         ticking = true;

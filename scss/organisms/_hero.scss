@@ -266,26 +266,8 @@
 
     @include respond-to('lg') {
       // Summary sits in the SVG's transparent top-left triangle (viewBox 482x433 of 1115x677).
-      top: 180px;
+      top: 40px;
       right: -340px;
-      width: 65%;
-      max-width: none;
-    }
-  }
-
-  &__device-grid--left {
-    left: -200px;
-    top: 50%; // mobile — anchor the element top (mirrors --right's approach)
-    transform: scale(-1, -1) rotate(15deg);
-
-    @include respond-to('md') {
-      top: 60%;
-      left: -180px;
-    }
-
-    @include respond-to('lg') {
-      top: 350px;
-      left: -420px;
       width: 65%;
       max-width: none;
     }
@@ -301,10 +283,15 @@
 
     .hero__inner {
       gap: 0;
+      align-items: flex-start;
       padding-bottom: $spacing-lg;
 
       // Space between content block and search box
       .hero__content {
+        align-items: flex-start;
+        text-align: left;
+        // Inset text to align with the search-box / alert inner content below
+        padding-left: $spacing-lg;
         margin-bottom: $spacing-xl;
       }
 
@@ -324,6 +311,11 @@
 
     .hero__heading {
       max-width: 1160px;
+      text-align: left;
+    }
+
+    .hero__body {
+      text-align: left;
     }
 
     // --- Entrance animations ---
