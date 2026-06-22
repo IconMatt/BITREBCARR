@@ -126,3 +126,45 @@
 @mixin sr-only {
   @include visually-hidden;
 }
+
+// --- Prose / body link ---
+// The canonical inline link treatment for body copy and CKEditor prose:
+// deep-teal text with an animated underline that fills on hover, navy on hover.
+// Use this everywhere an inline text link appears so links stay consistent.
+//
+// External links: append the external-link icon as a trailing inline <svg>, and
+// wrap the final word + icon in <span class="link__end"> so the icon never wraps
+// onto a line of its own.
+@mixin prose-link {
+  color: $color-brand-secondary-deep-teal;
+  text-decoration: none;
+  padding-bottom: 1px;
+  background:
+    linear-gradient($color-brand-secondary-deep-teal, $color-brand-secondary-deep-teal) no-repeat 0 100% / 0% 2px,
+    linear-gradient($color-brand-teal, $color-brand-teal) no-repeat 0 100% / 100% 2px;
+  transition: color 0.25s ease, background-size 0.35s ease;
+
+  &:hover {
+    color: $color-brand-navy;
+    background-size: 100% 2px, 100% 2px;
+  }
+
+  &:focus-visible {
+    @include focus-ring;
+    border-radius: $radius-sm;
+  }
+
+  // Trailing external-link icon: inline, immediately after the link text
+  svg {
+    display: inline-block;
+    width: 0.9em;
+    height: 0.9em;
+    margin-left: 0.25em;
+    vertical-align: -0.1em;
+  }
+
+  // Keeps an external link's final word and its icon together on one line
+  .link__end {
+    white-space: nowrap;
+  }
+}

@@ -284,6 +284,10 @@
     color: $color-text-secondary;
   }
 
+  a {
+    @include prose-link;
+  }
+
   h2 {
     margin: 0;
     font-size: $font-size-xl;

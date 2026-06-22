@@ -4200,6 +4200,32 @@ hr {
   line-height: 1.55;
   color: #495057;
 }
+.article__content a {
+  color: #337b7e;
+  text-decoration: none;
+  padding-bottom: 1px;
+  background: linear-gradient(#337b7e, #337b7e) no-repeat 0 100%/0% 2px, linear-gradient(#4eb2b4, #4eb2b4) no-repeat 0 100%/100% 2px;
+  transition: color 0.25s ease, background-size 0.35s ease;
+}
+.article__content a:hover {
+  color: #081e3f;
+  background-size: 100% 2px, 100% 2px;
+}
+.article__content a:focus-visible {
+  outline: 2px solid #0d6efd;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.article__content a svg {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  margin-left: 0.25em;
+  vertical-align: -0.1em;
+}
+.article__content a .link__end {
+  white-space: nowrap;
+}
 .article__content h2 {
   margin: 0;
   font-size: 1.5rem;
@@ -4936,6 +4962,16 @@ hr {
   outline: 2px solid #0d6efd;
   outline-offset: 2px;
   border-radius: 4px;
+}
+.page-content__section a svg {
+  display: inline-block;
+  width: 0.9em;
+  height: 0.9em;
+  margin-left: 0.25em;
+  vertical-align: -0.1em;
+}
+.page-content__section a .link__end {
+  white-space: nowrap;
 }
 .page-content__section ul,
 .page-content__section ol {

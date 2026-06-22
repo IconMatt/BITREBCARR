@@ -155,23 +155,7 @@
   // --- Links ---
 
   a {
-    color: $color-brand-secondary-deep-teal;
-    text-decoration: none;
-    padding-bottom: 1px;
-    background:
-      linear-gradient($color-brand-secondary-deep-teal, $color-brand-secondary-deep-teal) no-repeat 0 100% / 0% 2px,
-      linear-gradient($color-brand-teal, $color-brand-teal) no-repeat 0 100% / 100% 2px;
-    transition: color 0.25s ease, background-size 0.35s ease;
-
-    &:hover {
-      color: $color-brand-navy;
-      background-size: 100% 2px, 100% 2px;
-    }
-
-    &:focus-visible {
-      @include focus-ring;
-      border-radius: $radius-sm;
-    }
+    @include prose-link;
   }
 
   // --- Lists (bulleted + numbered) ---
